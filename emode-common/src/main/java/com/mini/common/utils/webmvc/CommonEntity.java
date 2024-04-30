@@ -1,0 +1,54 @@
+package com.mini.common.utils.webmvc;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mini.common.enums.number.Delete;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * mybatis-plus 通用类
+ */
+@Data
+public class CommonEntity implements Serializable {
+
+    /**
+     * 删除标志（1代表存在 -1代表删除）
+     */
+    private Delete delFlag;
+
+    /**
+     * 创建者
+     */
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty(value = "创建者", notes = "")
+    private Long createBy;
+
+    /**
+     * 创建时间
+     */
+    @TableField(fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @ApiModelProperty(value = "创建时间", notes = "")
+    private LocalDateTime createTime;
+
+    /**
+     * 更新者
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty(value = "更新者", notes = "")
+    private Long updateBy;
+
+    /**
+     * 更新时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @ApiModelProperty(value = "更新时间", notes = "")
+    private LocalDateTime updateTime;
+
+}

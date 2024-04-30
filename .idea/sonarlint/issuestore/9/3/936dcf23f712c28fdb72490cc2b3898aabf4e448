@@ -1,0 +1,9 @@
+
+Â
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¼ŠÀøùÿÿÿÿJ$65100c8f-9b33-486a-831a-937f7cab8092
+^
+java:S1118"Hide this public constructor.(¼ŠÀøùÿÿÿÿJ$1f3be4ce-24cf-4bc2-a960-61ffc8e979e3
+u
+java:S34004"9Remove this method and declare a constant for this value.(ª¸•¼J$b8635d7b-27e7-436a-8292-3753b92426d5
+”
+java:S2786Œ"RRemove this redundant "static" qualifier; nested enum types are implicitly static.(Ä¹ñˆþÿÿÿÿJ$1a1f2db8-c7cd-4715-bbc6-bd5c215eedb3
