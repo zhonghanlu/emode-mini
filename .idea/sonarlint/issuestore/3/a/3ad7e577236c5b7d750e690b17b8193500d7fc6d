@@ -1,3 +1,9 @@
 
 …
-java:S2094"BRemove this empty class, write its code or make it an "interface".(¶¦’8‹şîò1J$1f9b0bc6-02de-4ab5-ba93-75b5386f282e
+java:S3518"CMake sure this expression can't be zero before doing this division.(›º<8åÑ±õ1J$924368cb-5822-4df0-8f09-f17d59edff6c
+w
+java:S1854"5Remove this useless assignment to local variable "i".(›º<8èÑ±õ1J$0b87cb00-5e39-4298-be34-c18e6755a72c
+h
+java:S1481"&Remove this unused "i" local variable.(›º<8êÑ±õ1J$7009e5f3-ec88-4232-b5a1-7fc8da3b4d12
+‚
+java:S1128"@Remove this unused import 'com.mini.common.constant.HttpStatus'.(‹Å¸{8ˆ°Ô±õ1J$6d4411ec-616c-41cc-90b1-11e98ca0fee3

@@ -23,7 +23,7 @@ server:
 # 日志配置
 logging:
   level:
-    com.mini: @logging.level@
+    com.mini: info
     org.springframework: warn
 
 # Spring配置
@@ -111,7 +111,7 @@ xss:
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
 
-# knife4j configuration
+# knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
 knife4j:
   enable: true
   production: false

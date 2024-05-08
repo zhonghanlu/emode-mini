@@ -1,0 +1,201 @@
+10:26:12.862 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 19328 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:26:12.864 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:26:13.667 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:26:13.911 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:26:14.123 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:26:14.321 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:26:14.659 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:26:14.664 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:26:14.669 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:26:14.691 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:26:14.715 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:26:14.719 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:26:14.733 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:26:14.744 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.137 seconds (JVM running for 2.883)
+10:28:10.805 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:33:51.859 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+10:33:51.861 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+10:33:51.862 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+10:33:51.867 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+10:33:56.404 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 20488 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:33:56.406 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:33:57.194 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:33:57.419 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:33:57.632 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:33:57.826 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:33:58.148 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:33:58.154 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:33:58.158 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:33:58.178 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:33:58.202 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:33:58.204 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:33:58.219 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:33:58.253 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.099 seconds (JVM running for 2.846)
+10:34:01.892 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:38:52.839 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+10:38:52.841 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+10:38:52.843 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+10:38:52.847 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+10:38:55.118 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 18052 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:38:55.119 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:38:55.913 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:38:56.139 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:38:56.354 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:38:56.562 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:38:56.881 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:38:56.886 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:38:56.892 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:38:56.917 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:38:56.941 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:38:56.944 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:38:56.960 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:38:56.994 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.13 seconds (JVM running for 2.919)
+10:39:06.110 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:40:38.296 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+10:40:38.297 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+10:40:38.300 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+10:40:38.305 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+10:40:42.260 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 3296 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:40:42.262 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:40:43.049 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:40:43.275 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:40:43.481 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:40:43.670 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:40:44.012 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:40:44.017 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:40:44.022 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:40:44.044 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:40:44.069 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:40:44.071 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:40:44.087 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:40:44.097 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.089 seconds (JVM running for 2.85)
+10:40:48.681 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:41:03.295 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+10:41:03.297 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+10:41:03.299 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+10:41:03.302 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+10:41:07.725 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 25016 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:41:07.728 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:41:08.524 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:41:08.744 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:41:08.951 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:41:09.148 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:41:09.482 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:41:09.487 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:41:09.491 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:41:09.513 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:41:09.537 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:41:09.540 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:41:09.555 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:41:09.565 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.086 seconds (JVM running for 2.84)
+10:41:13.442 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:45:44.223 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+10:45:44.226 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+10:45:44.227 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+10:45:44.232 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+10:45:48.828 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 22920 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+10:45:48.831 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+10:45:49.626 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+10:45:49.846 [main] INFO  s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping - [initHandlerMethods,69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+10:45:50.063 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+10:45:50.256 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+10:45:50.589 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+10:45:50.595 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+10:45:50.599 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+10:45:50.621 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+10:45:50.645 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [start,93] - Documentation plugins bootstrapped
+10:45:50.647 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - [bootstrapDocumentationPlugins,79] - Found 1 custom documentation plugin(s)
+10:45:50.664 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - [scan,44] - Scanning for api listing references
+10:45:50.698 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.121 seconds (JVM running for 2.862)
+10:45:54.441 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:04:12.444 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:04:12.445 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:04:12.447 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:04:12.448 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:08:40.344 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 25668 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:08:40.346 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:08:41.098 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:08:41.470 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:08:41.664 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:08:42.020 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:08:42.024 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:08:42.029 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:08:42.050 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:08:42.079 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 1.989 seconds (JVM running for 2.701)
+11:08:45.832 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:08:46.173 [XNIO-1 task-5] INFO  o.s.a.AbstractOpenApiResource - [getOpenApi,367] - Init duration for springdoc-openapi is: 92 ms
+11:10:14.548 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:10:14.551 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:10:14.553 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:10:14.558 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:10:18.553 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 26396 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:10:18.555 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:10:19.337 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:10:19.738 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:10:19.946 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:10:20.357 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:10:20.361 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:10:20.367 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:10:20.392 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:10:20.425 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.127 seconds (JVM running for 2.868)
+11:10:25.876 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:10:49.286 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:10:49.288 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:10:49.290 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:10:49.293 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:10:53.183 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 22000 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:10:53.186 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:10:53.921 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:10:54.286 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:10:54.473 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:10:54.839 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:10:54.842 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:10:54.848 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:10:54.871 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:10:54.902 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 1.953 seconds (JVM running for 2.688)
+11:10:57.492 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:12:37.297 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:12:37.299 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:12:37.301 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:12:37.305 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:12:41.845 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 25596 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:12:41.847 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:12:42.630 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:12:43.001 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:12:43.192 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:12:43.557 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:12:43.561 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:12:43.565 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:12:43.585 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:12:43.613 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.011 seconds (JVM running for 2.748)
+11:12:46.386 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:16:56.819 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:16:56.821 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:16:56.823 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:16:56.828 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:17:00.660 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 26196 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:17:00.662 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:17:01.438 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:17:01.807 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:17:02.004 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:17:02.436 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:17:02.439 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:17:02.445 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:17:02.464 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:17:02.496 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 2.076 seconds (JVM running for 2.816)
+11:17:08.861 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:17:50.272 [SpringApplicationShutdownHook] INFO  io.undertow - [stop,259] - stopping server: Undertow - 2.2.24.Final
+11:17:50.275 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - [log,389] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+11:17:50.276 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2174] - {dataSource-1} closing ...
+11:17:50.281 [SpringApplicationShutdownHook] INFO  c.a.d.p.DruidDataSource - [close,2247] - {dataSource-1} closed
+11:17:55.229 [main] INFO  c.m.w.ModeApplication - [logStarting,55] - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 25584 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+11:17:55.231 [main] INFO  c.m.w.ModeApplication - [logStartupProfileInfo,686] - The following 2 profiles are active: "dev", "druid-dev"
+11:17:55.985 [main] INFO  io.undertow.servlet - [log,389] - Initializing Spring embedded WebApplicationContext
+11:17:56.341 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,55] - Init DruidDataSource
+11:17:56.546 [main] INFO  c.a.d.p.DruidDataSource - [init,1009] - {dataSource-1} inited
+11:17:56.900 [main] INFO  io.undertow - [start,120] - starting server: Undertow - 2.2.24.Final
+11:17:56.904 [main] INFO  org.xnio - [<clinit>,95] - XNIO version 3.8.7.Final
+11:17:56.909 [main] INFO  org.xnio.nio - [<clinit>,58] - XNIO NIO Implementation Version 3.8.7.Final
+11:17:56.929 [main] INFO  org.jboss.threads - [<clinit>,52] - JBoss Threads version 3.1.0.Final
+11:17:56.957 [main] INFO  c.m.w.ModeApplication - [logStarted,61] - Started ModeApplication in 1.962 seconds (JVM running for 2.679)
+11:17:59.199 [XNIO-1 task-1] INFO  io.undertow.servlet - [log,389] - Initializing Spring DispatcherServlet 'dispatcherServlet'

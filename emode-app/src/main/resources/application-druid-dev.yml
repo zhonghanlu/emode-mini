@@ -4,15 +4,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
-      # 主库数据源
-      master:
-        url: jdbc:mysql://192.168.1.12:3306/health?characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&useSSL=false
-        username: root
-        password: 123456
-      # 从库数据源
-      slave:
-        # 从数据源开关/默认关闭
-        enabled: false
+      url: jdbc:mysql://127.0.0.1:3307/emode?characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: 123456
       # 初始连接数
       initialSize: 5
       # 最小连接池数量

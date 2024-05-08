@@ -83,11 +83,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
         </dependency>
@@ -137,6 +132,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- knife4j -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
         </dependency>
 
     </dependencies>

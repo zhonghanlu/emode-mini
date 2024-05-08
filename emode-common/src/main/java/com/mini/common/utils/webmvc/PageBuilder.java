@@ -1,7 +1,7 @@
 package com.mini.common.utils.webmvc;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import java.util.List;
@@ -13,16 +13,16 @@ import java.util.List;
 @NoArgsConstructor
 public class PageBuilder<T> {
 
-    @ApiModelProperty(value = "当前页")
+    @Schema(name = "当前页" ,type = "long")
     private long current;
 
-    @ApiModelProperty(value = "页大小")
+    @Schema(name = "页大小",type = "long")
     private long size;
 
-    @ApiModelProperty(value = "总数")
+    @Schema(name = "总数",type = "long")
     private long total;
 
-    @ApiModelProperty(value = "数据详情")
+    @Schema(name = "数据详情",type = "long")
     private List<T> records;
 
     public static <T> PageBuilder<T> pB(IPage<T> page, List<T> records) {

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mini.common.enums.number.Delete;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,7 +25,7 @@ public class CommonEntity implements Serializable {
      * 创建者
      */
     @TableField(fill = FieldFill.INSERT)
-    @ApiModelProperty(value = "创建者", notes = "")
+    @Schema(name = "创建者", type = "Long")
     private Long createBy;
 
     /**
@@ -33,14 +33,14 @@ public class CommonEntity implements Serializable {
      */
     @TableField(fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    @ApiModelProperty(value = "创建时间", notes = "")
+    @Schema(name = "创建时间", type = "LocalDateTime")
     private LocalDateTime createTime;
 
     /**
      * 更新者
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    @ApiModelProperty(value = "更新者", notes = "")
+    @Schema(name = "更新者", type = "Long")
     private Long updateBy;
 
     /**
@@ -48,7 +48,7 @@ public class CommonEntity implements Serializable {
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    @ApiModelProperty(value = "更新时间", notes = "")
+    @Schema(name = "更新时间", type = "LocalDateTime")
     private LocalDateTime updateTime;
 
 }

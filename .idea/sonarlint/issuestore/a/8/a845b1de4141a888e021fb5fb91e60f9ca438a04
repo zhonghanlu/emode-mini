@@ -1,0 +1,11 @@
+
+Ÿ
+java:S14884"^Immediately return this expression instead of assigning it to the temporary variable "result".(ô§­éûÿÿÿÿJ$4b679a43-d233-42c0-86ef-abafda96698e
+~
+java:S2696"6Make the enclosing method "static" or remove this set.(‚ÜÍ½úÿÿÿÿ8Á¢Ô¯õ1J$5d0254df-2d94-447f-92ee-de4e89321671
+y
+java:S2696"6Make the enclosing method "static" or remove this set.(ÎÆ±µ8Á¢Ô¯õ1J$7c785570-9db3-4990-a312-61cf7377f3be
+q
+java:S19054")Remove this unnecessary cast to "Object".(ô§­éûÿÿÿÿ8€°Ó¯õ1J$4cab700c-7eff-4b12-8b42-eaf6d554f28c
+o
+java:S1172h".Remove this unused method parameter "invoker".(¨‘Ü„üÿÿÿÿJ$28f5f340-8a33-4726-964e-ff1e7c990dbe

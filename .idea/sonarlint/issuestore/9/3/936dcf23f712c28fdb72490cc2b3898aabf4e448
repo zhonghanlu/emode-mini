@@ -5,5 +5,25 @@ java:S1186"€Add a nested comment explaining why this method is empty, throw a
 java:S1118"Hide this public constructor.(¼ŠÀøùÿÿÿÿJ$1f3be4ce-24cf-4bc2-a960-61ffc8e979e3
 u
 java:S34004"9Remove this method and declare a constant for this value.(ª¸•¼J$b8635d7b-27e7-436a-8292-3753b92426d5
+i
+java:S3252F"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(ƒ¸‡Ú8ÔïÏ¯õ1
+n
+java:S3252J"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(¢ò¶›üÿÿÿÿ8ÔïÏ¯õ1
+h
+java:S3252N"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(•³»P8ÕïÏ¯õ1
+h
+java:S3252W"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(ÄäÖ8ÕïÏ¯õ1
+i
+java:S3252Z"LUse static access with "org.apache.commons.lang3.StringUtils" for "indexOf".(·×è•8ÕïÏ¯õ1
+h
+java:S3252`"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(³Ëº8ÖïÏ¯õ1
+g
+java:S3252`"KUse static access with "org.apache.commons.lang3.StringUtils" for "repeat".(³Ëº8ÖïÏ¯õ1
+i
+java:S3252d"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(È°æ8ÖïÏ¯õ1
+i
+java:S3252r"LUse static access with "org.apache.commons.lang3.StringUtils" for "isBlank".(×”½É8×ïÏ¯õ1
+f
+java:S3252u"IUse static access with "org.apache.commons.lang3.StringUtils" for "trim".(»››Ü8×ïÏ¯õ1
 ”
 java:S2786Œ"RRemove this redundant "static" qualifier; nested enum types are implicitly static.(Ä¹ñˆşÿÿÿÿJ$1a1f2db8-c7cd-4715-bbc6-bd5c215eedb3
