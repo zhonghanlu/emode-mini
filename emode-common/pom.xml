@@ -69,6 +69,17 @@
         </dependency>
 
         <!-- redis 缓存操作 -->
+        <!--redisson-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- lock4j分布式锁 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>lock4j-redisson-spring-boot-starter</artifactId>
+        </dependency>
 
         <!-- pool 对象池 -->
         <dependency>

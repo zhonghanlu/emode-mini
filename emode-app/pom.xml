@@ -13,7 +13,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-
         <!-- Mysql驱动包 -->
         <dependency>
             <groupId>mysql</groupId>

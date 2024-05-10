@@ -22,6 +22,7 @@
         <emode.version>1.0-SNAPSHOT</emode.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <springboot.version>2.5.15</springboot.version>
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <druid.version>1.2.20</druid.version>
@@ -40,6 +41,8 @@
         <mybatis.spring.version>2.2.2</mybatis.spring.version>
         <minio.version>8.5.2</minio.version>
         <okhttp.version>4.9.0</okhttp.version>
+        <redisson.version>3.16.4</redisson.version>
+        <lock4j.version>2.2.1</lock4j.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -49,7 +52,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.5.15</version>
+                <version>${springboot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -177,6 +180,20 @@
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp.version}</version>
             </dependency>
+
+            <!--redisson-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>lock4j-redisson-spring-boot-starter</artifactId>
+                <version>${lock4j.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

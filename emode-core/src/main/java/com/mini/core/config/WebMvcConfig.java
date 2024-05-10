@@ -1,5 +1,7 @@
 package com.mini.core.config;
 
+import com.mini.common.mybatis.RequestIntEnumConverterFactory;
+import com.mini.common.mybatis.RequestStringEnumConverterFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -48,8 +50,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-//        registry.addConverterFactory(new RequestStringEnumConverterFactory());
-//        registry.addConverterFactory(new RequestIntEnumConverterFactory());
+        registry.addConverterFactory(new RequestStringEnumConverterFactory());
+        registry.addConverterFactory(new RequestIntEnumConverterFactory());
     }
 
 }
