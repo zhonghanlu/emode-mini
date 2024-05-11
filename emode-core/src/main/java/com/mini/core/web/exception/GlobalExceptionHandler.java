@@ -1,10 +1,12 @@
 package com.mini.core.web.exception;
 
+import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.NotPermissionException;
+import cn.dev33.satoken.exception.NotRoleException;
 import com.mini.common.constant.HttpStatus;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.webmvc.Restful;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -14,22 +16,43 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.nio.file.AccessDeniedException;
 import java.util.Objects;
 
+/**
+ * 全局异常处理器
+ */
+@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    /**
+     * 权限码异常
+     */
+    @ExceptionHandler(NotPermissionException.class)
+    public Restful<?> handleNotPermissionException(NotPermissionException e, HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',权限码校验失败'{}'", requestURI, e.getMessage());
+        return Restful.FORBIDDEN().build();
+    }
 
     /**
-     * 权限校验异常
+     * 角色权限异常
      */
-    @ExceptionHandler(AccessDeniedException.class)
-    public Restful<Object> handleAccessDeniedException(AccessDeniedException e, HttpServletRequest request) {
+    @ExceptionHandler(NotRoleException.class)
+    public Restful<?> handleNotRoleException(NotRoleException e, HttpServletRequest request) {
         String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',权限校验失败'{}'", requestURI, e.getMessage());
-        return Restful.builder().msg("没有权限，请联系管理员授权").code(HttpStatus.FORBIDDEN).build();
+        log.error("请求地址'{}',角色权限校验失败'{}'", requestURI, e.getMessage());
+        return Restful.FORBIDDEN().build();
+    }
+
+    /**
+     * 认证失败
+     */
+    @ExceptionHandler(NotLoginException.class)
+    public Restful<?> handleNotLoginException(NotLoginException e, HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',认证失败'{}',无法访问系统资源", requestURI, e.getMessage());
+        return Restful.ERROR_LOGIN().build();
     }
 
     /**
