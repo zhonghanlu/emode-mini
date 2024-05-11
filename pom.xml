@@ -22,10 +22,9 @@
         <emode.version>1.0-SNAPSHOT</emode.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <springboot.version>2.5.15</springboot.version>
+        <springboot.version>2.7.18</springboot.version>
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-        <druid.version>1.2.20</druid.version>
         <knife4j.version>4.5.0</knife4j.version>
         <kaptcha.version>2.3.3</kaptcha.version>
         <commons.io.version>2.13.0</commons.io.version>
@@ -36,6 +35,8 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <commons.dbutils>1.7</commons.dbutils>
         <amqp.version>3.1.5</amqp.version>
+        <mysql.version>8.0.33</mysql.version>
+        <druid.version>1.2.20</druid.version>
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <mybatis-plus-extension>3.5.4</mybatis-plus-extension>
         <mybatis.spring.version>2.2.2</mybatis.spring.version>
@@ -55,13 +56,6 @@
                 <version>${springboot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <!-- 阿里数据库连接池 -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
             </dependency>
 
             <!-- io常用工具类 -->
@@ -142,6 +136,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
                 <version>${amqp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- 阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
             </dependency>
 
             <!-- mybatis-plus 增强CRUD -->
