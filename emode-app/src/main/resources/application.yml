@@ -2,4 +2,4 @@ spring:
   profiles:
     include:
       - dev
-      - druid-dev
+      - hikari-dev

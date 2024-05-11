@@ -34,3 +34,8 @@
 #### 升级依赖版本
 
 - 升级springboot mysql druid版本
+- 选择权限框架：sa-token
+- 基础整合sa-token框架
+- 修改数据源使用HikariDataSource
+- 修改全局异常处理
+- 登录基础功能开发（下次做更新）

@@ -1,16 +1,15 @@
 
 k
-java:S3740™"/Provide the parametrized type for this generic.(Ä–æxJ$d5ba71c7-c419-4c70-939c-999cb7143116
+java:S3740¤"/Provide the parametrized type for this generic.(Ä–æxJ$b044f946-43e7-4880-96b6-999e041cc473
 q
-java:S3740Ä"/Provide the parametrized type for this generic.(ñÕ»¹ûÿÿÿÿJ$748949f9-f993-4c17-a4ac-f8aa188e15b6
-
-java:S1128"HRemove this unused import 'org.springframework.dao.DataAccessException'.(·È³÷ûÿÿÿÿ8Ø¦€Šö1J$11a40fe6-133c-401b-a113-04e0d6ade240
-˜
-java:S1128	"PRemove this unused import 'org.springframework.data.redis.core.RedisOperations'.(²Ÿ‹»ûÿÿÿÿ8Ø¦€Šö1J$8439fa51-be2e-4766-930c-40d1928d092a
-“
-java:S1128
-"PRemove this unused import 'org.springframework.data.redis.core.SessionCallback'.(—ÿÖÚ8Ø¦€Šö1J$b769d06a-7113-40b6-b784-ec8ea25be909
-—
-java:S1128"TRemove this unused import 'org.springframework.data.redis.core.StringRedisTemplate'.(Á•½8Ø¦€Šö1J$3da2e81a-2b48-4fd1-a9df-5ae62ed988d9
-y
-java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8Ø¦€Šö1J$485db782-b961-40bd-b486-b3febafd985b
+java:S3740Ï"/Provide the parametrized type for this generic.(ñÕ»¹ûÿÿÿÿJ$ea05c0d3-19b8-4235-a57b-e82771ca6412
+P
+java:S1874i".Remove this use of "expire"; it is deprecated.(ıÖıšıÿÿÿÿ8¾º‰¶ö1
+L
+java:S1874Š".Remove this use of "expire"; it is deprecated.(¯Ã»ı8¿º‰¶ö1
+Q
+java:S1874¥".Remove this use of "expire"; it is deprecated.(Û¡ˆøÿÿÿÿ8Àº‰¶ö1
+Q
+java:S1874€".Remove this use of "trySet"; it is deprecated.(½³÷ùÿÿÿÿ8Éº‰¶ö1
+N
+java:S1874‚"+Remove this use of "set"; it is deprecated.(ôÊÆ±øÿÿÿÿ8Êº‰¶ö1
