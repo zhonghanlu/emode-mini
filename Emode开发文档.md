@@ -39,3 +39,4 @@
 - 修改数据源使用HikariDataSource
 - 修改全局异常处理
 - 登录基础功能开发（下次做更新）
+- mvn release 发布 
