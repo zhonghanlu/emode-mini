@@ -252,6 +252,10 @@
         </plugins>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/zhonghanlu/emode-mini</developerConnection>
+    </scm>
+
     <repositories>
         <repository>
             <id>public</id>
