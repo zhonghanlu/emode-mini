@@ -43,7 +43,7 @@ public class PlusSaTokenDao implements SaTokenDao {
      */
     @Override
     public void update(String key, String value) {
-        if (RedisUtils.hasKey(key)) {
+        if (Boolean.TRUE.equals(RedisUtils.hasKey(key))) {
             RedisUtils.setCacheObject(key, value, true);
         }
     }
@@ -103,7 +103,7 @@ public class PlusSaTokenDao implements SaTokenDao {
      */
     @Override
     public void updateObject(String key, Object object) {
-        if (RedisUtils.hasKey(key)) {
+        if (Boolean.TRUE.equals(RedisUtils.hasKey(key))) {
             RedisUtils.setCacheObject(key, object, true);
         }
     }

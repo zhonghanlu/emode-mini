@@ -224,9 +224,7 @@ public class RedisUtils {
      */
     public static void deleteObject(final Collection collection) {
         RBatch batch = CLIENT.createBatch();
-        collection.forEach(t -> {
-            batch.getBucket(t.toString()).deleteAsync();
-        });
+        collection.forEach(t -> batch.getBucket(t.toString()).deleteAsync());
         batch.execute();
     }
 

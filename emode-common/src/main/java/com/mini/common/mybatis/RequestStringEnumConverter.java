@@ -3,7 +3,6 @@ package com.mini.common.mybatis;
 import org.springframework.core.convert.converter.Converter;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class RequestStringEnumConverter<T extends StringEnum> implements Converter<String, T> {
 

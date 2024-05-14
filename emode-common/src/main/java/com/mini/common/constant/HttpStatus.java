@@ -4,6 +4,8 @@ package com.mini.common.constant;
  * 返回状态码
  */
 public class HttpStatus {
+    private HttpStatus() {
+    }
     /**
      * 操作成功
      */

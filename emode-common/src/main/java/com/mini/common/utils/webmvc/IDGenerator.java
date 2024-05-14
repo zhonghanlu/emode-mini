@@ -1,5 +1,7 @@
 package com.mini.common.utils.webmvc;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
@@ -9,9 +11,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Slf4j
 public class IDGenerator {
-
-//    private static final Pattern PATTERN_LONG_ID = Pattern.compile("^([0-9]{15})([0-9a-f]{32})([0-9a-f]{3})$");
 
     private static final Pattern PATTERN_HOSTNAME = Pattern.compile("^.*\\D+([0-9]+)$");
 
@@ -78,7 +79,7 @@ public class IDGenerator {
             set.add(IDGenerator.next());
             Thread.sleep(1);
         }
-        System.out.println(set.size());
+        log.debug(String.valueOf(set.size()));
     }
 
 }

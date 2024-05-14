@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DesensitizedUtil {
     public DesensitizedUtil() {
+        // 无参构造
     }
 
     public static String desensitized(CharSequence str, DesensitizedType desensitizedType) {
