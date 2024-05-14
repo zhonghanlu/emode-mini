@@ -1,10 +1,10 @@
 
 
-java:S1192Z"NDefine a constant instead of duplicating this literal "idCard error!" 3 times.(ê–À»ÿÿÿÿÿJ$7b84a93d-d261-4427-81d8-7f9994ce7c94
+java:S1192Z"NDefine a constant instead of duplicating this literal "idCard error!" 3 times.(ê–À»ÿÿÿÿÿJ$2c10eb38-92a3-4fca-9abb-a5c93811213d
 ‚
-java:S2184Õ"ECast one of the operands of this subtraction operation to a "double".(ÎüøJ$a2f54157-3d25-4cdc-a42f-35e5932feb95
+java:S2184Õ"ECast one of the operands of this subtraction operation to a "double".(ÎüøJ$8ca7ee83-a2f7-47b5-b3f6-972a65605a4f
 l
-java:S6035"0Replace this alternation with a character class.(ãä· J$5153e874-9c52-4eb5-8ae2-04abaa3f2f7f
-g	java:S106ì"+Replace this use of System.out by a logger.(ş§Ë­J$c9aeaa8a-a180-440d-bdc8-5f0093c3e70c
-g	java:S106í"+Replace this use of System.out by a logger.(»Œ«J$262c2703-1525-42c1-84b9-37c836340613
-s	java:S106î"+Replace this use of System.out by a logger.(¾üõ­şÿÿÿÿ8¾€ïò1J$f05c2a20-63f5-4b6c-b53c-726aa1ca9889
+java:S6035"0Replace this alternation with a character class.(ãä· J$8e53b94f-1a10-4bf7-b5da-b97f04adf2d7
+g	java:S106ì"+Replace this use of System.out by a logger.(ş§Ë­J$5f42e3a0-a981-495b-88b3-2577ac878e2b
+g	java:S106í"+Replace this use of System.out by a logger.(»Œ«J$0a5774c6-f1bd-45ed-9102-f0c25cdc81de
+s	java:S106î"+Replace this use of System.out by a logger.(¾üõ­şÿÿÿÿ8¾€ïò1J$d04b5857-6620-42d2-b721-868baf361c10

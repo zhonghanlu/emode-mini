@@ -105,7 +105,7 @@ public class IdCardNumberUtil {
         if (!isIdCard(idCard)) {
             return "";
         }
-        Map<String, Object> sexMap = new HashMap<>();
+        Map<String, Object> sexMap = new HashMap<>(16);
         // 默认值
         int sexInt = -1;
         String sexStr = "未知";
