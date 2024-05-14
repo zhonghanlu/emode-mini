@@ -113,7 +113,7 @@ public class IdCardNumberUtil {
         if (idCard.length() == FIRST_ID_CARD_LENGTH) {
             String sex = idCard.substring(14, 15);
             // 偶数表示女性，奇数表示男性
-            if (Integer.parseInt(sex) % 2 == 0) {
+            if (Integer.parseInt(sex) % FEMALE_SEX_INT == 0) {
                 sexInt = FEMALE_SEX_INT;
                 sexStr = FEMALE_SEX_STRING;
             } else {
@@ -125,7 +125,7 @@ public class IdCardNumberUtil {
         if (idCard.length() == SECOND_ID_CARD_LENGTH) {
             String sex = idCard.substring(16, 17);
             // 偶数表示女性，奇数表示男性
-            if (Integer.parseInt(sex) % 2 == 0) {
+            if (Integer.parseInt(sex) % FEMALE_SEX_INT == 0) {
                 sexInt = FEMALE_SEX_INT;
                 sexStr = FEMALE_SEX_STRING;
             } else {
@@ -140,7 +140,7 @@ public class IdCardNumberUtil {
 
         AtomicReference<String> sex = new AtomicReference<>("");
         sexMap.forEach((k, v) -> {
-            if ("男".equals(v)) {
+            if (MALE_SEX_STRING.equals(v)) {
                 sex.set("M");
             } else {
                 sex.set("F");

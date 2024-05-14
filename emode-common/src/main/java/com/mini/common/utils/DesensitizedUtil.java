@@ -7,6 +7,13 @@ import org.apache.commons.lang3.StringUtils;
  * @author zhl
  */
 public class DesensitizedUtil {
+
+    private static final int CAR_LICENSE_LENGTH_7 = 7;
+
+    private static final int CAR_LICENSE_LENGTH_8 = 8;
+
+    private static final int BANK_CARD_NO_LENGTH = 9;
+
     public DesensitizedUtil() {
         // 无参构造
     }
@@ -106,9 +113,9 @@ public class DesensitizedUtil {
         if (StringUtils.isBlank(carLicense)) {
             return "";
         } else {
-            if (carLicense.length() == 7) {
+            if (carLicense.length() == CAR_LICENSE_LENGTH_7) {
                 carLicense = StrUtil.hide(carLicense, 3, 6);
-            } else if (carLicense.length() == 8) {
+            } else if (carLicense.length() == CAR_LICENSE_LENGTH_8) {
                 carLicense = StrUtil.hide(carLicense, 3, 7);
             }
 
@@ -121,7 +128,7 @@ public class DesensitizedUtil {
             return bankCardNo;
         } else {
             bankCardNo = StringUtils.trim(bankCardNo);
-            if (bankCardNo.length() < 9) {
+            if (bankCardNo.length() < BANK_CARD_NO_LENGTH) {
                 return bankCardNo;
             } else {
                 int length = bankCardNo.length();

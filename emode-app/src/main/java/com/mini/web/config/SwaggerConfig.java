@@ -13,21 +13,30 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
+    /**
+     * 创建了一个api接口的分组
+     */
     @Bean
-    public GroupedOpenApi adminApi() {      // 创建了一个api接口的分组
+    public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
-                .group("BIZ业务")         // 分组名称
-                .pathsToMatch("/**")  // 接口请求路径规则
+                // 分组名称
+                .group("BIZ业务")
+                // 接口请求路径规则
+                .pathsToMatch("/**")
                 .build();
     }
 
     @Bean
     public OpenAPI openApi() {
         return new OpenAPI()
-                .info(new Info() // 基本信息配置
-                        .title("fusApi") // 标题
-                        .description("Knife4j说明") // 描述Api接口文档的基本信息
-                        .version("v1") // 版本
+                // 基本信息配置
+                .info(new Info()
+                        // 标题
+                        .title("fusApi")
+                        // 描述Api接口文档的基本信息
+                        .description("Knife4j说明")
+                        // 版本
+                        .version("v1")
                 );
 
     }

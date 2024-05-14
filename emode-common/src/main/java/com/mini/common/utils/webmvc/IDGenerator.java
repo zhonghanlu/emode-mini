@@ -75,14 +75,4 @@ public class IDGenerator {
         }
         return 0;
     }
-
-    public static void main(String[] args) throws InterruptedException {
-        Set<Long> set = new HashSet<>();
-        for (int i = 0; i < 10000 * 10; i++) {
-            set.add(IDGenerator.next());
-            Thread.sleep(1);
-        }
-        log.debug(String.valueOf(set.size()));
-    }
-
 }
