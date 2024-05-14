@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
+ * @author zhl
  * 自定义序列化类
  */
 @AllArgsConstructor

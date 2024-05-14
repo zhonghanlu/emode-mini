@@ -4,6 +4,9 @@ import org.springframework.core.convert.converter.Converter;
 
 import java.util.Arrays;
 
+/**
+ * @author zhl
+ */
 public class RequestIntEnumConverter<T extends IntEnum> implements Converter<Integer, T> {
 
     private final Class<T> enumType;

@@ -4,6 +4,9 @@ import com.mini.common.utils.bean.SpringBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 
+/**
+ * @author zhl
+ */
 public class MessageUtils {
     private MessageUtils() {
     }

@@ -11,6 +11,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author zhl
+ */
 @Slf4j
 public class IDGenerator {
 

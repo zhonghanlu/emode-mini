@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Locale;
 
 /**
+ * @author zhl
  * 国际化配置
  */
 @Configuration

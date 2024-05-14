@@ -14,6 +14,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author zhl
+ */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 

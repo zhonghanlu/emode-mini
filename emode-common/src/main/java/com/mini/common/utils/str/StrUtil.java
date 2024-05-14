@@ -2,6 +2,9 @@ package com.mini.common.utils.str;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * @author zhl
+ */
 public class StrUtil extends StringUtils {
 
     public static String str(CharSequence cs) {

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @author zhl
  * sa-token 权限管理实现类
  */
 public class SaPermissionImpl implements StpInterface {

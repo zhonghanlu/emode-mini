@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * @author zhl
  * 分页查询实体类
  */
 @Data

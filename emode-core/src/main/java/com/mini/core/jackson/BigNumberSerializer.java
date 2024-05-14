@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ser.std.NumberSerializer;
 import java.io.IOException;
 
 /**
+ * @author zhl
  * 超出 JS 最大最小值 处理
  */
 @JacksonStdImpl

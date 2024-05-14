@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * @author zhl
  * Mybatis异常处理器
- *
- * @author Lion Li
  */
 @Slf4j
 @RestControllerAdvice

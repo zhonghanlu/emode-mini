@@ -4,6 +4,7 @@ import com.mini.common.utils.MessageUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * @author zhl
  * 基类
  */
 public class BaseException extends RuntimeException {

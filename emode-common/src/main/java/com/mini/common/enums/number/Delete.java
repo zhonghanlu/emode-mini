@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mini.common.mybatis.IntEnum;
 
 /**
+ * @author zhl
  * 是否删除
  */
 public enum Delete implements IntEnum {

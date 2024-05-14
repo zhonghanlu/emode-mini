@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
+ * @author zhl
  * mybatis string枚举类型转换
  */
 public class StringEnumTypeHandler<E extends Enum<?> & StringEnum> extends BaseTypeHandler<StringEnum> {

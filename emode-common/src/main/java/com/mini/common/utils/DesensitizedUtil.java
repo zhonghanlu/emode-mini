@@ -3,6 +3,9 @@ package com.mini.common.utils;
 import com.mini.common.utils.str.StrUtil;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * @author zhl
+ */
 public class DesensitizedUtil {
     public DesensitizedUtil() {
         // 无参构造
@@ -43,6 +46,8 @@ public class DesensitizedUtil {
                     break;
                 case BANK_CARD:
                     newStr = bankCard(String.valueOf(str));
+                    break;
+                default:
             }
 
             return newStr;

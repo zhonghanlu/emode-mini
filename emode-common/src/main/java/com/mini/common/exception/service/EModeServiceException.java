@@ -3,6 +3,9 @@ package com.mini.common.exception.service;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author zhl
+ */
 @Setter
 @Getter
 public final class EModeServiceException extends RuntimeException {

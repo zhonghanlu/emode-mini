@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * @author zhl
  * 身份证工具类
  */
 public class IdCardNumberUtil {

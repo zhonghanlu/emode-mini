@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * @author zhl
  * Sa-Token持久层接口(使用框架自带RedisUtils实现 协议统一)
  */
 public class PlusSaTokenDao implements SaTokenDao {

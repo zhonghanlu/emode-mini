@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
+ * @author zhl
  * Redisson 配置属性
  */
 @Data

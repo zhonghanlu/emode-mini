@@ -1,6 +1,7 @@
 package com.mini.common.enums;
 
 /**
+ * @author zhl
  * 脱敏策略枚举
  */
 public enum DesensitizationTypeEnum {
