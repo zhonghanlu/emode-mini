@@ -23,7 +23,7 @@ server:
 # 日志配置
 logging:
   level:
-    com.mini: info
+    com.mini: debug
     org.springframework: warn
   config: classpath:logback.xml
 
@@ -60,7 +60,7 @@ spring:
     # 数据库索引
     database: 3
     # 密码
-    password:
+#    password:
     # 连接超时时间
     timeout: 10s
     lettuce:
@@ -119,9 +119,9 @@ lock4j:
 # MyBatisPlus配置 不允许修改
 mybatis-plus:
   # 搜索指定包别名
-  typeAliasesPackage: com.mini.**.domain
+  typeAliasesPackage: com.mini.**
   # 配置mapper的扫描，找到所有的mapper.xml映射文件
-  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  mapperLocations: classpath*:mapper/*Mapper.xml
   # 启动时是否检查 MyBatis XML 文件的存在，默认不检查
   checkConfigLocation: false
   configuration:

@@ -20,7 +20,14 @@ public class CommonEntity implements Serializable {
     /**
      * 删除标志（1代表存在 -1代表删除）
      */
+    @Schema(name = "删除标识")
     private Delete delFlag;
+
+    /**
+     * 删除人
+     */
+    @Schema(name = "删除人", type = "Long")
+    private Long delBy;
 
     /**
      * 创建者

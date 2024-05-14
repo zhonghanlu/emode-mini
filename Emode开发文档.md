@@ -55,3 +55,10 @@
 - mvn release:rollback
 - tag冲突及时删除git tag -d tagName
 - MySQL规范文档输出
+- 修复所有issue
+
+### 2024年5月14日17:53:39
+- 用户表CRUD初始化
+- 项目开发结构优化，日志优化
+- 项目开发层级模式优化
+- 用户CRUD操作完善，确定开发模式（下次更新）
