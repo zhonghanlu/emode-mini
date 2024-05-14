@@ -40,3 +40,17 @@
 - 修改全局异常处理
 - 登录基础功能开发（下次做更新）
 - mvn release 发布 
+
+### 2024年5月14日10:06:51
+
+#### 更新mvn release 发布
+- 仓库采用阿里云效
+- 不对地址做ssl校验
+- git config --global http.sslVerify false
+- 本地所有文件提交
+- mvn release:clean
+- mvn release:prepare
+- mvn release:perform
+- 出现问题及时回滚
+- mvn release:rollback
+- tag冲突及时删除git tag -d tagName
