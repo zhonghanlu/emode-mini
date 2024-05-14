@@ -1,178 +1,25 @@
-2024-05-11 16:59:58 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 24500 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 16:59:58 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:00:00 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:00:00 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:00:00 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:00:00 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:00:00 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:00:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:00:31 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 25780 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:00:31 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:00:32 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:00:33 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:00:33 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:00:33 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:00:33 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:00:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:00:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:00:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [slave] success
-2024-05-11 17:00:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:00:33 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [2] datasource,primary datasource named [master]
-2024-05-11 17:00:34 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:00:35 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:00:35 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:00:35 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:00:35 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:00:35 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 3.997 seconds (JVM running for 4.911)
-2024-05-11 17:00:35 [RMI TCP Connection(3)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [slave] success,
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:01:50 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:01:53 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 27516 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:01:53 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:01:54 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:01:54 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:01:54 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:01:55 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:01:55 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:01:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:01:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:01:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:01:55 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:01:55 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:01:56 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:01:56 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:01:56 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:01:56 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:01:57 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.018 seconds (JVM running for 4.921)
-2024-05-11 17:01:57 [RMI TCP Connection(1)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:09:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:09:52 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 20948 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:09:52 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:09:53 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:09:53 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:09:53 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:09:54 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:09:54 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:09:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:09:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:09:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:09:54 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:09:54 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:09:55 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:09:55 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:09:55 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:09:56 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:09:56 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.216 seconds (JVM running for 5.181)
-2024-05-11 17:09:56 [RMI TCP Connection(2)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:10:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:10:28 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 24124 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:10:28 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:10:29 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:10:29 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:10:29 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:10:29 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:10:30 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:10:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:10:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:10:30 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:10:30 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:10:30 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:10:31 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:10:31 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:10:31 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:10:31 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:10:32 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 3.942 seconds (JVM running for 4.835)
-2024-05-11 17:10:32 [RMI TCP Connection(3)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:11:24 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:11:27 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 18860 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:11:27 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:11:28 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:11:28 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:11:28 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:11:28 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:11:29 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:11:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:11:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:11:29 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:11:29 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:11:29 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:11:31 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:11:31 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:11:31 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:11:31 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:11:31 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.491 seconds (JVM running for 5.361)
-2024-05-11 17:11:32 [RMI TCP Connection(3)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:12:27 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:12:29 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 23156 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:12:29 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:12:30 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:12:31 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:12:31 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:12:31 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:12:31 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:12:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:12:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:12:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:12:31 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:12:32 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:12:33 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:12:33 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:12:33 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:12:33 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:12:33 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.035 seconds (JVM running for 4.928)
-2024-05-11 17:12:34 [RMI TCP Connection(2)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2024-05-11 17:13:52 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2024-05-11 17:13:54 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 29200 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
-2024-05-11 17:13:54 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
-2024-05-11 17:13:55 [main] INFO  org.redisson.Version - Redisson 3.24.3
-2024-05-11 17:13:56 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:13:56 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
-2024-05-11 17:13:56 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
-2024-05-11 17:13:56 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-2024-05-11 17:13:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
-2024-05-11 17:13:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
-2024-05-11 17:13:57 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2024-05-11 17:13:57 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2024-05-11 17:13:57 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
-2024-05-11 17:13:58 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
-2024-05-11 17:13:58 [main] INFO  org.xnio - XNIO version 3.8.7.Final
-2024-05-11 17:13:58 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
-2024-05-11 17:13:58 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
-2024-05-11 17:13:58 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.032 seconds (JVM running for 4.938)
-2024-05-11 17:13:59 [RMI TCP Connection(1)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-13 08:40:46 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 15892 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+2024-05-13 08:40:46 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
+2024-05-13 08:40:47 [main] INFO  org.redisson.Version - Redisson 3.24.3
+2024-05-13 08:40:48 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2024-05-13 08:40:48 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
+2024-05-13 08:40:48 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
+2024-05-13 08:40:48 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2024-05-13 08:40:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
+2024-05-13 08:40:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
+2024-05-13 08:40:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2024-05-13 08:40:49 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2024-05-13 08:40:49 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
+2024-05-13 08:40:50 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
+2024-05-13 08:40:50 [main] INFO  org.xnio - XNIO version 3.8.7.Final
+2024-05-13 08:40:50 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
+2024-05-13 08:40:50 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
+2024-05-13 08:40:50 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 4.613 seconds (JVM running for 6.124)
+2024-05-13 08:40:51 [RMI TCP Connection(1)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.2.28.Final
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown initiated...
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2024-05-13 18:04:47 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye

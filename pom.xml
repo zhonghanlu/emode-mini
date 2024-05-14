@@ -252,9 +252,13 @@
         </plugins>
     </build>
 
+    <!--版本管理:定义你的项目的(git仓库位置)-->
     <scm>
-        <developerConnection>scm:git:https://github.com/zhonghanlu/emode-mini</developerConnection>
+        <connection>scm:git:https://github.com/zhonghanlu/emode-mini.git</connection>
+        <developerConnection>scm:git:https://github.com/zhonghanlu/emode-mini.git</developerConnection>
+        <url>https://github.com/zhonghanlu/emode-mini</url>
     </scm>
+
 
     <repositories>
         <repository>
@@ -283,6 +287,38 @@
 
 
     <profiles>
+        <profile>
+            <id>aliyun-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>local</id>
             <properties>
