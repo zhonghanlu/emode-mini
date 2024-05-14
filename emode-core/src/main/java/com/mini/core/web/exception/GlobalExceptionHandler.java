@@ -30,8 +30,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NotPermissionException.class)
     public Restful<?> handleNotPermissionException(NotPermissionException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',权限码校验失败'{}'", requestURI, e.getMessage());
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',权限码校验失败'{}'", requestUri, e.getMessage());
         return Restful.FORBIDDEN().build();
     }
 
@@ -40,8 +40,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NotRoleException.class)
     public Restful<?> handleNotRoleException(NotRoleException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',角色权限校验失败'{}'", requestURI, e.getMessage());
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',角色权限校验失败'{}'", requestUri, e.getMessage());
         return Restful.FORBIDDEN().build();
     }
 
@@ -50,8 +50,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NotLoginException.class)
     public Restful<?> handleNotLoginException(NotLoginException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',认证失败'{}',无法访问系统资源", requestURI, e.getMessage());
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',认证失败'{}',无法访问系统资源", requestUri, e.getMessage());
         return Restful.ERROR_LOGIN().build();
     }
 
@@ -61,8 +61,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Restful<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException e,
                                                                HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',不支持'{}'请求", requestURI, e.getMethod());
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',不支持'{}'请求", requestUri, e.getMethod());
         return Restful.builder().msg(e.getMessage()).build();
     }
 
@@ -81,8 +81,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(MissingPathVariableException.class)
     public Restful<Object> handleMissingPathVariableException(MissingPathVariableException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求路径中缺少必需的路径变量'{}',发生系统异常.", requestURI, e);
+        String requestUri = request.getRequestURI();
+        log.error("请求路径中缺少必需的路径变量'{}',发生系统异常.", requestUri, e);
         return Restful.builder().msg(String.format("请求路径中缺少必需的路径变量[%s]", e.getVariableName())).build();
     }
 
@@ -91,8 +91,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public Restful<Object> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求参数类型不匹配'{}',发生系统异常.", requestURI, e);
+        String requestUri = request.getRequestURI();
+        log.error("请求参数类型不匹配'{}',发生系统异常.", requestUri, e);
         return Restful.builder().msg(String.format("请求参数类型不匹配，参数[%s]要求类型为：'%s'，但输入值为：'%s'", e.getName(), Objects.requireNonNull(e.getRequiredType()).getName(), e.getValue())).build();
     }
 
@@ -101,8 +101,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(RuntimeException.class)
     public Restful<Object> handleRuntimeException(RuntimeException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',发生未知异常.", requestURI, e);
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',发生未知异常.", requestUri, e);
         return Restful.builder().msg(e.getMessage()).build();
     }
 
@@ -111,8 +111,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public Restful<Object> handleException(Exception e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',发生系统异常.", requestURI, e);
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',发生系统异常.", requestUri, e);
         return Restful.builder().msg(e.getMessage()).build();
     }
 

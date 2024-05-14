@@ -67,15 +67,15 @@ public class DesensitizedUtil {
     }
 
     public static String fixedPhone(String num) {
-        return StrUtil.isBlank(num) ? "" : StrUtil.hide(num, 4, num.length() - 2);
+        return StringUtils.isBlank(num) ? "" : StrUtil.hide(num, 4, num.length() - 2);
     }
 
     public static String mobilePhone(String num) {
-        return StrUtil.isBlank(num) ? "" : StrUtil.hide(num, 3, num.length() - 4);
+        return StringUtils.isBlank(num) ? "" : StrUtil.hide(num, 3, num.length() - 4);
     }
 
     public static String address(String address, int sensitiveSize) {
-        if (StrUtil.isBlank(address)) {
+        if (StringUtils.isBlank(address)) {
             return "";
         } else {
             int length = address.length();
@@ -84,20 +84,20 @@ public class DesensitizedUtil {
     }
 
     public static String email(String email) {
-        if (StrUtil.isBlank(email)) {
+        if (StringUtils.isBlank(email)) {
             return "";
         } else {
-            int index = StrUtil.indexOf(email, '@');
+            int index = StringUtils.indexOf(email, '@');
             return index <= 1 ? email : StrUtil.hide(email, 1, index);
         }
     }
 
     public static String password(String password) {
-        return StrUtil.isBlank(password) ? "" : StrUtil.repeat('*', password.length());
+        return StringUtils.isBlank(password) ? "" : StringUtils.repeat('*', password.length());
     }
 
     public static String carLicense(String carLicense) {
-        if (StrUtil.isBlank(carLicense)) {
+        if (StringUtils.isBlank(carLicense)) {
             return "";
         } else {
             if (carLicense.length() == 7) {
@@ -111,10 +111,10 @@ public class DesensitizedUtil {
     }
 
     public static String bankCard(String bankCardNo) {
-        if (StrUtil.isBlank(bankCardNo)) {
+        if (StringUtils.isBlank(bankCardNo)) {
             return bankCardNo;
         } else {
-            bankCardNo = StrUtil.trim(bankCardNo);
+            bankCardNo = StringUtils.trim(bankCardNo);
             if (bankCardNo.length() < 9) {
                 return bankCardNo;
             } else {
@@ -137,16 +137,46 @@ public class DesensitizedUtil {
         }
     }
 
-    public static enum DesensitizedType {
+    public enum DesensitizedType {
+        /**
+         * 用户id
+         */
         USER_ID,
+        /**
+         * 中文名
+         */
         CHINESE_NAME,
+        /**
+         * 身份证
+         */
         ID_CARD,
+        /**
+         * 手机号
+         */
         FIXED_PHONE,
+        /**
+         * 电话
+         */
         MOBILE_PHONE,
+        /**
+         * 地址
+         */
         ADDRESS,
+        /**
+         * 邮箱
+         */
         EMAIL,
+        /**
+         * 密码
+         */
         PASSWORD,
+        /**
+         * 车牌号
+         */
         CAR_LICENSE,
+        /**
+         * 银行卡号
+         */
         BANK_CARD;
 
         private DesensitizedType() {

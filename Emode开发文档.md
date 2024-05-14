@@ -54,3 +54,4 @@
 - 出现问题及时回滚
 - mvn release:rollback
 - tag冲突及时删除git tag -d tagName
+- MySQL规范文档输出

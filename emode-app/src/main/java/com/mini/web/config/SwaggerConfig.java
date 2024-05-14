@@ -21,7 +21,7 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public OpenAPI openAPI() {
+    public OpenAPI openApi() {
         return new OpenAPI()
                 .info(new Info() // 基本信息配置
                         .title("fusApi") // 标题

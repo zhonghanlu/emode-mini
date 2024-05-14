@@ -24,8 +24,8 @@ public class MybatisExceptionHandler {
      */
     @ExceptionHandler(DuplicateKeyException.class)
     public Restful<Object> handleDuplicateKeyException(DuplicateKeyException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
-        log.error("请求地址'{}',数据库中已存在记录'{}'", requestURI, e.getMessage());
+        String requestUri = request.getRequestURI();
+        log.error("请求地址'{}',数据库中已存在记录'{}'", requestUri, e.getMessage());
         return Restful.builder().code(HttpStatus.BAD_REQUEST).msg("数据库中已存在该记录，请联系管理员确认").build();
     }
 
@@ -34,13 +34,14 @@ public class MybatisExceptionHandler {
      */
     @ExceptionHandler(MyBatisSystemException.class)
     public Restful<Object> handleCannotFindDataSourceException(MyBatisSystemException e, HttpServletRequest request) {
-        String requestURI = request.getRequestURI();
+        String requestUri = request.getRequestURI();
         String message = e.getMessage();
+        assert message != null;
         if ("CannotFindDataSourceException".contains(message)) {
-            log.error("请求地址'{}', 未找到数据源", requestURI);
+            log.error("请求地址'{}', 未找到数据源", requestUri);
             return Restful.builder().code(HttpStatus.BAD_REQUEST).msg("未找到数据源，请联系管理员确认").build();
         }
-        log.error("请求地址'{}', Mybatis系统异常", requestURI, e);
+        log.error("请求地址'{}', Mybatis系统异常", requestUri, e);
         return Restful.builder().code(HttpStatus.BAD_REQUEST).msg(message).build();
     }
 
