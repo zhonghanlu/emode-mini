@@ -1,9 +1,9 @@
 package com.mini.web.controller.auth;
 
-import com.mini.auth.entity.AuthUser;
-import com.mini.biz.biz.AuthBiz;
-import com.mini.biz.mapperstruct.AuthUserStructMapper;
-import com.mini.biz.request.auth.AuthUserRequest;
+import com.mini.auth.model.dto.AuthUserDTO;
+import com.mini.auth.mapperstruct.AuthUserStructMapper;
+import com.mini.auth.model.request.AuthUserRequest;
+import com.mini.biz.auth.AuthBiz;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -29,8 +29,8 @@ public class AuthController {
     @Operation(description = "测试插入")
     @PostMapping("/test")
     public Restful<?> test(AuthUserRequest request) {
-        AuthUser authUser = AuthUserStructMapper.INSTANCE.request2Entity(request);
-        authBiz.test(authUser);
+        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2dto(request);
+        authBiz.test(authUserDTO);
         return Restful.SUCCESS().build();
     }
 

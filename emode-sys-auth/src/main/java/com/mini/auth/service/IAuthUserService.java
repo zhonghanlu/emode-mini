@@ -1,6 +1,6 @@
 package com.mini.auth.service;
 
-import com.mini.auth.entity.AuthUser;
+import com.mini.auth.model.dto.AuthUserDTO;
 
 import java.util.List;
 
@@ -10,12 +10,24 @@ import java.util.List;
  */
 public interface IAuthUserService {
 
-    void insert(AuthUser authUser);
+    /**
+     * 插入
+     */
+    void insert(AuthUserDTO authUserDTO);
 
+    /**
+     * 删除
+     */
     void del(long id);
 
-    void update(AuthUser authUser);
+    /**
+     * 更新
+     */
+    void update(AuthUserDTO authUserDTO);
 
-    List<AuthUser> selectPage();
+    /**
+     * 查分页
+     */
+    List<AuthUserDTO> selectPage();
 
 }

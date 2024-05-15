@@ -17,9 +17,6 @@ public class RequestIntEnumConverter<T extends IntEnum> implements Converter<Int
 
     @Override
     public T convert(Integer source) {
-        if (source == null) {
-            return null;
-        }
         return Arrays.stream(enumType.getEnumConstants()).filter(t -> t.getIntValue() == (source)).findFirst().orElse(null);
     }
 }

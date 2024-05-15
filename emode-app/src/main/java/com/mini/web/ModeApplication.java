@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},
         scanBasePackages = {
+                "com.mini.core.*",
                 "com.mini.common.utils",
                 "com.mini.biz.*",
                 "com.mini.*.service.impl"

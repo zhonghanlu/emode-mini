@@ -2,8 +2,10 @@ package com.mini.auth.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.entity.AuthUser;
 import com.mini.auth.mapper.AuthUserMapper;
+import com.mini.auth.mapperstruct.AuthUserStructMapper;
 import com.mini.auth.service.IAuthUserService;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
@@ -28,7 +30,8 @@ public class AuthUserServiceImpl implements IAuthUserService {
     private final AuthUserMapper authUserMapper;
 
     @Override
-    public void insert(AuthUser authUser) {
+    public void insert(AuthUserDTO dto) {
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
         authUser.setId(IDGenerator.next());
         int b = authUserMapper.insert(authUser);
         if (b <= 0) {
@@ -58,7 +61,8 @@ public class AuthUserServiceImpl implements IAuthUserService {
     }
 
     @Override
-    public void update(AuthUser authUser) {
+    public void update(AuthUserDTO dto) {
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
         Long id = authUser.getId();
         if (id <= 0) {
             throw new EModeServiceException("参数id有误，id:" + id);
@@ -77,7 +81,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
     }
 
     @Override
-    public List<AuthUser> selectPage() {
+    public List<AuthUserDTO> selectPage() {
         return Collections.emptyList();
     }
 

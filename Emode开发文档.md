@@ -39,11 +39,12 @@
 - 修改数据源使用HikariDataSource
 - 修改全局异常处理
 - 登录基础功能开发（下次做更新）
-- mvn release 发布 
+- mvn release 发布
 
 ### 2024年5月14日10:06:51
 
 #### 更新mvn release 发布
+
 - 仓库采用阿里云效
 - 不对地址做ssl校验
 - git config --global http.sslVerify false
@@ -58,7 +59,12 @@
 - 修复所有issue
 
 ### 2024年5月14日17:53:39
+
 - 用户表CRUD初始化
 - 项目开发结构优化，日志优化
 - 项目开发层级模式优化
 - 用户CRUD操作完善，确定开发模式（下次更新）
+
+### 2024年5月15日09:33:57
+
+- mapperstruct出现问题（下次处理）
