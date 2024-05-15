@@ -1,6 +1,4 @@
 package com.mini.auth;
-import com.mini.common.enums.number.Delete;
-import java.time.LocalDateTime;
 
 import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.biz.auth.AuthBiz;
@@ -26,20 +24,13 @@ class AuthTest {
     @Test
     void test() {
         AuthUserDTO authUserDTO = new AuthUserDTO();
-        authUserDTO.setId(IDGenerator.next());
+        authUserDTO.setId(1612858641088544L);
         authUserDTO.setUsername("aaa");
         authUserDTO.setPassword("aaa");
         authUserDTO.setNickname("aaa");
         authUserDTO.setAvatar(1L);
         authUserDTO.setPhone("15312665707");
-        authUserDTO.setDelFlag(Delete.YES);
-        authUserDTO.setDelBy(1L);
-        authUserDTO.setCreateBy(1L);
-        authUserDTO.setCreateTime(LocalDateTime.now());
-        authUserDTO.setUpdateBy(1L);
-        authUserDTO.setUpdateTime(LocalDateTime.now());
-
-        authBiz.test(authUserDTO);
+        authBiz.add(authUserDTO);
         log.info("插入成功");
     }
 

@@ -10,7 +10,7 @@
 ### 字段
 1. 字段名使用小写字母，下划线分隔
 2. 主键统一使用id，外键使用xxx_id，统一使用bigint
-3. 必须有create_time、update_time、create_by、update_by、del_flag、del_time字段
+3. 必须有create_time、update_time、create_by、update_by、del_flag字段；del_flag 默认值为未删除
 4. 时间类型使用datetime、id类型使用bigint禁止使用int、del_flag类型使用tinyint
 5. 库内枚举值注释需和项目同步更新，枚举值使用项目搭配的handler（详情见common.mybatis）
 ### 关联

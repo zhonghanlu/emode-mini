@@ -46,16 +46,21 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <annotationProcessorPaths>
-                        <path>
+                        <dependency>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.18</version>
-                        </path>
-                        <path>
+                            <version>1.18.16</version>
+                        </dependency>
+                        <dependency>
                             <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
+                            <artifactId>mapstruct</artifactId>
                             <version>1.4.2.Final</version>
-                        </path>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </dependency>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>

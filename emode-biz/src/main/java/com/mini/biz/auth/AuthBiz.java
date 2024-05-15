@@ -5,6 +5,7 @@ import com.mini.auth.service.IAuthUserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author zhl
@@ -17,7 +18,13 @@ public class AuthBiz {
 
     private final IAuthUserService authUserService;
 
-    public void test(AuthUserDTO dto) {
+    @Transactional
+    public void add(AuthUserDTO dto) {
         authUserService.insert(dto);
+    }
+
+    @Transactional
+    public void update(AuthUserDTO dto) {
+        authUserService.update(dto);
     }
 }

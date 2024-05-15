@@ -29,7 +29,7 @@
         <commons.collections.version>3.2.2</commons.collections.version>
         <poi.version>4.1.2</poi.version>
         <jwt.version>0.9.1</jwt.version>
-        <lombok.version>1.18.18</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <commons.dbutils>1.7</commons.dbutils>
         <amqp.version>3.1.5</amqp.version>
@@ -223,6 +223,13 @@
                 <artifactId>sa-token-core</artifactId>
                 <version>${satoken.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-mapstruct-binding</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

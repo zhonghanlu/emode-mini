@@ -24,12 +24,6 @@ public class CommonEntity implements Serializable {
     private Delete delFlag;
 
     /**
-     * 删除人
-     */
-    @Schema(name = "删除人", type = "Long")
-    private Long delBy;
-
-    /**
      * 创建者
      */
     @TableField(fill = FieldFill.INSERT)

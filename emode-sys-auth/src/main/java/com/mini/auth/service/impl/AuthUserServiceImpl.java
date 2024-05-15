@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author zhl
@@ -31,7 +32,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
 
     @Override
     public void insert(AuthUserDTO dto) {
-        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2entity(dto);
         authUser.setId(IDGenerator.next());
         int b = authUserMapper.insert(authUser);
         if (b <= 0) {
@@ -62,9 +63,9 @@ public class AuthUserServiceImpl implements IAuthUserService {
 
     @Override
     public void update(AuthUserDTO dto) {
-        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2entity(dto);
         Long id = authUser.getId();
-        if (id <= 0) {
+        if (Objects.isNull(id) || id <= 0) {
             throw new EModeServiceException("参数id有误，id:" + id);
         }
 
