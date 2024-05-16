@@ -494,3 +494,22 @@
 2024-05-16 10:22:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - master - Shutdown completed.
 2024-05-16 10:22:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
 2024-05-16 10:22:25 [SpringApplicationShutdownHook] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2024-05-16 10:22:37 [main] INFO  com.mini.web.ModeApplication - Starting ModeApplication using Java 1.8.0_151 on zhonghanlu with PID 14604 (D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\target\classes started by 14208 in D:\idea_project\springboot-mini-common\springboot-mini-common)
+2024-05-16 10:22:37 [main] INFO  com.mini.web.ModeApplication - The following 2 profiles are active: "dev", "hikari-dev"
+2024-05-16 10:22:39 [main] INFO  org.redisson.Version - Redisson 3.24.3
+2024-05-16 10:22:39 [redisson-netty-2-4] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2024-05-16 10:22:39 [redisson-netty-2-3] INFO  o.r.c.pool.MasterConnectionPool - 32 connections initialized for 127.0.0.1/127.0.0.1:6379
+2024-05-16 10:22:39 [main] INFO  com.mini.core.config.RedisConfig - 初始化 redis 配置
+2024-05-16 10:22:39 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2024-05-16 10:22:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Starting...
+2024-05-16 10:22:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - master - Start completed.
+2024-05-16 10:22:40 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2024-05-16 10:22:40 [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2024-05-16 10:22:40 [main] INFO  com.mini.core.config.JacksonConfig - 初始化 jackson 配置
+2024-05-16 10:22:41 [main] INFO  io.undertow - starting server: Undertow - 2.2.28.Final
+2024-05-16 10:22:41 [main] INFO  org.xnio - XNIO version 3.8.7.Final
+2024-05-16 10:22:41 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.7.Final
+2024-05-16 10:22:41 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final
+2024-05-16 10:22:41 [main] INFO  com.mini.web.ModeApplication - Started ModeApplication in 3.874 seconds (JVM running for 4.843)
+2024-05-16 10:22:41 [RMI TCP Connection(2)-192.168.0.47] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-16 10:22:56 [XNIO-1 task-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 143 ms

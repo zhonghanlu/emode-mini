@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;- 添加knife4j静态过滤文件&#10;- 优化mvc前置拦截器&#10;- 优化knife4j配置，分组待处理（TODO）&#10;- 文件系统添加（下次更新）&#10;- mapperStruct依旧出现问题（下次处理）&#10;]">
+    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;- 处理mapperStruct问题&#10;- mapperStruct如果反复重启仍然是空对象，&#10;- 使用mvn编译运行下，或着将.idea文件删除，刷新，重启即可&#10;- 注意target文件及时删除测试&#10;]">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-app/logs/sys-console.2024-05-15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-app/logs/sys-info.2024-05-15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/sys-console.2024-05-15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/sys-error.2024-05-15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/sys-info.2024-05-15.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00457b92452d0fc05e7260c8d0b7825330dd1fb0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00b551faf2a632d4924719cd81434084b17d72a5" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00cf871a2b455bcf1579371b0fce466470d479d2" beforeDir="false" />
@@ -1445,7 +1451,7 @@
       <workItem from="1715733496820" duration="18432000" />
       <workItem from="1715763630602" duration="3291000" />
       <workItem from="1715818959717" duration="4650000" />
-      <workItem from="1715823752642" duration="2168000" />
+      <workItem from="1715823752642" duration="2498000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[&#10;&#10;- 修改项目依赖结构（web层依赖core层）&#10;- 修改内部容器Undertow&#10;- 初始化日志&#10;- 新增全局异常处理（待测试）&#10;- 新增全局bean处理（待测试）&#10;- 新增knife模块 OpenAPI3 语法 不依赖fox （待深度使用）&#10;&#10;]">
       <option name="closed" value="true" />
@@ -1607,7 +1613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715767536168</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="DESC:[&#10;- 处理mapperStruct问题&#10;- mapperStruct如果反复重启仍然是空对象，&#10;- 使用mvn编译运行下，或着将.idea文件删除，刷新，重启即可&#10;- 注意target文件及时删除测试&#10;]">
+      <option name="closed" value="true" />
+      <created>1715826254277</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1715826254277</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1627,7 +1641,8 @@
     <MESSAGE value="DESC:[&#10;- 用户表CRUD初始化&#10;- 项目开发结构优化，日志优化&#10;- 项目开发层级模式优化&#10;- 用户CRUD操作完善，确定开发模式（下次更新）&#10;]" />
     <MESSAGE value="DESC:[&#10;- mapperstruct出现问题（下次处理）&#10;]" />
     <MESSAGE value="DESC:[&#10;- 添加knife4j静态过滤文件&#10;- 优化mvc前置拦截器&#10;- 优化knife4j配置，分组待处理（TODO）&#10;- 文件系统添加（下次更新）&#10;- mapperStruct依旧出现问题（下次处理）&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 添加knife4j静态过滤文件&#10;- 优化mvc前置拦截器&#10;- 优化knife4j配置，分组待处理（TODO）&#10;- 文件系统添加（下次更新）&#10;- mapperStruct依旧出现问题（下次处理）&#10;]" />
+    <MESSAGE value="DESC:[&#10;- 处理mapperStruct问题&#10;- mapperStruct如果反复重启仍然是空对象，&#10;- 使用mvn编译运行下，或着将.idea文件删除，刷新，重启即可&#10;- 注意target文件及时删除测试&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 处理mapperStruct问题&#10;- mapperStruct如果反复重启仍然是空对象，&#10;- 使用mvn编译运行下，或着将.idea文件删除，刷新，重启即可&#10;- 注意target文件及时删除测试&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
