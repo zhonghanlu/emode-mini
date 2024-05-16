@@ -6,6 +6,10 @@ import com.mini.common.mybatis.StringEnum;
 
 import java.util.Arrays;
 
+/**
+ * @author zhl
+ * 是或否
+ */
 public enum YesOrNo implements StringEnum {
 
     // 是

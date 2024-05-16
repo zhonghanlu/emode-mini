@@ -6,6 +6,10 @@ import com.mini.common.mybatis.StringEnum;
 
 import java.util.Arrays;
 
+/**
+ * @author zhl
+ * 行别枚举
+ */
 public enum Gender implements StringEnum {
 
     MALE("male"),
