@@ -1,6 +1,7 @@
 package com.mini.common.enums;
 
 /**
+ * @author zhl
  * 文件存储桶的权限策略枚举
  */
 public enum DevFileBucketAuthEnum {

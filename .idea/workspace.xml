@@ -5,39 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;- 添加文件系统模块&#10;- 添加minio整合&#10;]">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/file/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/file/CommonFileBiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/constant/FileConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/DevFileBucketAuthEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/str/Device.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/str/FileType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/DeviceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/file/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/http/ServletUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/minio/MinIoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/entity/SysFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapper/SysFileMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/model/dto/SysFileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/model/edit/SysFileEdit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/model/request/SysFileRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/model/vo/SysFileVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/ISysFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/IDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/security/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/release.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/DevFileBucketAuthEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/DevFileBucketAuthEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/str/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/str/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/file/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/file/FileUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +219,7 @@
       <workItem from="1715733496820" duration="18432000" />
       <workItem from="1715763630602" duration="3291000" />
       <workItem from="1715818959717" duration="4650000" />
-      <workItem from="1715823752642" duration="15633000" />
+      <workItem from="1715823752642" duration="17123000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[&#10;&#10;- 修改项目依赖结构（web层依赖core层）&#10;- 修改内部容器Undertow&#10;- 初始化日志&#10;- 新增全局异常处理（待测试）&#10;- 新增全局bean处理（待测试）&#10;- 新增knife模块 OpenAPI3 语法 不依赖fox （待深度使用）&#10;&#10;]">
       <option name="closed" value="true" />
@@ -450,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715826954071</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="DESC:[&#10;- 添加文件系统模块&#10;- 添加minio整合&#10;]">
+      <option name="closed" value="true" />
+      <created>1715846810987</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715846810987</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

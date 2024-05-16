@@ -12,8 +12,17 @@ import java.util.Arrays;
  */
 public enum Gender implements StringEnum {
 
+    /**
+     * 男
+     */
     MALE("male"),
+    /**
+     * 女
+     */
     FEMALE("female"),
+    /**
+     * 未知
+     */
     UNKNOWN("unknown");
 
     private final String value;

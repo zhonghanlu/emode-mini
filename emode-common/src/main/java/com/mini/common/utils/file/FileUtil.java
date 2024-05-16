@@ -21,7 +21,7 @@ public class FileUtil {
         if (Objects.isNull(file)) {
             throw new EModeServiceException("文件不可为空");
         }
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>(16);
 
         String originalFilename = file.getOriginalFilename();
         map.put(FileConstant.ORIGINAL_FILE_NAME, originalFilename);
