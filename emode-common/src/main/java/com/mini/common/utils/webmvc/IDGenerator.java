@@ -6,8 +6,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +14,8 @@ import java.util.regex.Pattern;
  */
 @Slf4j
 public class IDGenerator {
+    private IDGenerator() {
+    }
 
     private static final Pattern PATTERN_HOSTNAME = Pattern.compile("^.*\\D+([0-9]+)$");
 

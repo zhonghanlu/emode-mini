@@ -18,12 +18,12 @@ public class AuthBiz {
 
     private final IAuthUserService authUserService;
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void add(AuthUserDTO dto) {
         authUserService.insert(dto);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void update(AuthUserDTO dto) {
         authUserService.update(dto);
     }

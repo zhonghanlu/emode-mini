@@ -5,7 +5,6 @@ import com.mini.auth.mapperstruct.AuthUserStructMapper;
 import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.request.AuthUserRequest;
 import com.mini.biz.auth.AuthBiz;
-import com.mini.common.utils.redis.RedisUtils;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

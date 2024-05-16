@@ -60,7 +60,7 @@ spring:
     # 数据库索引
     database: 3
     # 密码
-#    password:
+    #    password:
     # 连接超时时间
     timeout: 10s
     lettuce:
@@ -164,9 +164,9 @@ mybatis-plus:
 minio:
   accessKey: minioadmin
   secretKey: minioadmin
-  endPoint: http://192.168.1.12:9000
-  defaultBucketName: health-bucket
-  appStaticBucketName: app-static
+  endPoint: http://192.168.0.47:9000
+  defaultBucketName: e-mode-bucket
+  appStaticBucketName: e-mode-app-static
 
 # Sa-Token配置
 sa-token:
@@ -202,6 +202,9 @@ security:
     - /favicon.ico
     # 登录接口
     - /login
+    # 文件上传 TODO:删除 未登录不允许上传
+    - /file/upload-single-mf-business
+    - /file/upload-mf
     # knife4j接口文档
     - /doc.html
     - /druid/**

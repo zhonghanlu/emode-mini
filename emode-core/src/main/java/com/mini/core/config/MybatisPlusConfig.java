@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.extension.plugins.inner.BlockAttackInnerIntercep
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.mini.common.enums.number.Delete;
+import com.mini.common.enums.str.Device;
+import com.mini.common.enums.str.FileType;
 import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.YesOrNo;
 import com.mini.common.mybatis.IntEnumTypeHandler;
@@ -36,6 +38,8 @@ public class MybatisPlusConfig {
             // 注册自定义的StringEnumTypeHandler
             registry.register(Gender.class, StringEnumTypeHandler.class);
             registry.register(YesOrNo.class, StringEnumTypeHandler.class);
+            registry.register(Device.class, StringEnumTypeHandler.class);
+            registry.register(FileType.class, StringEnumTypeHandler.class);
         };
     }
 

@@ -35,5 +35,11 @@
             <artifactId>emode-sys-auth</artifactId>
             <version>1.5-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.mini</groupId>
+            <artifactId>emode-sys-file</artifactId>
+            <version>1.5-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

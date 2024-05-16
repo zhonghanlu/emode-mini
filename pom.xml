@@ -14,6 +14,7 @@
         <module>emode-biz</module>
         <module>emode-core</module>
         <module>emode-sys-auth</module>
+        <module>emode-sys-file</module>
     </modules>
 
     <properties>
