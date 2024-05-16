@@ -1,13 +1,0 @@
-
-Œ
-java:S1845"PRename field "offset" to prevent any misunderstanding/clash with field "OFFSET".(œ‘•ÆJ$50fda653-581e-45a0-86d5-e5963b523954
-‚
-java:S1118":Add a private constructor to hide the implicit public one.(ÛéÛÖÿÿÿÿÿ8­Ñ®÷1J$eec0e789-46f6-41f9-a944-80e7ec71a4ae
-}
-java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(‹ŒıúÿÿÿÿJ$98505c84-90b4-4424-a1d8-5ca7e85e762c
-d	java:S108J")Either remove or fill this block of code.(´ú§âJ$4bb05b31-0893-4dbc-b2ce-705eb6feaa7f
-p
-java:S1128	".Remove this unused import 'java.util.HashSet'.(Ê‚êX8²Ñ®÷1J$5dd30bc8-e850-40fe-a237-ff8de6a13136
-r
-java:S1128
-"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8³Ñ®÷1J$37f5841f-05af-458e-b582-87e01fdaf0e6

@@ -76,3 +76,9 @@
 - 优化knife4j配置，分组待处理（TODO）
 - 文件系统添加（下次更新）
 - mapperStruct依旧出现问题（下次处理）
+
+### 2024年5月16日08:27:07
+- 处理mapperStruct问题
+- mapperStruct如果反复重启仍然是空对象，
+- 使用mvn编译运行下，或着将.idea文件删除，刷新，重启即可
+- 注意target文件及时删除测试
