@@ -1,11 +1,13 @@
 package com.mini.auth.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.entity.AuthUser;
 import com.mini.auth.mapper.AuthUserMapper;
 import com.mini.auth.mapperstruct.AuthUserStructMapper;
+import com.mini.auth.model.dto.AuthUserDTO;
+import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.service.IAuthUserService;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
@@ -15,8 +17,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -82,8 +82,9 @@ public class AuthUserServiceImpl implements IAuthUserService {
     }
 
     @Override
-    public List<AuthUserDTO> selectPage() {
-        return Collections.emptyList();
+    public IPage<AuthUserDTO> selectPage(AuthUserQuery query) {
+        IPage<AuthUserDTO> page = query.build();
+        return authUserMapper.selectPage(query, page);
     }
 
 }

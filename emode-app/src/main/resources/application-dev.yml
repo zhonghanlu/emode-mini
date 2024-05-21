@@ -198,6 +198,7 @@ security:
     # Test
     - /auth/add
     - /auth/update
+    - /auth/page
     - /error
     - /favicon.ico
     # 登录接口

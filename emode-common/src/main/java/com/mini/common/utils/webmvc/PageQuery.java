@@ -1,5 +1,9 @@
 package com.mini.common.utils.webmvc;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,67 +17,69 @@ public class PageQuery implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-//    /**
-//     * 数据偏移 (数据库用)
-//     */
-//    @ApiModelProperty(hidden = true)
-//    private int offset;
-//
-//    /**
-//     * 分页大小
-//     */
-//    @ApiModelProperty(name = "pageSize", value = "分页大小")
-//    private Integer pageSize;
-//
-//    /**
-//     * 当前页数
-//     */
-//    @ApiModelProperty(name = "pageNum", value = "当前页数")
-//    private Integer pageNum;
-//
-//    /**
-//     * 排序列
-//     */
-//    private String orderByColumn;
-//
-//    /**
-//     * 排序的方向desc或者asc
-//     */
-//    private String isAsc;
-//
-//    /**
-//     * 当前记录起始索引 默认值
-//     */
-//    public static final int DEFAULT_PAGE_NUM = 1;
-//
-//    /**
-//     * 每页显示记录数 默认值 默认查全部
-//     */
-//    public static final int DEFAULT_PAGE_SIZE = 50;
-//
-//    public <T> Page<T> build() {
-//        Integer pageNum = ObjectUtil.defaultIfNull(getPageNum(), DEFAULT_PAGE_NUM);
-//        Integer pageSize = ObjectUtil.defaultIfNull(getPageSize(), DEFAULT_PAGE_SIZE);
-//        if (pageNum <= 0) {
-//            pageNum = DEFAULT_PAGE_NUM;
-//        }
-//        Page<T> page = new Page<>(pageNum, pageSize);
+    /**
+     * 数据偏移 (数据库用)
+     */
+    @Schema(hidden = true)
+    private int offset;
+
+    /**
+     * 分页大小
+     */
+    @Parameter(description = "分页大小")
+    private Integer pageSize;
+
+    /**
+     * 当前页数
+     */
+    @Parameter(description = "当前页数")
+    private Integer pageNum;
+
+    /**
+     * 排序列
+     */
+    @Schema(hidden = true)
+    private String orderByColumn;
+
+    /**
+     * 排序的方向desc或者asc
+     */
+    @Schema(hidden = true)
+    private String isAsc;
+
+    /**
+     * 当前记录起始索引 默认值
+     */
+    public static final int DEFAULT_PAGE_NUM = 1;
+
+    /**
+     * 每页显示记录数 默认值 默认查全部
+     */
+    public static final int DEFAULT_PAGE_SIZE = 50;
+
+    public <T> Page<T> build() {
+        Integer pn = ObjectUtil.defaultIfNull(getPageNum(), DEFAULT_PAGE_NUM);
+        Integer ps = ObjectUtil.defaultIfNull(getPageSize(), DEFAULT_PAGE_SIZE);
+        if (pn <= 0) {
+            pn = DEFAULT_PAGE_NUM;
+        }
+        Page<T> page = new Page<>(pn, ps);
 //        List<OrderItem> orderItems = buildOrderItem();
 //        if (CollUtil.isNotEmpty(orderItems)) {
 //            page.addOrder(orderItems);
 //        }
-//        return page;
-//    }
-//
-//    /**
-//     * 构建排序
-//     * <p>
-//     * 支持的用法如下:
-//     * {isAsc:"asc",orderByColumn:"id"} order by id asc
-//     * {isAsc:"asc",orderByColumn:"id,createTime"} order by id asc,create_time asc
-//     * {isAsc:"desc",orderByColumn:"id,createTime"} order by id desc,create_time desc
-//     * {isAsc:"asc,desc",orderByColumn:"id,createTime"} order by id asc,create_time desc
-//     */
+        return page;
+    }
+
+    /**
+     * 构建排序
+     * <p>
+     * 支持的用法如下:
+     * {isAsc:"asc",orderByColumn:"id"} order by id asc
+     * {isAsc:"asc",orderByColumn:"id,createTime"} order by id asc,create_time asc
+     * {isAsc:"desc",orderByColumn:"id,createTime"} order by id desc,create_time desc
+     * {isAsc:"asc,desc",orderByColumn:"id,createTime"} order by id asc,create_time desc
+     */
 //    private List<OrderItem> buildOrderItem() {
 //        if (StringUtils.isBlank(orderByColumn) || StringUtils.isBlank(isAsc)) {
 //            return null;
@@ -87,7 +93,7 @@ public class PageQuery implements Serializable {
 //        String[] orderByArr = orderBy.split(StringUtils.SEPARATOR);
 //        String[] isAscArr = isAsc.split(StringUtils.SEPARATOR);
 //        if (isAscArr.length != 1 && isAscArr.length != orderByArr.length) {
-//            throw new ServiceException("排序参数有误");
+//            throw new EModeServiceException("排序参数有误");
 //        }
 //
 //        List<OrderItem> list = new ArrayList<>();
@@ -100,7 +106,7 @@ public class PageQuery implements Serializable {
 //            } else if ("desc".equals(isAscStr)) {
 //                list.add(OrderItem.desc(orderByStr));
 //            } else {
-//                throw new ServiceException("排序参数有误");
+//                throw new EModeServiceException("排序参数有误");
 //            }
 //        }
 //        return list;

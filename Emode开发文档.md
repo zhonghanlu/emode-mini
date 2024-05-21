@@ -92,3 +92,11 @@
 ### 2024年5月17日16:51:221
 
 - 处理分页（下次更新）
+
+### 2024年5月21日11:02:55
+
+- 添加分页接口，处理分页
+- common包下utils.webmvc.PageQuery 类
+- common包下utils.webmvc.PageBuilder 类
+- 转换使用mapperStruct
+- 注意OpenApi3的语法

@@ -1,19 +1,20 @@
 package com.mini.web.controller.auth;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.mapperstruct.AuthUserStructMapper;
 import com.mini.auth.model.edit.AuthUserEdit;
+import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.model.request.AuthUserRequest;
+import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.biz.auth.AuthBiz;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author zhl
@@ -42,6 +43,12 @@ public class AuthController {
         AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2dto(edit);
         authBiz.update(authUserDTO);
         return Restful.SUCCESS().build();
+    }
+
+    @Operation(summary = "分页")
+    @GetMapping("/page")
+    public Restful<IPage<AuthUserVo>> page(@ParameterObject AuthUserQuery query) {
+        return Restful.OBJECT(authBiz.page(query)).build();
     }
 
 

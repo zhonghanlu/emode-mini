@@ -1,8 +1,8 @@
 package com.mini.auth.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.model.dto.AuthUserDTO;
-
-import java.util.List;
+import com.mini.auth.model.query.AuthUserQuery;
 
 /**
  * @author zhl
@@ -28,6 +28,6 @@ public interface IAuthUserService {
     /**
      * 查分页
      */
-    List<AuthUserDTO> selectPage();
+    IPage<AuthUserDTO> selectPage(AuthUserQuery query);
 
 }

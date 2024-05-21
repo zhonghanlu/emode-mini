@@ -2,8 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mini.auth.mapper.AuthUserMapper">
-    <select id="selectByPage" resultType="com.mini.auth.entity.AuthUser">
-        select *
-        from user ${ew.customSqlSegment}
+    <select id="selectPage" resultType="com.mini.auth.model.dto.AuthUserDTO">
+        SELECT *
+        FROM auth_user
+        WHERE username LIKE CONCAT('%', #{query.username}, '%')
     </select>
 </mapper>
