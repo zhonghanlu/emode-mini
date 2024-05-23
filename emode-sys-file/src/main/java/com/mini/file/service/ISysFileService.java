@@ -8,8 +8,14 @@ import com.mini.file.model.dto.SysFileDTO;
  */
 public interface ISysFileService {
 
+    /**
+     * 新增
+     */
     long insert(SysFileDTO dto);
 
+    /**
+     * 删除
+     */
     void del(long id);
 
 }
