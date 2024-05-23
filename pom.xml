@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mini</groupId>
@@ -44,6 +45,7 @@
         <redisson.version>3.24.3</redisson.version>
         <lock4j.version>2.2.1</lock4j.version>
         <satoken.version>1.37.0</satoken.version>
+        <httpclient.version>4.5.14</httpclient.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -225,6 +227,12 @@
                 <version>${satoken.version}</version>
             </dependency>
 
+            <!-- httpClient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -256,8 +264,8 @@
         <connection>scm:git:https://github.com/zhonghanlu/emode-mini.git</connection>
         <developerConnection>scm:git:https://github.com/zhonghanlu/emode-mini.git</developerConnection>
         <url>https://github.com/zhonghanlu/emode-mini</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
 
     <repositories>

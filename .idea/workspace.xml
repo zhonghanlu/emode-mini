@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;pageBuilder&#10;]">
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/sql/SqlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/query/AuthUserQuery.java" afterDir="false" />
+    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;init over&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/PageQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/PageQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/emode.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/emode.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +79,7 @@
     "jdk.selected.JAVA_MODULE": "1.8",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "D:/idea_project/springboot-mini-common/springboot-mini-common/emode-biz/src/main/java/com/mini/biz",
-    "last_opened_file_path": "D:/idea_project/springboot-mini-common/springboot-mini-common/sql",
+    "last_opened_file_path": "D:/idea_project/springboot-mini-common/springboot-mini-common/emode-common/src/main/java/com/mini/common/utils/http",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,6 +98,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_project\springboot-mini-common\springboot-mini-common\emode-common\src\main\java\com\mini\common\utils\http" />
       <recent name="D:\idea_project\springboot-mini-common\springboot-mini-common\sql" />
       <recent name="D:\idea_project\springboot-mini-common\springboot-mini-common\emode-app\src\main\resources" />
       <recent name="D:\idea_project\springboot-mini-common\springboot-mini-common\emode-common\src\main\java\com\mini\common" />
@@ -233,7 +224,9 @@
       <workItem from="1715905302730" duration="25000" />
       <workItem from="1715911575508" duration="4318000" />
       <workItem from="1716165631308" duration="4847000" />
-      <workItem from="1716260472591" duration="5261000" />
+      <workItem from="1716260472591" duration="7862000" />
+      <workItem from="1716337115614" duration="513000" />
+      <workItem from="1716429308837" duration="1420000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[&#10;&#10;- 修改项目依赖结构（web层依赖core层）&#10;- 修改内部容器Undertow&#10;- 初始化日志&#10;- 新增全局异常处理（待测试）&#10;- 新增全局bean处理（待测试）&#10;- 新增knife模块 OpenAPI3 语法 不依赖fox （待深度使用）&#10;&#10;]">
       <option name="closed" value="true" />
@@ -459,7 +452,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715939834882</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="DESC:[&#10;pageBuilder&#10;]">
+      <option name="closed" value="true" />
+      <created>1716272099663</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716272099663</updated>
+    </task>
+    <task id="LOCAL-00030" summary="DESC:[&#10;init over&#10;]">
+      <option name="closed" value="true" />
+      <created>1716274439963</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1716274439963</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +494,8 @@
     <MESSAGE value="DESC:[&#10;fix issue&#10;]" />
     <MESSAGE value="DESC:[&#10;nothing&#10;]" />
     <MESSAGE value="DESC:[&#10;pageBuilder&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;pageBuilder&#10;]" />
+    <MESSAGE value="DESC:[&#10;init over&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;init over&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
