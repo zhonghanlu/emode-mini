@@ -21,8 +21,8 @@ public class HttpHelper {
      * @param requestUrl  请求地址
      * @param requestJson 请求json体
      */
-    public static void requestServerVoid(String requestUrl, String requestJson) {
-        requestServerReturn(requestUrl, requestJson);
+    public static void requestPostVoid(String requestUrl, String requestJson) {
+        requestPostReturn(requestUrl, requestJson);
     }
 
     /**
@@ -31,7 +31,7 @@ public class HttpHelper {
      * @param requestUrl  请求地址
      * @param requestJson 请求json体
      */
-    public static HttpResponse requestServerReturn(String requestUrl, String requestJson) {
+    public static HttpResponse requestPostReturn(String requestUrl, String requestJson) {
         String result = "";
         HttpResponse httpResponse;
         try {
