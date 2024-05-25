@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;添加注释&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/http/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/http/HttpHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +30,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="customMavenHome" value="D:\dev\apache-maven-3.9.6" />
-        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
-        <option name="userSettingsFile" value="D:\dev\apache-maven-3.9.6\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.9.0" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.9.0/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -44,7 +45,7 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2foCNNrGMOhCmkCKeKEaAd73bkU" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -70,6 +71,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.ModeApplication.executor": "Debug",
@@ -87,7 +89,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -190,8 +192,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-995e55e7" />
       </set>
     </attachedChunks>
   </component>
@@ -225,6 +226,7 @@
       <workItem from="1716260472591" duration="7862000" />
       <workItem from="1716337115614" duration="513000" />
       <workItem from="1716429308837" duration="5641000" />
+      <workItem from="1716599728873" duration="164000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[&#10;&#10;- 修改项目依赖结构（web层依赖core层）&#10;- 修改内部容器Undertow&#10;- 初始化日志&#10;- 新增全局异常处理（待测试）&#10;- 新增全局bean处理（待测试）&#10;- 新增knife模块 OpenAPI3 语法 不依赖fox （待深度使用）&#10;&#10;]">
       <option name="closed" value="true" />
