@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;添加注释&#10;]">
+    <list default="true" id="e42550fe-cf6d-4c72-8285-e0c637b35d04" name="Changes" comment="DESC:[&#10;修改命名&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/http/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/http/HttpHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/ModeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/ModeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,46 +54,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.AuthTest.test.executor": "Debug",
-    "Maven.ModeApplication.executor": "Debug",
-    "Maven.emode-common [compile].executor": "Run",
-    "Maven.emode-mini [clean].executor": "Run",
-    "Maven.emode-mini [compile].executor": "Run",
-    "Maven.emode-mini [install,--projects...].executor": "Run",
-    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:clean].executor": "Run",
-    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:perform].executor": "Run",
-    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:prepare].executor": "Run",
-    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:rollback].executor": "Run",
-    "Maven.emode-mini [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.ModeApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "D:/idea_project/springboot-mini-common/springboot-mini-common/emode-biz/src/main/java/com/mini/biz",
-    "last_opened_file_path": "D:/idea_project/springboot-mini-common/springboot-mini-common/emode-common/src/main/java/com/mini/common/utils/http",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/idea_project/springboot-mini-common/springboot-mini-common/emode-sys-file/src/main/java/com/mini/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthTest.test.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.ModeApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.emode-common [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [install,--projects...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:perform].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:prepare].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:rollback].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.emode-mini [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ModeApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/idea_project/springboot-mini-common/springboot-mini-common/emode-biz/src/main/java/com/mini/biz&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/idea_project/springboot-mini-common/springboot-mini-common/emode-common/src/main/java/com/mini/common/utils/http&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/idea_project/springboot-mini-common/springboot-mini-common/emode-sys-file/src/main/java/com/mini/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -224,7 +227,9 @@
       <workItem from="1716165631308" duration="4847000" />
       <workItem from="1716260472591" duration="7862000" />
       <workItem from="1716337115614" duration="513000" />
-      <workItem from="1716429308837" duration="5641000" />
+      <workItem from="1716429308837" duration="9376000" />
+      <workItem from="1716519372797" duration="5062000" />
+      <workItem from="1716885737274" duration="2145000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[&#10;&#10;- 修改项目依赖结构（web层依赖core层）&#10;- 修改内部容器Undertow&#10;- 初始化日志&#10;- 新增全局异常处理（待测试）&#10;- 新增全局bean处理（待测试）&#10;- 新增knife模块 OpenAPI3 语法 不依赖fox （待深度使用）&#10;&#10;]">
       <option name="closed" value="true" />
@@ -482,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716435306063</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="DESC:[&#10;修改命名&#10;]">
+      <option name="closed" value="true" />
+      <created>1716445899095</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1716445899095</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +535,8 @@
     <MESSAGE value="DESC:[&#10;init over&#10;]" />
     <MESSAGE value="DESC:[&#10;append utils&#10;]" />
     <MESSAGE value="DESC:[&#10;添加注释&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;添加注释&#10;]" />
+    <MESSAGE value="DESC:[&#10;修改命名&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;修改命名&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -541,6 +555,11 @@
           <url>file://$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java</url>
           <line>42</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/aop/ApiMessageAdvisor.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

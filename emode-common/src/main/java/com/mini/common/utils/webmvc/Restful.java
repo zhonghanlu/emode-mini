@@ -59,4 +59,7 @@ public class Restful<T> {
     @JsonProperty("info")
     private Object info;
 
+    @JsonProperty("requestId")
+    private String requestId;
+
 }
