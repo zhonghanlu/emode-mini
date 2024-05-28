@@ -19,6 +19,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Objects;
 import java.util.UUID;
 
 @Aspect
@@ -76,8 +77,9 @@ public class ApiMessageAdvisor {
      * @return 返回参数
      */
     private Restful<Object> handleBusinessException(String apiName, EModeServiceException ex) {
-        log.error("@Meet error when do " + apiName + "[" + ex.getCode() + "]:" + ex.getMessage(), ex);
-        return Restful.builder().code(ex.getCode()).msg(ex.getMessage()).requestId(RequestIdUtils.getRequestId().toString()).build();
+        int code = Objects.nonNull(ex.getCode()) ? ex.getCode() : HttpStatus.ERROR;
+        log.error("@Meet error when do " + apiName + "[" + code + "]:" + ex.getMessage(), ex);
+        return Restful.builder().code(code).msg(ex.getMessage()).requestId(RequestIdUtils.getRequestId().toString()).build();
     }
 
     /**

@@ -20,9 +20,9 @@ spring:
 #          username: root
 #          password:
           # mac 本地
-          url: jdbc:mysql://localhost:3306/emode?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+          url: jdbc:mysql://rm-bp1xd6sbag3rwsz46po.mysql.rds.aliyuncs.com:3306/emode?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
           username: root
-          password:
+          password: rootROOT!
         # 从库数据源
 #        slave:
 #          lazy: true
