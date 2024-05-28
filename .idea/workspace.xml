@@ -93,7 +93,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -555,11 +555,6 @@
           <url>file://$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java</url>
           <line>42</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/aop/ApiMessageAdvisor.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
