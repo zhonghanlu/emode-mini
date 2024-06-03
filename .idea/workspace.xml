@@ -4,14 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 修改数据源为阿里云rds&#10;]">
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 加入鸽鸽banner&#10;]">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthRolePermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRolePermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRolePermissionStructMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRoleStructMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserRoleStructMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthRoleRelationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/query/AuthRoleQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthRoleRelationVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthRolePermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthPermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRolePermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRoleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,6 +93,13 @@
 }</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mini.auth.model.vo" />
+      <recent name="com.mini.auth.model.query" />
+      <recent name="com.mini.auth.model.dto" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="ModeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -104,9 +147,18 @@
       <updated>1716947570666</updated>
       <workItem from="1716947571752" duration="43000" />
       <workItem from="1716947655750" duration="3947000" />
-      <workItem from="1717061993523" duration="395000" />
+      <workItem from="1717061993523" duration="1192000" />
+      <workItem from="1717397696267" duration="6914000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
+      <option name="closed" value="true" />
+      <created>1717063318955</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717063318955</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +167,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DESC:[&#10;- 添加日志搜索   requestId&#10;- 优化全局aopConfig&#10;]" />
     <MESSAGE value="DESC:[&#10;- 修改数据源为阿里云rds&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 修改数据源为阿里云rds&#10;]" />
+    <MESSAGE value="DESC:[&#10;- 加入鸽鸽banner&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 加入鸽鸽banner&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
