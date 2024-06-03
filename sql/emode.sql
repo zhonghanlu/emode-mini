@@ -1,21 +1,58 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql8.3
+ Source Server         : rds-demo
  Source Server Type    : MySQL
- Source Server Version : 80300 (8.3.0)
- Source Host           : localhost:3307
+ Source Server Version : 80034 (8.0.34)
+ Source Host           : rm-bp1xd6sbag3rwsz46po.mysql.rds.aliyuncs.com:3306
  Source Schema         : emode
 
  Target Server Type    : MySQL
- Target Server Version : 80300 (8.3.0)
+ Target Server Version : 80034 (8.0.34)
  File Encoding         : 65001
 
- Date: 21/05/2024 11:02:07
+ Date: 03/06/2024 17:17:44
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for auth_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `auth_permission`;
+CREATE TABLE `auth_permission`  (
+  `id` bigint NOT NULL COMMENT '主键id',
+  `auth_menu` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '页面权限值',
+  `auth_opt` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '操作权限值',
+  `auth_data` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '数据权限值',
+  `del_flag` tinyint(1) NULL DEFAULT NULL COMMENT '删除标识1未删除-1已删除',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统权限详细记录表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for auth_role
+-- ----------------------------
+DROP TABLE IF EXISTS `auth_role`;
+CREATE TABLE `auth_role`  (
+  `id` bigint NOT NULL COMMENT '主键id',
+  `role_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色名',
+  `role_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色码值',
+  `del_flag` tinyint(1) NULL DEFAULT NULL COMMENT '删除标识1未删除-1已删除',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统角色表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for auth_role_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `auth_role_permission`;
+CREATE TABLE `auth_role_permission`  (
+  `id` bigint NOT NULL COMMENT '主键id',
+  `role_id` bigint NULL DEFAULT NULL COMMENT '角色id',
+  `permission_id` bigint NULL DEFAULT NULL COMMENT '权限详情id',
+  `del_flag` tinyint(1) NULL DEFAULT NULL COMMENT '删除标识1未删除-1已经删除',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色权限关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for auth_user
@@ -34,7 +71,21 @@ CREATE TABLE `auth_user`  (
   `update_by` bigint NULL DEFAULT NULL COMMENT '更新人',
   `del_flag` tinyint(1) NULL DEFAULT 1 COMMENT '删除标识1未删除-1已删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统用户表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for auth_user_role
+-- ----------------------------
+DROP TABLE IF EXISTS `auth_user_role`;
+CREATE TABLE `auth_user_role`  (
+  `id` bigint NOT NULL COMMENT '主键id',
+  `role_id` bigint NULL DEFAULT NULL COMMENT '角色id',
+  `role_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '角色名',
+  `user_id` bigint NULL DEFAULT NULL COMMENT '用户id',
+  `user_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户名',
+  `del_flag` tinyint(1) NULL DEFAULT NULL COMMENT '删除标识1未删除 -1 已删除',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户角色关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for sys_file
@@ -52,6 +103,6 @@ CREATE TABLE `sys_file`  (
   `update_by` bigint NULL DEFAULT NULL COMMENT '更新人id',
   `del_flag` tinyint(1) NULL DEFAULT 1 COMMENT '删除标识1未删除，-1已删除 默认值1',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统文件表' ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
