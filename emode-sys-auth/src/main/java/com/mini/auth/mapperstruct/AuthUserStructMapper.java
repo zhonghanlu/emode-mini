@@ -17,11 +17,23 @@ public interface AuthUserStructMapper {
 
     AuthUserStructMapper INSTANCE = Mappers.getMapper(AuthUserStructMapper.class);
 
+    /**
+     * request2dto
+     */
     AuthUserDTO request2dto(AuthUserRequest request);
 
+    /**
+     * edit2dto
+     */
     AuthUserDTO request2dto(AuthUserEdit edit);
 
+    /**
+     * dto2entity
+     */
     AuthUser dto2entity(AuthUserDTO dto);
 
+    /**
+     * dto2vo
+     */
     AuthUserVo dto2vo(AuthUserDTO dto);
 }

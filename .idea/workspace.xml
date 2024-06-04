@@ -4,35 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]">
-      <change afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/SysRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysRoleBiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/AddOrUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthPermissionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/edit/AuthPermissionEdit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/edit/AuthRoleRelationEdit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/request/AuthPermissionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/request/AuthRoleRelationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthPermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRolePermissionMapper.xml" afterDir="false" />
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-app/src/test/java/com/mini/auth/AuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/test/java/com/mini/auth/AuthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/AuthBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysUserBiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/list/ListSpilt.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/list/ListSpilt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/aop/ApiMessageAdvisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/aop/ApiMessageAdvisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/RequestIdUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/RequestIdUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRoleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRolePermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRoleStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRoleStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthRoleRelationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthRoleRelationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthRoleRelationVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthRoleRelationVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +146,7 @@
       <workItem from="1716947655750" duration="3947000" />
       <workItem from="1717061993523" duration="1192000" />
       <workItem from="1717397696267" duration="8464000" />
-      <workItem from="1717460065942" duration="11317000" />
+      <workItem from="1717460065942" duration="12436000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -191,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717406295132</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]">
+      <option name="closed" value="true" />
+      <created>1717493430586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717493430586</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +192,8 @@
     <MESSAGE value="DESC:[&#10;- 加入鸽鸽banner&#10;]" />
     <MESSAGE value="DESC:[&#10;- 添加RBAC权限模型&#10;- 添加角色关联分页查询&#10;- PC登录功能实现(待处理)&#10;]" />
     <MESSAGE value="DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
+    <MESSAGE value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

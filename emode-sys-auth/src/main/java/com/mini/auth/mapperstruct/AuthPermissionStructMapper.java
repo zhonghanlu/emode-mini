@@ -15,5 +15,8 @@ import java.util.List;
 public interface AuthPermissionStructMapper {
     AuthPermissionStructMapper INSTANCE = Mappers.getMapper(AuthPermissionStructMapper.class);
 
+    /**
+     * dto2entity List
+     */
     List<AuthPermission> dtoList2EntityList(List<AuthPermissionDTO> permissionList);
 }

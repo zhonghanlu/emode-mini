@@ -16,7 +16,13 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface AuthRoleMapper extends BaseMapper<AuthRole> {
 
+    /**
+     * 分页查询
+     */
     IPage<AuthRoleRelationDTO> selectPage(@Param("query") AuthRoleQuery query, IPage<AuthRoleRelationDTO> page);
 
+    /**
+     * 根据id查询详细信息
+     */
     AuthRoleRelationDTO getRoleById(long id);
 }

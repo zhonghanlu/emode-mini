@@ -16,6 +16,9 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface AuthUserMapper extends BaseMapper<AuthUser> {
 
+    /**
+     * 分页查询
+     */
     IPage<AuthUserDTO> selectPage(@Param("query") AuthUserQuery query, IPage<AuthUserDTO> page);
 
 }

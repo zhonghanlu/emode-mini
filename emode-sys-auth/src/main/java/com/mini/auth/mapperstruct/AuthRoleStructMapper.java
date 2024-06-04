@@ -17,11 +17,23 @@ public interface AuthRoleStructMapper {
 
     AuthRoleStructMapper INSTANCE = Mappers.getMapper(AuthRoleStructMapper.class);
 
+    /**
+     * dto2vo
+     */
     AuthRoleRelationVo dto2Vo(AuthRoleRelationDTO dto);
 
+    /**
+     * dto2entity
+     */
     AuthRole dto2Entity(AuthRoleRelationDTO dto);
 
+    /**
+     * request2dto
+     */
     AuthRoleRelationDTO req2Dto(AuthRoleRelationRequest request);
 
+    /**
+     * edit2dto
+     */
     AuthRoleRelationDTO edit2Dto(AuthRoleRelationEdit edit);
 }

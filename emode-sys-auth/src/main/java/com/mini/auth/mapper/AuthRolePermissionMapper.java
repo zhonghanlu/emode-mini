@@ -14,7 +14,13 @@ import java.util.List;
 @Mapper
 public interface AuthRolePermissionMapper extends BaseMapper<AuthRolePermission> {
 
+    /**
+     * 批量新增
+     */
     int batchInsert(List<AuthRolePermission> authRolePermissionList);
 
+    /**
+     * 批量修改
+     */
     int batchUpdate(List<AuthRolePermission> authRolePermissionList);
 }
