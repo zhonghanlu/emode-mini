@@ -18,4 +18,5 @@ public interface AuthRoleMapper extends BaseMapper<AuthRole> {
 
     IPage<AuthRoleRelationDTO> selectPage(@Param("query") AuthRoleQuery query, IPage<AuthRoleRelationDTO> page);
 
+    AuthRoleRelationDTO getRoleById(long id);
 }

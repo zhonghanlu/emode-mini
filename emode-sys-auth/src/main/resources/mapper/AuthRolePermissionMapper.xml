@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.auth.mapper.AuthRolePermissionMapper">
+    <insert id="batchInsert">
+        INSERT INTO auth_role_permission (id,role_id, permission_id,del_flag)
+        <foreach collection="authRolePermissionList" item="item" open="(" close=")" separator=",">
+            #{item.id},#{item.roleId},#{item.permissionId},#{item.delFlag}
+        </foreach>
+    </insert>
+
+    <update id="batchUpdate">
+        <foreach collection="authRolePermissionList" item="item" separator=";" open="begin" close=";end;">
+            UPDATE auth_role_permission
+            <set>
+                role_id = #{item.roleId},
+            </set>
+            <set>
+                permission_id = #{item.permissionId},
+            </set>
+            <set>
+                del_flag = #{item.delFlag},
+            </set>
+            WHERE id = #{item.id}
+        </foreach>
+    </update>
+</mapper>

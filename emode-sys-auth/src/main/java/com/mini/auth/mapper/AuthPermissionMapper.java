@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mini.auth.entity.AuthPermission;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 系统权限详细记录表;(auth_permission)表数据库访问层
  *
@@ -12,4 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface AuthPermissionMapper extends BaseMapper<AuthPermission> {
 
+    int batchInsert(List<AuthPermission> authPermissionList);
 }

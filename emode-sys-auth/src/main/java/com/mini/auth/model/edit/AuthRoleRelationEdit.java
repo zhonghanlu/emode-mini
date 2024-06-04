@@ -1,10 +1,10 @@
-package com.mini.auth.model.dto;
+package com.mini.auth.model.edit;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -14,27 +14,26 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AuthRoleRelationDTO {
-
+public class AuthRoleRelationEdit {
     /**
      * 主键id
      */
-    @Schema(name = "主键id")
-    @TableId
+    @NotNull(message = "修改主键id不可为空")
+    @Schema(title = "主键id")
     private Long id;
     /**
      * 角色名
      */
-    @Schema(name = "角色名")
+    @Schema(title = "角色名")
     private String roleName;
     /**
      * 角色码值
      */
-    @Schema(name = "角色码值")
+    @Schema(title = "角色码值")
     private String roleCode;
     /**
      * 权限集合
      */
-    @Schema(name = "权限集合")
-    private List<AuthPermissionDTO> authPermissionDTOList;
+    @Schema(title = "权限集合")
+    private List<AuthPermissionEdit> authPermissionEditList;
 }

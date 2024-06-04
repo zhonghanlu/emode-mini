@@ -1,6 +1,5 @@
-package com.mini.auth.model.dto;
+package com.mini.auth.model.request;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,27 +13,21 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AuthRoleRelationDTO {
+public class AuthRoleRelationRequest {
 
-    /**
-     * 主键id
-     */
-    @Schema(name = "主键id")
-    @TableId
-    private Long id;
     /**
      * 角色名
      */
-    @Schema(name = "角色名")
+    @Schema(title = "角色名")
     private String roleName;
     /**
      * 角色码值
      */
-    @Schema(name = "角色码值")
+    @Schema(title = "角色码值")
     private String roleCode;
     /**
      * 权限集合
      */
-    @Schema(name = "权限集合")
-    private List<AuthPermissionDTO> authPermissionDTOList;
+    @Schema(title = "权限集合")
+    private List<AuthPermissionRequest> authPermissionRequestList;
 }

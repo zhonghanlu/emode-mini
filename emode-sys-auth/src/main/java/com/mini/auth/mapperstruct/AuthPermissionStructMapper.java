@@ -1,7 +1,11 @@
 package com.mini.auth.mapperstruct;
 
+import com.mini.auth.entity.AuthPermission;
+import com.mini.auth.model.dto.AuthPermissionDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 /**
  * @author zhl
@@ -10,4 +14,6 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface AuthPermissionStructMapper {
     AuthPermissionStructMapper INSTANCE = Mappers.getMapper(AuthPermissionStructMapper.class);
+
+    List<AuthPermission> dtoList2EntityList(List<AuthPermissionDTO> permissionList);
 }

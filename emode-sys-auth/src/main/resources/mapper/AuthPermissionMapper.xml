@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.auth.mapper.AuthPermissionMapper">
+    <insert id="batchInsert">
+        INSERT INTO auth_permission (id,auth_menu,auth_opt,auth_data,del_flag)
+        <foreach collection="authPermissionList" item="item" open="(" close=")" separator=",">
+            #{item.id},#{item.authMenu},#{item.authOpt},#{item.authData},#{item.delFlag}
+        </foreach>
+    </insert>
+</mapper>

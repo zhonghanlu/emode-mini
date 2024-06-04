@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Restful<T> {
 
-    public static <T> RestfulBuilder<T> SUCCESS() {
-        return Restful.<T>builder().code(200).msg("操作成功");
+    public static RestfulBuilder<Void> SUCCESS() {
+        return Restful.<Void>builder().code(200).msg("操作成功");
     }
 
     public static <T> RestfulBuilder<T> OBJECT(T data) {

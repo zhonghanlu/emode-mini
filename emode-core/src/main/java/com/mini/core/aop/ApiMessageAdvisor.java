@@ -102,7 +102,7 @@ public class ApiMessageAdvisor {
      */
     private void printResponse(String apiName, Object returnValue) {
         if (log.isInfoEnabled()) {
-            log.info("@@{} done, response: {}", apiName, JSONUtil.toJsonStr(returnValue));
+            log.info("@@{} 【done】, response: {}", apiName, JSONUtil.toJsonStr(returnValue));
         }
     }
 
@@ -117,7 +117,7 @@ public class ApiMessageAdvisor {
         if (log.isInfoEnabled() && args != null) {
             for (Object o : args) {
                 if (!(o instanceof HttpServletRequest) && !(o instanceof HttpServletResponse) && !(o instanceof CommonsMultipartFile)) {
-                    log.info("@@{} started, request: {}", apiName, JsonUtils.toJsonString(o));
+                    log.info("@@{} 【started】, request: {}", apiName, JsonUtils.toJsonString(o));
                 }
             }
         }

@@ -15,4 +15,24 @@ public interface IAuthRoleService {
      */
     IPage<AuthRoleRelationDTO> pageAuthRelation(AuthRoleQuery authRoleQuery);
 
+    /**
+     * 根据角色id查询角色详细权限信息
+     */
+    AuthRoleRelationDTO getRoleById(long id);
+
+    /**
+     * 新增角色信息
+     */
+    void insert(AuthRoleRelationDTO dto);
+
+    /**
+     * 删除角色信息
+     */
+    void del(long id);
+
+    /**
+     * 修改角色信息
+     */
+    void update(AuthRoleRelationDTO dto);
+
 }

@@ -195,13 +195,7 @@ sa-token:
 security:
   # 排除路径
   excludes:
-    # Test
-    - /auth/add
-    - /auth/update
-    - /auth/page
-    - /auth/role-page
-    - /error
-    - /favicon.ico
+    - /**
     # 登录接口
     - /login
     # 文件上传 TODO:删除 未登录不允许上传

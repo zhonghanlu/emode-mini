@@ -1,8 +1,7 @@
 package com.mini.auth;
 
 import com.mini.auth.model.dto.AuthUserDTO;
-import com.mini.biz.auth.AuthBiz;
-import com.mini.common.utils.webmvc.IDGenerator;
+import com.mini.biz.auth.SysUserBiz;
 import com.mini.web.ModeApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ import javax.annotation.Resource;
 class AuthTest {
 
     @Resource
-    AuthBiz authBiz;
+    SysUserBiz sysUserBiz;
 
     @Test
     void test() {
@@ -30,7 +29,7 @@ class AuthTest {
         authUserDTO.setNickname("aaa");
         authUserDTO.setAvatar(1L);
         authUserDTO.setPhone("15312665707");
-        authBiz.add(authUserDTO);
+        sysUserBiz.add(authUserDTO);
         log.info("插入成功");
     }
 
