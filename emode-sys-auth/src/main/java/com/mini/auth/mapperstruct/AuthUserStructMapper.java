@@ -30,7 +30,7 @@ public interface AuthUserStructMapper {
     /**
      * dto2entity
      */
-    AuthUser dto2entity(AuthUserDTO dto);
+    AuthUser dto2Entity(AuthUserDTO dto);
 
     /**
      * dto2vo

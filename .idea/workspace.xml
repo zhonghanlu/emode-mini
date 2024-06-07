@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]">
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;添加接口注释&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/RequestIdUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/RequestIdUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthRolePermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRoleStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthRoleStructMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +140,9 @@
       <workItem from="1716947655750" duration="3947000" />
       <workItem from="1717061993523" duration="1192000" />
       <workItem from="1717397696267" duration="8464000" />
-      <workItem from="1717460065942" duration="12436000" />
+      <workItem from="1717460065942" duration="13141000" />
+      <workItem from="1717575616737" duration="627000" />
+      <workItem from="1717635322212" duration="2843000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -180,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717493430586</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DESC:[&#10;添加接口注释&#10;]">
+      <option name="closed" value="true" />
+      <created>1717494535226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717494535226</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +197,8 @@
     <MESSAGE value="DESC:[&#10;- 添加RBAC权限模型&#10;- 添加角色关联分页查询&#10;- PC登录功能实现(待处理)&#10;]" />
     <MESSAGE value="DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
     <MESSAGE value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
+    <MESSAGE value="DESC:[&#10;添加接口注释&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;添加接口注释&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

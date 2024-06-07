@@ -32,7 +32,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
 
     @Override
     public void insert(AuthUserDTO dto) {
-        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2entity(dto);
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
         authUser.setId(IDGenerator.next());
         int b = authUserMapper.insert(authUser);
         if (b <= 0) {
@@ -63,7 +63,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
 
     @Override
     public void update(AuthUserDTO dto) {
-        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2entity(dto);
+        AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
         Long id = authUser.getId();
         if (Objects.isNull(id) || id <= 0) {
             throw new EModeServiceException("参数id有误，id:" + id);
