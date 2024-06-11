@@ -20,12 +20,12 @@ public interface AuthUserStructMapper {
     /**
      * request2dto
      */
-    AuthUserDTO request2dto(AuthUserRequest request);
+    AuthUserDTO request2Dto(AuthUserRequest request);
 
     /**
      * edit2dto
      */
-    AuthUserDTO request2dto(AuthUserEdit edit);
+    AuthUserDTO edit2Dto(AuthUserEdit edit);
 
     /**
      * dto2entity
@@ -35,5 +35,5 @@ public interface AuthUserStructMapper {
     /**
      * dto2vo
      */
-    AuthUserVo dto2vo(AuthUserDTO dto);
+    AuthUserVo dto2Vo(AuthUserDTO dto);
 }

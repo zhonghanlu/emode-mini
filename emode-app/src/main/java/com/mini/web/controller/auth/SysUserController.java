@@ -32,7 +32,7 @@ public class SysUserController {
     @Operation(summary = "用户新增")
     @PostMapping("/add")
     public Restful<Void> add(@RequestBody @Validated AuthUserRequest request) {
-        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2dto(request);
+        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2Dto(request);
         sysUserBiz.add(authUserDTO);
         return Restful.SUCCESS().build();
     }
@@ -40,7 +40,7 @@ public class SysUserController {
     @Operation(summary = "用户修改")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Validated AuthUserEdit edit) {
-        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2dto(edit);
+        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.edit2Dto(edit);
         sysUserBiz.update(authUserDTO);
         return Restful.SUCCESS().build();
     }

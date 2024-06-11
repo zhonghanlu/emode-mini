@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;添加接口注释&#10;]">
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;fix issue&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/SysUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysUserBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysUserBiz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthUserStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +144,9 @@
       <workItem from="1717460065942" duration="13141000" />
       <workItem from="1717575616737" duration="627000" />
       <workItem from="1717635322212" duration="2843000" />
+      <workItem from="1717745146790" duration="1120000" />
+      <workItem from="1718064556268" duration="284000" />
+      <workItem from="1718064850785" duration="2277000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -184,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717494535226</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DESC:[&#10;fix issue&#10;]">
+      <option name="closed" value="true" />
+      <created>1717745175304</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717745175304</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +210,8 @@
     <MESSAGE value="DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
     <MESSAGE value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
     <MESSAGE value="DESC:[&#10;添加接口注释&#10;]" />
-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;添加接口注释&#10;]" />
+    <MESSAGE value="DESC:[&#10;fix issue&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;fix issue&#10;]" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -43,7 +43,7 @@ public class SysUserBiz {
 
     public IPage<AuthUserVo> page(AuthUserQuery query) {
         IPage<AuthUserDTO> authUserDTOIPage = authUserService.selectPage(query);
-        return authUserDTOIPage.convert(AuthUserStructMapper.INSTANCE::dto2vo);
+        return authUserDTOIPage.convert(AuthUserStructMapper.INSTANCE::dto2Vo);
     }
 
     /**
