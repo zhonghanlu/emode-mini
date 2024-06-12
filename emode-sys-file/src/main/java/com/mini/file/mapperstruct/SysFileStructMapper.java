@@ -14,6 +14,6 @@ public interface SysFileStructMapper {
 
     SysFileStructMapper INSTANCE = Mappers.getMapper(SysFileStructMapper.class);
 
-    SysFile dto2entity(SysFileDTO dto);
+    SysFile dto2Entity(SysFileDTO dto);
 
 }

@@ -28,7 +28,7 @@ public class SysFileServiceImpl implements ISysFileService {
 
     @Override
     public long insert(SysFileDTO dto) {
-        SysFile sysFile = SysFileStructMapper.INSTANCE.dto2entity(dto);
+        SysFile sysFile = SysFileStructMapper.INSTANCE.dto2Entity(dto);
 
         long next = IDGenerator.next();
         sysFile.setId(next);
