@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;fix issue&#10;]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +144,10 @@
       <workItem from="1717745146790" duration="1120000" />
       <workItem from="1718064556268" duration="284000" />
       <workItem from="1718064850785" duration="4885000" />
-      <workItem from="1718150748103" duration="1701000" />
+      <workItem from="1718150748103" duration="5137000" />
+      <workItem from="1718237822905" duration="3381000" />
+      <workItem from="1718324056092" duration="3239000" />
+      <workItem from="1718608022332" duration="1413000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718068527011</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="DESC:[&#10;fix issue&#10;]">
+      <option name="closed" value="true" />
+      <created>1718171188278</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718171188278</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
