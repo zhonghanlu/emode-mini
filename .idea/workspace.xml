@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
-      <change afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/controller/auth/SysPermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysPermissionBiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/enums/str/MenuType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/TreeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/query/AuthPermissionQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthPermissionVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/src/main/java/com/mini/common/utils/webmvc/Restful.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthPermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/entity/AuthPermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapper/AuthPermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/mapperstruct/AuthPermissionStructMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthPermissionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/dto/AuthPermissionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/edit/AuthPermissionEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/edit/AuthPermissionEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/request/AuthPermissionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/request/AuthPermissionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthRoleRelationVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/model/vo/AuthRoleRelationVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/IAuthPermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthPermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthPermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthPermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthPermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/resources/mapper/AuthRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/emode.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/emode.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +159,7 @@
       <workItem from="1719533546836" duration="1746000" />
       <workItem from="1719793982009" duration="2804000" />
       <workItem from="1719966349322" duration="1035000" />
-      <workItem from="1720073800194" duration="11820000" />
+      <workItem from="1720073800194" duration="11965000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -263,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719306342098</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
+      <option name="closed" value="true" />
+      <created>1720085952373</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720085952373</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
