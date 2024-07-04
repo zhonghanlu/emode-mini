@@ -1,8 +1,11 @@
 package com.mini.auth.model.request;
 
+import com.mini.common.enums.str.MenuType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * 系统权限详细记录表;
@@ -13,21 +16,47 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class AuthPermissionRequest {
     /**
-     * 页面权限值
+     * 父级id
      */
-    @Schema(title = "页面权限值")
-    private String authMenu;
+    @NotNull(message = "父级id不可为空")
+    @Schema(title = "父级id", description = "父级id")
+    private Long parentId;
 
     /**
-     * 操作权限值
+     * 菜单名
      */
-    @Schema(title = "操作权限值")
-    private String authOpt;
+    @Schema(title = "菜单名", description = "菜单名")
+    private String menuName;
 
     /**
-     * 数据权限值
+     * 菜单url
      */
-    @Schema(title = "数据权限值")
-    private String authData;
+    @Schema(title = "菜单url", description = "菜单url")
+    private String menuUrl;
+
+    /**
+     * 授权(多个用逗号分隔，如：sys:user:list,sys:user:save)
+     */
+    @Schema(title = "授权(多个用逗号分隔，如：sys:user:list,sys:user:save)", description = "授权(多个用逗号分隔，如：sys:user:list,sys:user:save)")
+    private String permissions;
+
+    /**
+     * 类型 按钮 菜单
+     */
+    @NotNull(message = "类型不可为空")
+    @Schema(title = "类型：按钮、菜单", description = "类型：按钮、菜单")
+    private MenuType menuType;
+
+    /**
+     * 图标
+     */
+    @Schema(title = "图标", description = "图标")
+    private String icon;
+
+    /**
+     * 排序
+     */
+    @Schema(title = "排序",description = "排序")
+    private int sort;
 
 }

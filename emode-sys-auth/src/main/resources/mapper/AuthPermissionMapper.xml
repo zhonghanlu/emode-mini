@@ -2,10 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mini.auth.mapper.AuthPermissionMapper">
+
     <insert id="batchInsert">
         INSERT INTO auth_permission (id,auth_menu,auth_opt,auth_data,del_flag)
         <foreach collection="authPermissionList" item="item" open="(" close=")" separator=",">
             #{item.id},#{item.authMenu},#{item.authOpt},#{item.authData},#{item.delFlag}
         </foreach>
     </insert>
+
+    <select id="selectPage" resultType="com.mini.auth.model.dto.AuthPermissionDTO">
+        SELECT id,parent_id,menu_name,menu_url,permissions,menu_type,icon,sort
+        FROM auth_permission
+        WHERE del_flag = 0
+        <if test="query.menuName != null and query.menuName != ''">
+            AND menu_name LIKE CONCAT('%', #{query.menuName}, '%')
+        </if>
+        <if test="query.menuUrl != null and query.menuUrl != ''">
+            AND menu_url LIKE CONCAT('%', #{query.menuUrl}, '%')
+        </if>
+        <if test="query.permissions != null and query.permissions != ''">
+            AND permissions LIKE CONCAT('%', #{query.permissions}, '%')
+        </if>
+        <if test="query.menuType != null">
+            AND menu_type LIKE CONCAT('%', #{query.menuType}, '%')
+        </if>
+        ORDER BY sort
+    </select>
 </mapper>

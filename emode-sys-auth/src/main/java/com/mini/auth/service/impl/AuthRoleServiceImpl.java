@@ -69,10 +69,13 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
             e.setDelFlag(Delete.NO);
             e.setId(IDGenerator.next());
         });
-        int b = authPermissionMapper.batchInsert(authPermissionList);
 
-        if (b <= 0) {
-            throw new EModeServiceException("权限入库失败");
+        if (CollectionUtils.isNotEmpty(authPermissionList)) {
+            int b = authPermissionMapper.batchInsert(authPermissionList);
+
+            if (b <= 0) {
+                throw new EModeServiceException("权限入库失败");
+            }
         }
 
         // 入库角色

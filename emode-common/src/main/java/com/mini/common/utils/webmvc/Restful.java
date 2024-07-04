@@ -1,6 +1,7 @@
 package com.mini.common.utils.webmvc;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -48,18 +49,23 @@ public class Restful<T> {
     }
 
     @JsonProperty("code")
+    @Schema(title = "响应码")
     private int code;
 
     @JsonProperty("msg")
+    @Schema(title = "响应消息")
     private String msg;
 
     @JsonProperty("data")
+    @Schema(title = "响应数据")
     private T object;
 
     @JsonProperty("info")
+    @Schema(title = "其他信息")
     private Object info;
 
     @JsonProperty("requestId")
+    @Schema(title = "全局唯一操作id")
     private String requestId;
 
 }

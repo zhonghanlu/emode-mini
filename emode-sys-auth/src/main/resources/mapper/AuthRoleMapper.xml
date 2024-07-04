@@ -9,14 +9,28 @@
         <result column="role_code" property="roleCode"/>
         <collection property="authPermissionDTOList" ofType="com.mini.auth.model.dto.AuthPermissionDTO">
             <id column="apID" property="id"/>
-            <result column="auth_menu" property="authMenu"/>
-            <result column="auth_opt" property="authOpt"/>
-            <result column="auth_data" property="authData"/>
+            <result column="parent_id" property="parentId"/>
+            <result column="menu_name" property="menuName"/>
+            <result column="menu_url" property="menuUrl"/>
+            <result column="menu_type" property="menuType"/>
+            <result column="permissions" property="permissions"/>
+            <result column="icon" property="icon"/>
+            <result column="sort" property="sort"/>
         </collection>
     </resultMap>
 
     <select id="selectPage" resultType="com.mini.auth.model.dto.AuthRoleRelationDTO" resultMap="roleMap">
-        SELECT ar.id AS arID, ar.role_name, ar.role_code, ap.id AS apID, ap.auth_menu, ap.auth_opt, ap.auth_data
+        SELECT ar.id AS arID,
+               ar.role_name,
+               ar.role_code,
+               ap.id AS apID,
+               ap.parent_id,
+               ap.menu_name,
+               ap.menu_url,
+               ap.menu_type,
+               ap.permissions,
+               ap.icon,
+               ap.sort
         FROM auth_role ar
                  LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
                  LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
@@ -28,7 +42,17 @@
     </select>
 
     <select id="getRoleById" resultMap="roleMap">
-        SELECT ar.id AS arID, ar.role_name, ar.role_code, ap.id AS apID, ap.auth_menu, ap.auth_opt, ap.auth_data
+        SELECT ar.id AS arID,
+               ar.role_name,
+               ar.role_code,
+               ap.id AS apID,
+               ap.parent_id,
+               ap.menu_name,
+               ap.menu_url,
+               ap.menu_type,
+               ap.permissions,
+               ap.icon,
+               ap.sort
         FROM auth_role ar
                  LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
                  LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
