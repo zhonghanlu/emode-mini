@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.mini</groupId>
         <artifactId>emode-mini</artifactId>
-        <version>1.5</version>
+        <version>1.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>emode-sys-auth</artifactId>
@@ -13,7 +13,7 @@
         <dependency>
             <groupId>com.mini</groupId>
             <artifactId>emode-common</artifactId>
-            <version>1.5</version>
+            <version>1.6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
