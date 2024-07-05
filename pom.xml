@@ -38,8 +38,7 @@
         <mysql.version>8.0.33</mysql.version>
         <dynamic-ds.version>4.2.0</dynamic-ds.version>
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
-        <mybatis-plus-extension>3.5.4</mybatis-plus-extension>
-        <mybatis.spring.version>2.2.2</mybatis.spring.version>
+        <mybatis-plus-extension>3.5.6</mybatis-plus-extension>
         <minio.version>8.5.2</minio.version>
         <okhttp.version>4.9.0</okhttp.version>
         <redisson.version>3.24.3</redisson.version>
@@ -164,12 +163,6 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis-plus-extension}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.version}</version>
             </dependency>
 
             <dependency>
