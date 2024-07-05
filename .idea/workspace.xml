@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64622403-a8bb-4ed0-af97-774289bfed41" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emode-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="64622403-a8bb-4ed0-af97-774289bfed41" name="Changes" comment="DESC:[&#10;1.6 release update&#10;]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,9 @@
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2iohOge7FT6nINQcHhS2hPGWBrd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,12 +40,16 @@
   "keyToString": {
     "Maven.emode-mini [clean].executor": "Run",
     "Maven.emode-mini [compile].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:clean].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:perform].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:prepare].executor": "Run",
     "Maven.emode-mini [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.ModeApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -89,11 +94,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720162806385</updated>
-      <workItem from="1720162807582" duration="1537000" />
+      <workItem from="1720162807582" duration="2487000" />
     </task>
+    <task id="LOCAL-00001" summary="DESC:[- 优化项目打包结构，剔除mybatis-spring 升级mybatis-plus依赖]">
+      <option name="closed" value="true" />
+      <created>1720164353815</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720164353815</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DESC:[&#10;1.6 release update&#10;]">
+      <option name="closed" value="true" />
+      <created>1720164625838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720164625838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DESC:[- 优化项目打包结构，剔除mybatis-spring 升级mybatis-plus依赖]" />
+    <MESSAGE value="DESC:[&#10;1.6 release update&#10;]" />
+    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;1.6 release update&#10;]" />
   </component>
 </project>
