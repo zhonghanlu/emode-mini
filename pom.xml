@@ -4,7 +4,7 @@
 
     <groupId>com.mini</groupId>
     <artifactId>emode-mini</artifactId>
-    <version>1.6-SNAPSHOT</version>
+    <version>1.6</version>
     <packaging>pom</packaging>
 
     <description>父工程</description>
@@ -257,7 +257,7 @@
         <connection>scm:git:https://github.com/zhonghanlu/emode-mini.git</connection>
         <developerConnection>scm:git:https://github.com/zhonghanlu/emode-mini.git</developerConnection>
         <url>https://github.com/zhonghanlu/emode-mini</url>
-        <tag>HEAD</tag>
+        <tag>1.6</tag>
     </scm>
 
 
