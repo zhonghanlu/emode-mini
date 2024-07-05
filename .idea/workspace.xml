@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64622403-a8bb-4ed0-af97-774289bfed41" name="Changes" comment="DESC:[&#10;deploy.sh&#10;]" />
+    <list default="true" id="64622403-a8bb-4ed0-af97-774289bfed41" name="Changes" comment="DESC:[&#10;deploy.sh&#10;]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-app/src/main/java/com/mini/web/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysUserBiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-biz/src/main/java/com/mini/biz/auth/SysUserBiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emode-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/UndertowConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-core/src/main/java/com/mini/core/config/UndertowConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-auth/src/main/java/com/mini/auth/service/impl/AuthUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +57,7 @@
     "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:clean].executor": "Run",
     "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:perform].executor": "Run",
     "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:prepare].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:rollback].executor": "Run",
     "Maven.emode-mini [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -64,7 +81,25 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mini.common.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SmCryptoUtil">
+    <configuration name="SmCryptoUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mini.common.utils.SmCryptoUtil" />
+      <module name="emode-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mini.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ModeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="emode-app" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mini.web.ModeApplication" />
@@ -72,6 +107,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SmCryptoUtil" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -92,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720162806385</updated>
-      <workItem from="1720162807582" duration="2932000" />
+      <workItem from="1720162807582" duration="8344000" />
     </task>
     <task id="LOCAL-00001" summary="DESC:[- 优化项目打包结构，剔除mybatis-spring 升级mybatis-plus依赖]">
       <option name="closed" value="true" />
@@ -118,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720166025009</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DESC:[&#10;deploy.sh&#10;]">
+      <option name="closed" value="true" />
+      <created>1720166213312</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720166213312</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

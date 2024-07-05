@@ -33,6 +33,8 @@ public class SysUserBiz {
 
     @Transactional(rollbackFor = Exception.class)
     public void add(AuthUserDTO dto) {
+        // TODO: 密码处理
+        // 采用国密加密sm1-sm4
         authUserService.insert(dto);
     }
 

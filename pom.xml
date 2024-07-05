@@ -44,6 +44,7 @@
         <lock4j.version>2.2.1</lock4j.version>
         <satoken.version>1.37.0</satoken.version>
         <httpclient.version>4.5.14</httpclient.version>
+        <sm.crypto.version>0.3.2</sm.crypto.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -224,6 +225,13 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient.version}</version>
+            </dependency>
+
+            <!-- sm-crypto -->
+            <dependency>
+                <groupId>com.antherd</groupId>
+                <artifactId>sm-crypto</artifactId>
+                <version>${sm.crypto.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

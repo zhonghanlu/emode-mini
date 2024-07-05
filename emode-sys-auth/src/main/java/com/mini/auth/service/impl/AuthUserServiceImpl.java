@@ -1,5 +1,6 @@
 package com.mini.auth.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -9,6 +10,7 @@ import com.mini.auth.mapperstruct.AuthUserStructMapper;
 import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.service.IAuthUserService;
+import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.mybatis.CommonMybatisUtil;
@@ -33,6 +35,10 @@ public class AuthUserServiceImpl implements IAuthUserService {
     @Override
     public void insert(AuthUserDTO dto) {
         AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
+
+        // 校验手机号是否重复
+        checkExistPhone(authUser.getPhone());
+
         authUser.setId(IDGenerator.next());
         int b = authUserMapper.insert(authUser);
         if (b <= 0) {
@@ -87,4 +93,17 @@ public class AuthUserServiceImpl implements IAuthUserService {
         return authUserMapper.selectPage(query, page);
     }
 
+    /**
+     * 校验手机号是否重复
+     */
+    private void checkExistPhone(String phone) {
+        LambdaQueryWrapper<AuthUser> wrapper = Wrappers.lambdaQuery(AuthUser.class);
+        wrapper.eq(AuthUser::getPhone, phone)
+                .eq(AuthUser::getDelFlag, Delete.NO)
+                .last(LastSql.LIMIT_ONE);
+        AuthUser authUser1 = authUserMapper.selectOne(wrapper);
+        if (Objects.nonNull(authUser1)) {
+            throw new EModeServiceException("当前手机号已经注册");
+        }
+    }
 }
