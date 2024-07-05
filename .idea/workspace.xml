@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]" />
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +44,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -53,6 +60,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:clean].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:prepare].executor": "Run",
+    "Maven.emode-mini [org.apache.maven.plugins:maven-release-plugin:3.0.0:rollback].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -157,6 +167,7 @@
       <workItem from="1719793982009" duration="2804000" />
       <workItem from="1719966349322" duration="1035000" />
       <workItem from="1720073800194" duration="12435000" />
+      <workItem from="1720139414775" duration="2200000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -254,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720086083342</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
+      <option name="closed" value="true" />
+      <created>1720161130719</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720161130719</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
