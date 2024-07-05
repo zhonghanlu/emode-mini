@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +156,7 @@
       <workItem from="1719533546836" duration="1746000" />
       <workItem from="1719793982009" duration="2804000" />
       <workItem from="1719966349322" duration="1035000" />
-      <workItem from="1720073800194" duration="11965000" />
+      <workItem from="1720073800194" duration="12435000" />
     </task>
     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
       <option name="closed" value="true" />
@@ -249,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720085952373</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="DESC:[&#10;- 优化权限设计----》 修改为权限表为 子父级别菜单 + 权限&#10;- 待新增地区表、部门表（校区表）、岗位表 【TODO】&#10;- 主管理端可以访问全部权限-部门可访问部门权限 【TODO】&#10;- 优化项目整理文档&#10;- 权限CRUD编写【待测试】&#10;- 权限与用户模块整体测试【待测试】&#10;]">
+      <option name="closed" value="true" />
+      <created>1720086083342</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720086083342</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
