@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.mini</groupId>
         <artifactId>emode-mini</artifactId>
-        <version>1.6-SNAPSHOT</version>
+        <version>1.6</version>
     </parent>
 
     <artifactId>emode-common</artifactId>
