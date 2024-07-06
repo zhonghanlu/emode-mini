@@ -21,24 +21,12 @@ public class SmCryptoUtil {
     /**
      * 公钥
      */
-    private static final String PUBLIC_KEY = "04298364ec840088475eae92a591e01284d1abefcda348b47eb324bb521bb03b0b2a5bc393f6b71dabb8f15c99a0050818b56b23f31743b93df9cf8948f15ddb54";
-
-//    private static final String PUBLIC_KEY = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMHNJvuXF+PF6I0tyaXSRtTVZeMvROeBmgJp7HTHi8EBG2BB3msfJXnUeLYfiq/+Pkzs2Kyo3tbF8gV8iUNMIsMCAwEAAQ==";
+    private static final String PUBLIC_KEY = "045db1994cea43e03385d5a888e27a1edabb3cbe180b7c90e43715a66f2e219a15bfabbdbd138dcb307681af2cb8de84f302b72cbd7b047a0d0dd759d2b1b4995f";
 
     /**
      * 私钥
      */
-    private static final String PRIVATE_KEY = "3037723d47292171677ec8bd7dc9af696c7472bc5f251b2cec07e65fdef22e25";
-
-//    private static final String PRIVATE_KEY =
-//            "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAwc0m+5cX48XojS3J\n" +
-//                    "pdJG1NVl4y9E54GaAmnsdMeLwQEbYEHeax8ledR4th+Kr/4+TOzYrKje1sXyBXyJ\n" +
-//                    "Q0wiwwIDAQABAkEAlMFjqrnPHIZMehErNpywwa0LB9bAjPJtxGyJkxmXrAxUVvOb\n" +
-//                    "VZ7yzu08+q6mFSYWD+jJhpSKmbnnbnmagnFUAQIhAP9Izc/dlCV4MI7VVg4TslOL\n" +
-//                    "CT9Rf5pp5bM6b3QvU+BvAiEAwlg6Ju70zz5iD8gjNpDVyzclli8J6aUy95XLPsmm\n" +
-//                    "ZO0CIB/s9vA8Ab793PS/8VcpV2/jP3DPvGmPPM7BTBb3pEG5AiAFY17RX4SoDkm3\n" +
-//                    "uEvJooBa7v96x3kV4j+kf6Gv7vVPDQIhAOYlRumXPBl5xrl7KN3ZSsDKDgFZI8Fy\n" +
-//                    "7dqVLNnYSoMd";
+    private static final String PRIVATE_KEY = "97b4224eabaf9b12e40347a68efa30c3c39418377aeb61f208075f6a7a6fb5c7";
 
 
     /**
@@ -114,6 +102,7 @@ public class SmCryptoUtil {
 
 
     public static void main(String[] args) {
+
         String encrypt = doSm2Encrypt("123456");
 
         System.out.println(doSm2Decrypt(encrypt));
