@@ -8,6 +8,7 @@ import com.mini.auth.model.query.AuthPermissionQuery;
 import com.mini.auth.model.request.AuthPermissionRequest;
 import com.mini.auth.model.vo.AuthPermissionVo;
 import com.mini.auth.service.IAuthPermissionService;
+import com.mini.common.enums.str.MenuType;
 import com.mini.common.utils.TreeUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author zhl

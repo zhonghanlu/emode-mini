@@ -2,7 +2,7 @@ package com.mini.common.enums.str;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mini.common.mybatis.StringEnum;
+import com.mini.common.enums.converter.StringEnum;
 
 import java.util.Arrays;
 

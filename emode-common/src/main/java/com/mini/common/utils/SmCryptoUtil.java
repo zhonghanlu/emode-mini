@@ -104,7 +104,7 @@ public class SmCryptoUtil {
     public static void main(String[] args) {
 
         String encrypt = doSm2Encrypt("123456");
-
+        System.out.println(encrypt);
         System.out.println(doSm2Decrypt(encrypt));
 
     }

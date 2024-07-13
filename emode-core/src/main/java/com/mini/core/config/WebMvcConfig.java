@@ -1,7 +1,7 @@
 package com.mini.core.config;
 
-import com.mini.common.mybatis.RequestIntEnumConverterFactory;
-import com.mini.common.mybatis.RequestStringEnumConverterFactory;
+import com.mini.common.enums.converter.RequestIntEnumConverterFactory;
+import com.mini.common.enums.converter.RequestStringEnumConverterFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;

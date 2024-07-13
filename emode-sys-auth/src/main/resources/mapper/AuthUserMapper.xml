@@ -5,6 +5,10 @@
     <select id="selectPage" resultType="com.mini.auth.model.dto.AuthUserDTO">
         SELECT *
         FROM auth_user
-        WHERE username LIKE CONCAT('%', #{query.username}, '%')
+        <where>
+            <if test="query.username != null and query.username != ''">
+                username LIKE CONCAT('%', #{query.username}, '%')
+            </if>
+        </where>
     </select>
 </mapper>

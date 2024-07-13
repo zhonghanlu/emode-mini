@@ -36,8 +36,8 @@ public class AuthUserServiceImpl implements IAuthUserService {
     public void insert(AuthUserDTO dto) {
         AuthUser authUser = AuthUserStructMapper.INSTANCE.dto2Entity(dto);
 
-        // 校验手机号是否重复
-        checkExistPhone(authUser.getPhone());
+        // 校验用户名是否重复
+        checkExistUsername(authUser.getUsername());
 
         authUser.setId(IDGenerator.next());
         int b = authUserMapper.insert(authUser);
@@ -94,16 +94,16 @@ public class AuthUserServiceImpl implements IAuthUserService {
     }
 
     /**
-     * 校验手机号是否重复
+     * 校验用户名是否重复
      */
-    private void checkExistPhone(String phone) {
+    private void checkExistUsername(String username) {
         LambdaQueryWrapper<AuthUser> wrapper = Wrappers.lambdaQuery(AuthUser.class);
-        wrapper.eq(AuthUser::getPhone, phone)
+        wrapper.eq(AuthUser::getUsername, username)
                 .eq(AuthUser::getDelFlag, Delete.NO)
                 .last(LastSql.LIMIT_ONE);
         AuthUser authUser1 = authUserMapper.selectOne(wrapper);
         if (Objects.nonNull(authUser1)) {
-            throw new EModeServiceException("当前手机号已经注册");
+            throw new EModeServiceException("当前用户名已经注册");
         }
     }
 }

@@ -14,6 +14,8 @@ import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * @author zhl
  * @create 2024/7/4 16:51
@@ -35,7 +37,7 @@ public class SysPermissionController {
 
     @Operation(summary = "新增权限信息")
     @PostMapping("/add")
-    public Restful<Void> insert(@RequestBody @Validated AuthPermissionRequest request) {
+    public Restful<Void> insert(@RequestBody @Valid AuthPermissionRequest request) {
         sysPermissionBiz.insert(request);
         return Restful.SUCCESS().build();
     }
@@ -49,7 +51,7 @@ public class SysPermissionController {
 
     @Operation(summary = "修改权限信息")
     @PostMapping("/update")
-    public Restful<Void> update(@RequestBody @Validated AuthPermissionEdit edit) {
+    public Restful<Void> update(@RequestBody @Valid AuthPermissionEdit edit) {
         sysPermissionBiz.update(edit);
         return Restful.SUCCESS().build();
     }

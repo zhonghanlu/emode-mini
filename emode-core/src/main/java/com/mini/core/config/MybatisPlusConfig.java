@@ -10,8 +10,8 @@ import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInt
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.enums.str.*;
-import com.mini.common.mybatis.IntEnumTypeHandler;
-import com.mini.common.mybatis.StringEnumTypeHandler;
+import com.mini.common.enums.converter.IntEnumTypeHandler;
+import com.mini.common.enums.converter.StringEnumTypeHandler;
 import com.mini.common.mybatis.handler.InjectionMetaObjectHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 import org.springframework.context.annotation.Bean;

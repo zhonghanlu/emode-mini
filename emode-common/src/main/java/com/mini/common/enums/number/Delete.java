@@ -1,7 +1,7 @@
 package com.mini.common.enums.number;
 
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mini.common.mybatis.IntEnum;
+import com.mini.common.enums.converter.IntEnum;
 
 /**
  * @author zhl

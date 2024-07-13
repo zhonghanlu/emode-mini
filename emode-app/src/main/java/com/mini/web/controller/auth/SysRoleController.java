@@ -14,6 +14,8 @@ import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 
 /**
  * @author zhl
@@ -42,7 +44,7 @@ public class SysRoleController {
 
     @Operation(summary = "新增角色信息")
     @PostMapping("/add")
-    public Restful<Void> insert(@RequestBody @Validated AuthRoleRelationRequest request) {
+    public Restful<Void> insert(@RequestBody @Valid AuthRoleRelationRequest request) {
         sysRoleBiz.insert(request);
         return Restful.SUCCESS().build();
     }
@@ -56,7 +58,7 @@ public class SysRoleController {
 
     @Operation(summary = "修改角色信息")
     @PostMapping("/update")
-    public Restful<Void> update(@RequestBody @Validated AuthRoleRelationEdit edit) {
+    public Restful<Void> update(@RequestBody @Valid AuthRoleRelationEdit edit) {
         sysRoleBiz.update(edit);
         return Restful.SUCCESS().build();
     }

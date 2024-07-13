@@ -13,7 +13,7 @@
     <select id="selectPage" resultType="com.mini.auth.model.dto.AuthPermissionDTO">
         SELECT id,parent_id,menu_name,menu_url,permissions,menu_type,icon,sort
         FROM auth_permission
-        WHERE del_flag = 0
+        WHERE del_flag = 1
         <if test="query.menuName != null and query.menuName != ''">
             AND menu_name LIKE CONCAT('%', #{query.menuName}, '%')
         </if>

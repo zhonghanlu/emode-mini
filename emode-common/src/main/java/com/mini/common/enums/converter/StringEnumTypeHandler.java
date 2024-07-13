@@ -1,4 +1,4 @@
-package com.mini.common.mybatis;
+package com.mini.common.enums.converter;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

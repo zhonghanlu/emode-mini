@@ -1,0 +1,103 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"1d4adc1b-a2c3-4e02-b915-a910db994a8d\" name=\"Changes\" comment=\"DESC:[&#10;fix issue&#10;]\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Emode开发文档.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Emode开发文档.md\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {}\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;git@github.com:zhonghanlu/emod-mini.git&quot;,\n    &quot;accountId&quot;: &quot;e34b1e9a-88de-4ddf-bc76-ca56c6cedcc8&quot;\n  }\n}</component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"customMavenHome\" value=\"D:\\dev\\apache-maven-3.9.6\" />\n        <option name=\"mavenHomeTypeForPersistence\" value=\"CUSTOM\" />\n        <option name=\"userSettingsFile\" value=\"D:\\dev\\apache-maven-3.9.6\\conf\\settings.xml\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\n  <component name=\"ProjectId\" id=\"2h7aSihJWDk4VjsrYSsReasACKA\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,\n    &quot;Spring Boot.ModeApplication.executor&quot;: &quot;Debug&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;D:/idea_project/springboot-mini-common/springboot-mini-common/sql&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"ReactorSettings\">\n    <option name=\"notificationShown\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"D:\\idea_project\\springboot-mini-common\\springboot-mini-common\\sql\" />\n    </key>\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"com.mini.biz.auth\" />\n      <recent name=\"com.mini.auth.model.edit\" />\n      <recent name=\"com.mini.auth.model.request\" />\n      <recent name=\"com.mini.auth.model.dto\" />\n      <recent name=\"com.mini.auth.model.vo\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"ModeApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"emode-app\" />\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.mini.web.ModeApplication\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.mini.web.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Spring Boot.ModeApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79\" />\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task id=\"LOCAL-00001\" summary=\"DESC:[&#10;- 修改数据源为阿里云rds&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1716888487408</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1716888487408</updated>\n    </task>\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"1d4adc1b-a2c3-4e02-b915-a910db994a8d\" name=\"Changes\" comment=\"DESC:[&#10;- 修改数据源为阿里云rds&#10;]\" />\n      <created>1716947570666</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1716947570666</updated>\n      <workItem from=\"1716947571752\" duration=\"43000\" />\n      <workItem from=\"1716947655750\" duration=\"3947000\" />\n      <workItem from=\"1717061993523\" duration=\"1192000\" />\n      <workItem from=\"1717397696267\" duration=\"8464000\" />\n      <workItem from=\"1717460065942\" duration=\"13141000\" />\n      <workItem from=\"1717575616737\" duration=\"627000\" />\n      <workItem from=\"1717635322212\" duration=\"2843000\" />\n      <workItem from=\"1717745146790\" duration=\"1120000\" />\n      <workItem from=\"1718064556268\" duration=\"284000\" />\n      <workItem from=\"1718064850785\" duration=\"4885000\" />\n      <workItem from=\"1718150748103\" duration=\"1701000\" />\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"DESC:[&#10;- 加入鸽鸽banner&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717063318955</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717063318955</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"DESC:[&#10;- 添加RBAC权限模型&#10;- 添加角色关联分页查询&#10;- PC登录功能实现(待处理)&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717406212416</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717406212416</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"DESC:[&#10;- 添加RBAC权限模型&#10;- 添加角色关联分页查询&#10;- PC登录功能实现(待处理)&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717406295132</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717406295132</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717493430586</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717493430586</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"DESC:[&#10;添加接口注释&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717494535226</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717494535226</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"DESC:[&#10;fix issue&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1717745175304</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1717745175304</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"DESC:[&#10;fix issue&#10;]\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1718068527011</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1718068527011</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"DESC:[&#10;- 添加日志搜索   requestId&#10;- 优化全局aopConfig&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;- 修改数据源为阿里云rds&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;- 加入鸽鸽banner&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;- 添加RBAC权限模型&#10;- 添加角色关联分页查询&#10;- PC登录功能实现(待处理)&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;添加接口注释&#10;]\" />\n    <MESSAGE value=\"DESC:[&#10;fix issue&#10;]\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"DESC:[&#10;fix issue&#10;]\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <pin-to-top-manager>\n      <pinned-members>\n        <PinnedItemInfo parentTag=\"com.mini.auth.model.dto.AuthUserDTO\" memberName=\"id\" />\n      </pinned-members>\n    </pin-to-top-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e8b45998ba72040e428c0e2ed96d7a0526752271)
++++ b/.idea/workspace.xml	(date 1719049850933)
+@@ -6,9 +6,6 @@
+   <component name="ChangeListManager">
+     <list default="true" id="1d4adc1b-a2c3-4e02-b915-a910db994a8d" name="Changes" comment="DESC:[&#10;fix issue&#10;]">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Emode开发文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/Emode开发文档.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/mapperstruct/SysFileStructMapper.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emode-sys-file/src/main/java/com/mini/file/service/impl/SysFileServiceImpl.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,11 +32,12 @@
+     &quot;accountId&quot;: &quot;e34b1e9a-88de-4ddf-bc76-ca56c6cedcc8&quot;
+   }
+ }</component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+-        <option name="customMavenHome" value="D:\dev\apache-maven-3.9.6" />
+-        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+         <option name="userSettingsFile" value="D:\dev\apache-maven-3.9.6\conf\settings.xml" />
+       </MavenGeneralSettings>
+     </option>
+@@ -48,7 +46,7 @@
+   &quot;associatedIndex&quot;: 6
+ }</component>
+   <component name="ProjectId" id="2h7aSihJWDk4VjsrYSsReasACKA" />
+-  <component name="ProjectLevelVcsManager">
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="1" id="Add" />
+   </component>
+   <component name="ProjectViewState">
+@@ -61,6 +59,7 @@
+     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+     &quot;Spring Boot.ModeApplication.executor&quot;: &quot;Debug&quot;,
+@@ -116,8 +115,7 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
++        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-995e55e7" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -148,6 +146,12 @@
+       <workItem from="1718064556268" duration="284000" />
+       <workItem from="1718064850785" duration="4885000" />
+       <workItem from="1718150748103" duration="1701000" />
++      <workItem from="1718425226089" duration="9000" />
++      <workItem from="1718425254096" duration="81000" />
++      <workItem from="1718425403874" duration="4000" />
++      <workItem from="1718425588795" duration="42000" />
++      <workItem from="1718425633805" duration="9000" />
++      <workItem from="1719031639265" duration="820000" />
+     </task>
+     <task id="LOCAL-00002" summary="DESC:[&#10;- 加入鸽鸽banner&#10;]">
+       <option name="closed" value="true" />
+@@ -211,6 +215,17 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="DESC:[&#10;- 添加日志搜索   requestId&#10;- 优化全局aopConfig&#10;]" />
+     <MESSAGE value="DESC:[&#10;- 修改数据源为阿里云rds&#10;]" />
+@@ -220,7 +235,8 @@
+     <MESSAGE value="DESC:[&#10;- 修改同意结果集返回&#10;- 角色和权限关联关系CRUD&#10;- 角色和权限关联关系(待测试)&#10;- 用户和角色关联关系CRUD(待编写)&#10;]" />
+     <MESSAGE value="DESC:[&#10;添加接口注释&#10;]" />
+     <MESSAGE value="DESC:[&#10;fix issue&#10;]" />
+-    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;fix issue&#10;]" />
++    <MESSAGE value="DESC:[&#10;添加mac地址&#10;]" />
++    <option name="LAST_COMMIT_MESSAGE" value="DESC:[&#10;添加mac地址&#10;]" />
+   </component>
+   <component name="XDebuggerManager">
+     <pin-to-top-manager>

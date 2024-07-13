@@ -13,6 +13,7 @@ import com.mini.auth.model.vo.AuthRoleRelationVo;
 import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.auth.service.IAuthRoleService;
 import com.mini.auth.service.IAuthUserService;
+import com.mini.common.utils.SmCryptoUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -33,8 +34,10 @@ public class SysUserBiz {
 
     @Transactional(rollbackFor = Exception.class)
     public void add(AuthUserDTO dto) {
-        // TODO: 密码处理
-        // 采用国密加密sm1-sm4
+        // 前端传入 sm2 的加密密文
+        String password = SmCryptoUtil.doSm2Decrypt(dto.getPassword());
+        // 对密码进行解密做 hash
+        dto.setPassword(SmCryptoUtil.doHashValue(password));
         authUserService.insert(dto);
     }
 
