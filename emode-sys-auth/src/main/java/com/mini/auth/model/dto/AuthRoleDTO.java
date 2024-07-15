@@ -5,17 +5,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
-
 /**
- * 系统角色表;
- *
- * @author : zhl
+ * @author zhl
+ * @create 2024/7/15 16:21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AuthRoleRelationDTO {
-
+public class AuthRoleDTO {
     /**
      * 主键id
      */
@@ -32,14 +28,4 @@ public class AuthRoleRelationDTO {
      */
     @Schema(name = "角色码值")
     private String roleCode;
-    /**
-     * 权限idList集合
-     */
-    @Schema(name = "权限idList集合")
-    private List<Long> authPermissionIdList;
-    /**
-     * 权限集合
-     */
-    @Schema(name = "权限集合")
-    private List<AuthPermissionDTO> authPermissionDTOList;
 }

@@ -63,5 +63,4 @@ public class AuthPermissionVo extends TreeNode<AuthPermissionVo> {
      */
     @Schema(title = "排序")
     private int sort;
-
 }

@@ -43,7 +43,7 @@ public class AuthPermissionRequest {
     /**
      * 类型 按钮 菜单
      */
-//    @NotNull(message = "类型不可为空")
+    @NotNull(message = "类型不可为空")
     @Schema(title = "类型：按钮、菜单", description = "类型：按钮、菜单")
     private MenuType menuType;
 

@@ -4,7 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.model.edit.AuthRoleRelationEdit;
 import com.mini.auth.model.query.AuthRoleQuery;
 import com.mini.auth.model.request.AuthRoleRelationRequest;
-import com.mini.auth.model.vo.AuthRoleRelationVo;
+import com.mini.auth.model.vo.AuthRoleDetailVo;
+import com.mini.auth.model.vo.AuthRoleVo;
 import com.mini.biz.auth.SysRoleBiz;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
@@ -27,18 +28,18 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @RequestMapping("/sys-role")
 public class SysRoleController {
-    
+
     private final SysRoleBiz sysRoleBiz;
 
     @Operation(summary = "角色分页")
     @GetMapping("/page")
-    public Restful<IPage<AuthRoleRelationVo>> rolePage(@ParameterObject AuthRoleQuery query) {
+    public Restful<IPage<AuthRoleVo>> rolePage(@ParameterObject AuthRoleQuery query) {
         return Restful.OBJECT(sysRoleBiz.page(query)).build();
     }
 
     @Operation(summary = "角色详情")
     @GetMapping("/detail/{roleId}")
-    public Restful<AuthRoleRelationVo> getRoleById(@PathVariable("roleId") Long id) {
+    public Restful<AuthRoleDetailVo> getRoleById(@PathVariable("roleId") Long id) {
         return Restful.OBJECT(sysRoleBiz.getRoleById(id)).build();
     }
 

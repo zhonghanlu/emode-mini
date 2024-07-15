@@ -35,4 +35,14 @@ public interface IAuthRoleService {
      */
     void update(AuthRoleRelationDTO dto);
 
+    /**
+     * 根据角色名获取信息
+     */
+    boolean checkRoleByRoleName(long id, String roleName);
+
+    /**
+     * 根据角色码值获取信息
+     */
+    boolean checkRoleByRoleCode(long id, String roleCode);
+
 }

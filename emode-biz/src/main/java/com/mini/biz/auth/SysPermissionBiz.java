@@ -8,15 +8,11 @@ import com.mini.auth.model.query.AuthPermissionQuery;
 import com.mini.auth.model.request.AuthPermissionRequest;
 import com.mini.auth.model.vo.AuthPermissionVo;
 import com.mini.auth.service.IAuthPermissionService;
-import com.mini.common.enums.str.MenuType;
 import com.mini.common.utils.TreeUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Objects;
 
 /**
  * @author zhl
@@ -46,15 +42,10 @@ public class SysPermissionBiz {
         authPermissionService.update(dto);
     }
 
-    // TODO: 树形结构待测试
     public IPage<AuthPermissionVo> page(AuthPermissionQuery query) {
         IPage<AuthPermissionDTO> dtoIPage = authPermissionService.pagePermission(query);
         IPage<AuthPermissionVo> voIPage = dtoIPage.convert(AuthPermissionStructMapper.INSTANCE::dto2Vo);
-        List<AuthPermissionVo> records = voIPage.getRecords();
-        List<AuthPermissionVo> build = TreeUtils.build(records);
-        voIPage.setRecords(build);
-        return voIPage;
+        return TreeUtils.buildByPage(voIPage);
     }
-
 
 }

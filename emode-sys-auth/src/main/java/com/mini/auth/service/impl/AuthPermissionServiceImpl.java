@@ -67,12 +67,12 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
             if (CollectionUtils.isNotEmpty(authPermissionList)) {
                 throw new EModeServiceException("当前节点下有子节点，不允许删除");
             }
+        }
 
-            authPermission.setDelFlag(Delete.YES);
-            int b = authPermissionMapper.updateById(authPermission);
-            if (b <= 0) {
-                throw new EModeServiceException("权限删除失败，id：" + id);
-            }
+        authPermission.setDelFlag(Delete.YES);
+        int b = authPermissionMapper.updateById(authPermission);
+        if (b <= 0) {
+            throw new EModeServiceException("权限删除失败，id：" + id);
         }
     }
 

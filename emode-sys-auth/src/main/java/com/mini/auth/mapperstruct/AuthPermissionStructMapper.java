@@ -34,6 +34,11 @@ public interface AuthPermissionStructMapper {
     AuthPermissionVo dto2Vo(AuthPermissionDTO authPermissionDTO);
 
     /**
+     * dtoList2VoList
+     */
+    List<AuthPermissionVo> dtoList2VoList(List<AuthPermissionDTO> authPermissionDTOList);
+
+    /**
      * req2dto
      */
     AuthPermissionDTO req2Dto(AuthPermissionRequest request);

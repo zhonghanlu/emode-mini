@@ -5,15 +5,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.List;
+
 /**
- * 系统角色表;
- *
- * @author : zhl
+ * @author zhl
+ * @create 2024/7/15 15:42
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class AuthRoleRelationVo {
-
+public class AuthRoleDetailVo {
     /**
      * 主键id
      */
@@ -30,5 +30,10 @@ public class AuthRoleRelationVo {
      */
     @Schema(title = "角色码值")
     private String roleCode;
+    /**
+     * 权限集合
+     */
+    @Schema(title = "权限集合")
+    private List<AuthPermissionVo> authPermissionVoList;
 
 }

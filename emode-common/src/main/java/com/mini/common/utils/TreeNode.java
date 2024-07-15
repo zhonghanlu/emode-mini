@@ -21,7 +21,7 @@ public class TreeNode<T> implements Serializable {
     /**
      * 上级ID
      */
-    private Long pid;
+    private Long parentId;
     /**
      * 子节点列表
      */

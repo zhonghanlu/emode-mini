@@ -9,9 +9,7 @@ import com.mini.auth.entity.AuthRolePermission;
 import com.mini.auth.mapper.AuthPermissionMapper;
 import com.mini.auth.mapper.AuthRoleMapper;
 import com.mini.auth.mapper.AuthRolePermissionMapper;
-import com.mini.auth.mapperstruct.AuthPermissionStructMapper;
 import com.mini.auth.mapperstruct.AuthRoleStructMapper;
-import com.mini.auth.model.dto.AuthPermissionDTO;
 import com.mini.auth.model.dto.AuthRoleRelationDTO;
 import com.mini.auth.model.query.AuthRoleQuery;
 import com.mini.auth.service.IAuthRoleService;
@@ -27,7 +25,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * @author zhl
@@ -62,21 +59,14 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         // 校验是否重复
         checkExist(dto);
 
-        // 入库权限集合
-        List<AuthPermissionDTO> permissionList = dto.getAuthPermissionDTOList();
-        List<AuthPermission> authPermissionList = AuthPermissionStructMapper.INSTANCE.dtoList2EntityList(permissionList);
-        authPermissionList.forEach(e -> {
-            e.setDelFlag(Delete.NO);
-            e.setId(IDGenerator.next());
-        });
-
-        if (CollectionUtils.isNotEmpty(authPermissionList)) {
-            int b = authPermissionMapper.batchInsert(authPermissionList);
-
-            if (b <= 0) {
-                throw new EModeServiceException("权限入库失败");
-            }
+        // 校验权限集合
+        List<Long> authPermissionIdList = dto.getAuthPermissionIdList();
+        if (CollectionUtils.isEmpty(authPermissionIdList)) {
+            throw new EModeServiceException("角色至少需要一个权限，请重新选择");
         }
+
+        // 校验权限是否与当前符合
+        checkExistPermission(authPermissionIdList);
 
         // 入库角色
         long roleId = IDGenerator.next();
@@ -90,9 +80,8 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         }
 
         // 入库角色和权限关联信息
-        List<Long> permissionIdList = authPermissionList.stream().map(AuthPermission::getId).collect(Collectors.toList());
         // 根据角色id和权限id构建关联关系list
-        List<AuthRolePermission> authRolePermissionList = getAuthRolePermissionList(permissionIdList, roleId);
+        List<AuthRolePermission> authRolePermissionList = getAuthRolePermissionList(authPermissionIdList, roleId);
 
         int b2 = authRolePermissionMapper.batchInsert(authRolePermissionList);
 
@@ -138,11 +127,15 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
     @Override
     public void update(AuthRoleRelationDTO dto) {
         Long roleId = dto.getId();
+        List<Long> permissionIdList = dto.getAuthPermissionIdList();
 
         AuthRole authRole = getAuthRole(roleId);
         if (Objects.isNull(authRole)) {
             throw new EModeServiceException("修改信息不存在");
         }
+
+        // 校验权限
+        checkExistPermission(permissionIdList);
 
         // 前端传入最新数据，之前数据删除，插入最新数据
         List<AuthRolePermission> authRolePermissionList = getAuthRolePermissionList(roleId);
@@ -155,8 +148,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         }
 
         // 插入关联信息
-        List<Long> authPermissionIdList = dto.getAuthPermissionDTOList().stream().map(AuthPermissionDTO::getId).collect(Collectors.toList());
-        List<AuthRolePermission> authRolePermissionList1 = getAuthRolePermissionList(authPermissionIdList, roleId);
+        List<AuthRolePermission> authRolePermissionList1 = getAuthRolePermissionList(permissionIdList, roleId);
 
         if (CollectionUtils.isNotEmpty(authRolePermissionList1)) {
             int b1 = authRolePermissionMapper.batchInsert(authRolePermissionList1);
@@ -173,6 +165,46 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         if (b2 <= 0) {
             throw new EModeServiceException("角色信息更新失败");
         }
+    }
+
+    @Override
+    public boolean checkRoleByRoleName(long id, String roleName) {
+        LambdaQueryWrapper<AuthRole> wrapper = Wrappers.lambdaQuery(AuthRole.class);
+        wrapper.eq(AuthRole::getRoleName, roleName)
+                .eq(AuthRole::getDelFlag, Delete.NO);
+        long count = authRoleMapper.selectCount(wrapper);
+
+        // 更改完的名字，如果已经存在进行比较，不存在直接过
+        if (count >= 1) {
+            // 原数据
+            AuthRole sourceRole = getAuthRole(id);
+
+            if (Objects.nonNull(sourceRole)) {
+                // true就是为原数据，false就是为新数据
+                return Objects.equals(sourceRole.getRoleName(), roleName);
+            }
+        }
+        return Boolean.TRUE;
+    }
+
+    @Override
+    public boolean checkRoleByRoleCode(long id, String roleCode) {
+        LambdaQueryWrapper<AuthRole> wrapper = Wrappers.lambdaQuery(AuthRole.class);
+        wrapper.eq(AuthRole::getRoleCode, roleCode)
+                .eq(AuthRole::getDelFlag, Delete.NO);
+        long count = authRoleMapper.selectCount(wrapper);
+
+        // 更改完的，如果已经存在进行比较，不存在直接过
+        if (count >= 1) {
+            // 原数据
+            AuthRole sourceRole = getAuthRole(id);
+
+            if (Objects.nonNull(sourceRole)) {
+                // true就是为原数据，false就是为新数据
+                return Objects.equals(sourceRole.getRoleCode(), roleCode);
+            }
+        }
+        return Boolean.TRUE;
     }
 
     /**
@@ -220,14 +252,31 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         String roleCode = dto.getRoleCode();
 
         LambdaQueryWrapper<AuthRole> wrapper = Wrappers.lambdaQuery(AuthRole.class);
-        wrapper.eq(AuthRole::getRoleName, roleName)
-                .and(wrapper1 -> wrapper1.eq(AuthRole::getRoleCode, roleCode))
+        wrapper.and(role -> role.eq(AuthRole::getRoleName, roleName).or().eq(AuthRole::getRoleCode, roleCode))
                 .eq(AuthRole::getDelFlag, Delete.NO)
                 .last(LastSql.LIMIT_ONE);
         AuthRole authRole = authRoleMapper.selectOne(wrapper);
 
-        if (Objects.isNull(authRole)) {
+        if (Objects.nonNull(authRole)) {
             throw new EModeServiceException("角色名或角色编码已存在");
+        }
+    }
+
+    /**
+     * 校验当前权限集合是否完全存在
+     */
+    private void checkExistPermission(List<Long> authPermissionIdList) {
+        if (CollectionUtils.isEmpty(authPermissionIdList)) {
+            return;
+        }
+
+        LambdaQueryWrapper<AuthPermission> wrapper = Wrappers.lambdaQuery(AuthPermission.class);
+        wrapper.in(AuthPermission::getId, authPermissionIdList)
+                .eq(AuthPermission::getDelFlag, Delete.NO);
+        List<AuthPermission> authPermissionList = authPermissionMapper.selectList(wrapper);
+
+        if (authPermissionList.size() != authPermissionIdList.size()) {
+            throw new EModeServiceException("新增角色所属权限不存在");
         }
     }
 }

@@ -4,23 +4,19 @@
 <mapper namespace="com.mini.auth.mapper.AuthRolePermissionMapper">
     <insert id="batchInsert">
         INSERT INTO auth_role_permission (id,role_id, permission_id,del_flag)
-        <foreach collection="authRolePermissionList" item="item" open="(" close=")" separator=",">
-            #{item.id},#{item.roleId},#{item.permissionId},#{item.delFlag}
+        VALUES
+        <foreach collection="authRolePermissionList" item="item" separator=",">
+            (#{item.id},#{item.roleId},#{item.permissionId},#{item.delFlag})
         </foreach>
     </insert>
 
     <update id="batchUpdate">
-        <foreach collection="authRolePermissionList" item="item" separator=";" open="begin" close=";end;">
+        <foreach collection="authRolePermissionList" item="item" separator=";">
             UPDATE auth_role_permission
-            <set>
-                role_id = #{item.roleId},
-            </set>
-            <set>
-                permission_id = #{item.permissionId},
-            </set>
-            <set>
-                del_flag = #{item.delFlag},
-            </set>
+            SET
+            role_id = #{item.roleId},
+            permission_id = #{item.permissionId},
+            del_flag = #{item.delFlag}
             WHERE id = #{item.id}
         </foreach>
     </update>

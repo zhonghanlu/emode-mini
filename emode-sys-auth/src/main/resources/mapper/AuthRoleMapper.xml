@@ -19,26 +19,20 @@
         </collection>
     </resultMap>
 
-    <select id="selectPage" resultType="com.mini.auth.model.dto.AuthRoleRelationDTO" resultMap="roleMap">
-        SELECT ar.id AS arID,
-               ar.role_name,
-               ar.role_code,
-               ap.id AS apID,
-               ap.parent_id,
-               ap.menu_name,
-               ap.menu_url,
-               ap.menu_type,
-               ap.permissions,
-               ap.icon,
-               ap.sort
+    <select id="selectPage" resultType="com.mini.auth.model.dto.AuthRoleRelationDTO">
+        SELECT ar.id,
+        ar.role_name,
+        ar.role_code
         FROM auth_role ar
-                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
-                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
-        WHERE ar.role_name LIKE CONCAT('%', #{query.roleName}, '%')
-          AND ar.role_code LIKE CONCAT('%', #{query.roleCode}, '%')
-          AND ar.del_flag = 1
-          AND arp.del_flag = 1
-          AND ap.del_flag = 1
+        <where>
+            ar.del_flag = 1
+            <if test="query.roleName != null and query.roleName != ''">
+                AND ar.role_name LIKE CONCAT('%', #{query.roleName}, '%')
+            </if>
+            <if test="query.roleCode != null and query.roleCode != ''">
+                AND ar.role_code LIKE CONCAT('%', #{query.roleCode}, '%')
+            </if>
+        </where>
     </select>
 
     <select id="getRoleById" resultMap="roleMap">
