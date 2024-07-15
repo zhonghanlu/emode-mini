@@ -1,102 +1,65 @@
-#!/bin/bash
+#!/bin
 
-# 修改APP_NAME为云效上的应用名
-APP_NAME=application
+## service name
+SERVICE_ROOT=$(dirname $(dirname "$PWD"))
+SERVICE_DIR=$(cd $(dirname $0); pwd)
+SERVICE_NAME=emode-app
+JAR_NAME=$SERVICE_NAME\.jar
+PID=$SERVICE_NAME\.pid
 
+cd $SERVICE_DIR
 
-PROG_NAME=$0
-ACTION=$1
-APP_START_TIMEOUT=20    # 等待应用启动的时间
-APP_PORT=8080          # 应用端口
-HEALTH_CHECK_URL=http://127.0.0.1:${APP_PORT}  # 应用健康检查URL
-APP_HOME=/home/admin/${APP_NAME} # 从package.tgz中解压出来的jar包放到这个目录下
-JAR_NAME=${APP_HOME}/target/${APP_NAME}.jar # jar包的名字
-JAVA_OUT=${APP_HOME}/logs/start.log  #应用的启动日志
-
-# 创建出相关目录
-mkdir -p ${APP_HOME}
-mkdir -p ${APP_HOME}/logs
-usage() {
-    echo "Usage: $PROG_NAME {start|stop|restart}"
-    exit 2
+start(){
+          nohup java -Xms256m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=4096m -jar $JAR_NAME > $SERVICE_NAME.log 2>&1 &
+          echo $! > $SERVICE_DIR/$PID
+          echo "=== start $SERVICE_NAME"
 }
 
-health_check() {
-    exptime=0
-    echo "checking ${HEALTH_CHECK_URL}"
-    while true
-        do
-            status_code=`/usr/bin/curl -L -o /dev/null --connect-timeout 5 -s -w %{http_code}  ${HEALTH_CHECK_URL}`
-            if [ "$?" != "0" ]; then
-               echo -n -e "\rapplication not started"
-            else
-                echo "code is $status_code"
-                if [ "$status_code" == "200" ];then
-                    break
-                fi
-            fi
-            sleep 1
-            ((exptime++))
+stop(){
+          kill `cat $SERVICE_DIR/$PID`
+          rm -rf $SERVICE_DIR/$PID
+          echo "=== stop $SERVICE_NAME"
 
-            echo -e "\rWait app to pass health check: $exptime..."
-
-            if [ $exptime -gt ${APP_START_TIMEOUT} ]; then
-                echo 'app start failed'
-               exit 1
-            fi
-        done
-    echo "check ${HEALTH_CHECK_URL} success"
-}
-start_application() {
-    echo "starting java process"
-    nohup java -jar ${JAR_NAME} > ${JAVA_OUT} 2>&1 &
-    echo "started java process"
+          sleep 5
+          P_ID=`ps -ef | grep "$SERVICE_NAME" | grep -v grep | grep -v "$0" | awk '{print $2}'`
+          if [ "$P_ID" == "" ]; then
+              echo "=== $SERVICE_NAME process not exists or stop success"
+          else
+              echo "=== $SERVICE_NAME process pid is:$P_ID"
+              echo "=== begin kill $SERVICE_NAME process, pid is:$P_ID"
+              kill -9 $P_ID
+          fi
 }
 
-stop_application() {
-   checkjavapid=`ps -ef | grep java | grep ${APP_NAME} | grep -v grep |grep -v 'deploy.sh'| awk '{print$2}'`
+case "$1" in
 
-   if [[ ! $checkjavapid ]];then
-      echo -e "\rno java process"
-      return
-   fi
-
-   echo "stop java process"
-   times=60
-   for e in $(seq 60)
-   do
-        sleep 1
-        COSTTIME=$(($times - $e ))
-        checkjavapid=`ps -ef | grep java | grep ${APP_NAME} | grep -v grep |grep -v 'deploy.sh'| awk '{print$2}'`
-        if [[ $checkjavapid ]];then
-            kill -9 $checkjavapid
-            echo -e  "\r        -- stopping java lasts `expr $COSTTIME` seconds."
-        else
-            echo -e "\rjava process has exited"
-            break;
-        fi
-   done
-   echo ""
-}
-start() {
-    start_application
-    health_check
-}
-stop() {
-    stop_application
-}
-case "$ACTION" in
     start)
         start
-    ;;
+        ;;
+
     stop)
         stop
-    ;;
+        ;;
+
     restart)
         stop
+        sleep 2
         start
-    ;;
+        echo "=== restart $SERVICE_NAME"
+        ;;
+
     *)
-        usage
-    ;;
+        echo "-------------------------------------"
+        echo ""
+        echo "项目地址： ${SERVICE_DIR}/${JAR_NAME}"
+        echo ""
+        echo "你可以使用如下参数进行操作"
+        echo "start  -启动当前项目"
+        echo "stop  -停止当前项目"
+        echo "restart -重启当前项目"
+        echo ""
+        echo "-------------------------------------"
+        ;;
+
 esac
+exit 0
