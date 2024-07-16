@@ -8,25 +8,27 @@ import java.util.Arrays;
 
 /**
  * @author zhl
- * @create 2024/5/16 10:57
+ * @create 2024/7/16 17:26
  */
-public enum Device implements StringEnum {
+public enum UserType implements StringEnum {
 
-    // pc
+    // 小程序
+    MINI("mini"),
+
+    // PC
     PC("pc"),
-    // mini_app
-    MINI_APP("mini_app"),
-    // other
-    OTHER("other");
+
+    // MANAGER
+    MANAGER("manager");
 
     private String value;
 
-    Device(String value) {
+    UserType(String value) {
         this.value = value;
     }
 
     @JsonCreator
-    public static Device get(String val) {
+    public static UserType get(String val) {
         return Arrays.stream(values()).filter(e -> e.getStringValue().equalsIgnoreCase(val)).findFirst().orElse(null);
     }
 
