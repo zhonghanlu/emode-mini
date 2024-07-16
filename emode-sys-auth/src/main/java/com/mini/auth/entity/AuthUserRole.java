@@ -46,7 +46,7 @@ public class AuthUserRole {
      * 用户名
      */
     @Schema(name = "用户名")
-    private String userName;
+    private String username;
     /**
      * 删除标识1未删除 -1 已删除
      */

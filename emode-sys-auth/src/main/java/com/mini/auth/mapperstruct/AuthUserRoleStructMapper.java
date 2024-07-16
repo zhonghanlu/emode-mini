@@ -1,5 +1,7 @@
 package com.mini.auth.mapperstruct;
 
+import com.mini.auth.model.dto.AuthUserRoleDTO;
+import com.mini.auth.model.request.AuthUserRoleRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -12,4 +14,8 @@ public interface AuthUserRoleStructMapper {
 
     AuthUserRoleStructMapper INSTANCE = Mappers.getMapper(AuthUserRoleStructMapper.class);
 
+    /**
+     * req2dto
+     */
+    AuthUserRoleDTO req2Dto(AuthUserRoleRequest request);
 }

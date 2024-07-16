@@ -22,15 +22,6 @@ class AuthTest {
 
     @Test
     void test() {
-        AuthUserDTO authUserDTO = new AuthUserDTO();
-        authUserDTO.setId(1612858641088544L);
-        authUserDTO.setUsername("aaa");
-        authUserDTO.setPassword("aaa");
-        authUserDTO.setNickname("aaa");
-        authUserDTO.setAvatar(1L);
-        authUserDTO.setPhone("15312665707");
-        sysUserBiz.add(authUserDTO);
-        log.info("插入成功");
     }
 
 }

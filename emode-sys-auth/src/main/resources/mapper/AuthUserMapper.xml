@@ -2,6 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mini.auth.mapper.AuthUserMapper">
+
+    <resultMap id="rolePermissionMap" type="com.mini.auth.model.dto.AuthUserDetailDTO">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="avatarUrl" property="avatarUrl"/>
+
+        <collection property="authRoleDTOList" ofType="com.mini.auth.model.dto.AuthRoleDTO">
+            <id column="roleId" property="id"/>
+            <result column="role_name" property="roleName"/>
+            <result column="role_code" property="roleCode"/>
+        </collection>
+
+        <collection property="authPermissionDTOList" ofType="com.mini.auth.model.dto.AuthPermissionDTO">
+            <id column="permissionId" property="id"/>
+            <result column="parent_id" property="parentId"/>
+            <result column="menu_name" property="menuName"/>
+            <result column="menu_url" property="menuUrl"/>
+            <result column="permissions" property="permissions"/>
+            <result column="menu_type" property="menuType"/>
+            <result column="icon" property="icon"/>
+            <result column="sort" property="sort"/>
+        </collection>
+
+    </resultMap>
+
     <select id="selectPage" resultType="com.mini.auth.model.dto.AuthUserDTO">
         SELECT *
         FROM auth_user
@@ -10,5 +36,89 @@
                 username LIKE CONCAT('%', #{query.username}, '%')
             </if>
         </where>
+    </select>
+
+    <select id="getUserRolePermissionById" resultMap="rolePermissionMap">
+        SELECT au.id,
+               au.username,
+               au.nickname,
+               sf.file_url AS avatarUrl,
+               ar.id       AS roleId,
+               ar.role_name,
+               ar.role_code,
+               ap.id       AS permissionId,
+               ap.parent_id,
+               ap.menu_name,
+               ap.menu_url,
+               ap.permissions,
+               ap.menu_type,
+               ap.icon,
+               ap.sort
+        FROM auth_user au
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
+                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
+                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
+                 LEFT JOIN sys_file sf ON au.avatar = sf.id
+        WHERE au.id = ${id}
+          AND aur.del_flag = 1
+          AND ar.del_flag = 1
+          AND arp.del_flag = 1
+          AND ap.del_flag = 1
+    </select>
+
+    <select id="getUserRoleById" resultMap="rolePermissionMap">
+        SELECT au.id,
+               au.username,
+               au.nickname,
+               sf.file_url AS avatarUrl,
+               ar.id       AS roleId,
+               ar.role_name,
+               ar.role_code
+        FROM auth_user au
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
+                 LEFT JOIN sys_file sf ON au.avatar = sf.id
+        WHERE au.id = ${id}
+          AND aur.del_flag = 1
+          AND ar.del_flag = 1
+    </select>
+
+    <select id="getUserPermissionById" resultMap="rolePermissionMap">
+        SELECT au.id,
+               au.username,
+               au.nickname,
+               sf.file_url AS avatarUrl,
+               ap.id       AS permissionId,
+               ap.parent_id,
+               ap.menu_name,
+               ap.menu_url,
+               ap.permissions,
+               ap.menu_type,
+               ap.icon,
+               ap.sort
+        FROM auth_user au
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
+                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
+                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
+                 LEFT JOIN sys_file sf ON au.avatar = sf.id
+        WHERE au.id = ${id}
+          AND aur.del_flag = 1
+          AND ar.del_flag = 1
+          AND arp.del_flag = 1
+          AND ap.del_flag = 1
+    </select>
+
+    <select id="getUserById" resultMap="rolePermissionMap">
+        SELECT au.id,
+               au.username,
+               au.nickname,
+               sf.file_url AS avatarUrl
+        FROM auth_user au
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
+                 LEFT JOIN sys_file sf ON au.avatar = sf.id
+        WHERE au.id = ${id}
+          AND aur.del_flag = 1
     </select>
 </mapper>

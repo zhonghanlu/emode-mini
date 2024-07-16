@@ -25,23 +25,35 @@ public class SysPermissionBiz {
 
     private final IAuthPermissionService authPermissionService;
 
+    /**
+     * 新增权限
+     */
     @Transactional(rollbackFor = Exception.class)
     public void insert(AuthPermissionRequest request) {
         AuthPermissionDTO dto = AuthPermissionStructMapper.INSTANCE.req2Dto(request);
         authPermissionService.insert(dto);
     }
 
+    /**
+     * 删除权限
+     */
     @Transactional(rollbackFor = Exception.class)
     public void del(Long id) {
         authPermissionService.del(id);
     }
 
+    /**
+     * 更新权限
+     */
     @Transactional(rollbackFor = Exception.class)
     public void update(AuthPermissionEdit edit) {
         AuthPermissionDTO dto = AuthPermissionStructMapper.INSTANCE.edit2Dto(edit);
         authPermissionService.update(dto);
     }
 
+    /**
+     * 权限分页
+     */
     public IPage<AuthPermissionVo> page(AuthPermissionQuery query) {
         IPage<AuthPermissionDTO> dtoIPage = authPermissionService.pagePermission(query);
         IPage<AuthPermissionVo> voIPage = dtoIPage.convert(AuthPermissionStructMapper.INSTANCE::dto2Vo);

@@ -6,12 +6,16 @@ import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.model.request.AuthUserRequest;
+import com.mini.auth.model.request.AuthUserRoleRequest;
+import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.biz.auth.SysUserBiz;
+import com.mini.common.enums.str.UserQueryType;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,16 +38,14 @@ public class SysUserController {
     @Operation(summary = "用户新增")
     @PostMapping("/add")
     public Restful<Void> add(@RequestBody @Valid AuthUserRequest request) {
-        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.request2Dto(request);
-        sysUserBiz.add(authUserDTO);
+        sysUserBiz.add(request);
         return Restful.SUCCESS().build();
     }
 
     @Operation(summary = "用户修改")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Valid AuthUserEdit edit) {
-        AuthUserDTO authUserDTO = AuthUserStructMapper.INSTANCE.edit2Dto(edit);
-        sysUserBiz.update(authUserDTO);
+        sysUserBiz.update(edit);
         return Restful.SUCCESS().build();
     }
 
@@ -51,6 +53,20 @@ public class SysUserController {
     @GetMapping("/page")
     public Restful<IPage<AuthUserVo>> page(@ParameterObject AuthUserQuery query) {
         return Restful.OBJECT(sysUserBiz.page(query)).build();
+    }
+
+    @Operation(summary = "用户角色关联")
+    @PostMapping("/user-role-relation")
+    public Restful<Void> relation(@RequestBody @Valid AuthUserRoleRequest request) {
+        sysUserBiz.relationUserRole(request);
+        return Restful.SUCCESS().build();
+    }
+
+    @Operation(summary = "用户详情")
+    @GetMapping("/user-detail-type/{id}/{type}")
+    public Restful<AuthUserDetailVo> getUserRolePermissionById(@PathVariable("id") long id,
+                                                               @PathVariable("type") UserQueryType type) {
+        return Restful.OBJECT(sysUserBiz.getUserRolePermissionById(id, type)).build();
     }
 
 }
