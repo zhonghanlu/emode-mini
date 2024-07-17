@@ -147,3 +147,60 @@ BEGIN;
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+
+
+
+
+
+
+-- ----------------------------
+-- Table structure for t_message_content
+-- ----------------------------
+DROP TABLE IF EXISTS `t_message_content`;
+CREATE TABLE `t_message_content` (
+  `c_id` int(11) NOT NULL  COMMENT '消息的id',
+  `send_id` int(11) DEFAULT NULL COMMENT '消息发送者的id',
+  `content` varchar(255) DEFAULT NULL COMMENT '消息的内容',
+  `type` int(11) DEFAULT NULL COMMENT '消息的类型',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送的时间',
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='站内信消息内容表';
+-- ----------------------------
+-- Records of t_message_content
+-- ----------------------------
+BEGIN;
+COMMIT;
+
+
+
+
+-- ----------------------------
+-- Table structure for sys_file
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_file`;
+CREATE TABLE `t_message_record` (
+  `r_id` int(11) NOT NULL  COMMENT '阅读记录的id',
+  `rec_id` int(11) DEFAULT NULL COMMENT '消息接收者的id',
+  `c_id` int(11) DEFAULT NULL COMMENT '对应消息的id',
+  `status` int(11) DEFAULT '0' COMMENT '阅读记录的状态',
+  PRIMARY KEY (`r_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='站内信记录表';
+
+
+-- ----------------------------
+-- Records of t_message_record
+-- ----------------------------
+BEGIN;
+COMMIT;
+
+
+
+
+
+
+
+
+
+
