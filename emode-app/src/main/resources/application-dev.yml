@@ -195,12 +195,10 @@ sa-token:
 security:
   # 排除路径
   excludes:
+    # TODO:删除
     - /**
     # 登录接口
     - /login
-    # 文件上传 TODO:删除 未登录不允许上传
-    - /file/upload-single-mf-business
-    - /file/upload-mf
     # knife4j接口文档
     - /doc.html
     - /druid/**
@@ -222,6 +220,22 @@ xss:
   excludes: /system/notice
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+
+# spring-doc-openapi项目配置
+spring-doc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: '权限模块'
+      paths-to-match: '/**'
+      packages-to-scan: com.mini.web.controller.auth
+    - group: '文件模块'
+      paths-to-match: '/**'
+      packages-to-scan: com.mini.web.controller.file
 
 # knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
 knife4j:
