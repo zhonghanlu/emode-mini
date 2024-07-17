@@ -8,6 +8,7 @@
         <result column="username" property="username"/>
         <result column="nickname" property="nickname"/>
         <result column="avatarUrl" property="avatarUrl"/>
+        <result column="user_type" property="userType"/>
 
         <collection property="authRoleDTOList" ofType="com.mini.auth.model.dto.AuthRoleDTO">
             <id column="roleId" property="id"/>
@@ -119,6 +120,26 @@
                  LEFT JOIN auth_user_role aur ON au.id = aur.user_id
                  LEFT JOIN sys_file sf ON au.avatar = sf.id
         WHERE au.id = ${id}
+          AND aur.del_flag = 1
+    </select>
+
+    <select id="getUserPermissionByIdForSet" resultType="java.lang.String">
+        SELECT ap.permissions
+        FROM auth_user_role aur
+                 LEFT JOIN auth_role_permission arp ON aur.role_id = arp.role_id
+                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
+        WHERE aur.user_id = ${id}
+          AND aur.del_flag = 1
+          AND arp.del_flag = 1
+          AND ap.del_flag = 1
+    </select>
+
+    <select id="getUserRoleByIdForSet" resultType="java.lang.String">
+        SELECT ar.role_code
+        FROM auth_user_role aur
+                 LEFT JOIN auth_role ar ON ar.id = aur.role_id
+        WHERE aur.user_id = ${id}
+          AND ar.del_flag = 1
           AND aur.del_flag = 1
     </select>
 </mapper>

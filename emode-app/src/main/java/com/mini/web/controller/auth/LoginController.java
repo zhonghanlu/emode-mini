@@ -1,10 +1,19 @@
 package com.mini.web.controller.auth;
 
+import com.mini.auth.model.request.AuthLoginRequest;
+import com.mini.biz.auth.SysUserBiz;
+import com.mini.common.model.LoginModel;
+import com.mini.common.utils.webmvc.Restful;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 /**
  * @author zhl
@@ -16,4 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/sys-auth")
 public class LoginController {
+
+    private final SysUserBiz sysUserBiz;
+
+    @Operation(summary = "账户密码登录")
+    @PostMapping("/login")
+    public Restful<LoginModel> login(@RequestBody @Valid AuthLoginRequest request) {
+        return Restful.OBJECT(sysUserBiz.login(request)).build();
+    }
+
 }

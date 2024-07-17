@@ -1,5 +1,6 @@
 package com.mini.auth.model.query;
 
+import com.mini.common.enums.str.UserType;
 import com.mini.common.utils.webmvc.PageQuery;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.Data;
@@ -19,4 +20,9 @@ public class AuthUserQuery extends PageQuery {
     @Parameter(description = "用户名")
     private String username;
 
+    /**
+     * 用户类型
+     */
+    @Parameter(description = "用户类型")
+    private UserType userType;
 }

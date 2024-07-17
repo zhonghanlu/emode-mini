@@ -1,9 +1,11 @@
 package com.mini.auth.model.request;
 
+import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -42,4 +44,10 @@ public class AuthUserRequest {
     @Schema(title = "手机号")
     @NotEmpty(message = "手机号不可为空")
     private String phone;
+    /**
+     * 用户类型
+     */
+    @NotBlank(message = "用户类型不可为空")
+    @Schema(title = "用户类型小程序:mini,管理端：manager，电脑端：PC")
+    private UserType userType;
 }

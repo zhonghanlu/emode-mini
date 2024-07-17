@@ -5,6 +5,9 @@ import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.dto.AuthUserDetailDTO;
 import com.mini.auth.model.dto.AuthUserRoleDTO;
 import com.mini.auth.model.query.AuthUserQuery;
+import com.mini.common.enums.str.UserType;
+
+import java.util.Set;
 
 /**
  * @author zhl
@@ -56,4 +59,19 @@ public interface IAuthUserService {
      * 根据用户id查询用户详细信息
      */
     AuthUserDetailDTO getUserById(long id);
+
+    /**
+     * 根据用户名和用户类型查询用户
+     */
+    AuthUserDTO getUserByUsernameAndUserType(String username, UserType userType);
+
+    /**
+     * 根据id查询用户所有权限
+     */
+    Set<String> getUserPermissionByIdForSet(long id);
+
+    /**
+     * 根据id查询用户所有角色
+     */
+    Set<String> getUserRoleByIdForSet(long id);
 }

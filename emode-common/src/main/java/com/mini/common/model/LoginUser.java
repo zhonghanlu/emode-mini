@@ -1,7 +1,10 @@
 package com.mini.common.model;
 
+import com.mini.common.enums.str.UserType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.Set;
 
 /**
  * @author zhl
@@ -21,5 +24,20 @@ public class LoginUser {
      * 用户名
      */
     private String username;
+
+    /**
+     * 用户名
+     */
+    private UserType userType;
+
+    /**
+     * 菜单权限
+     */
+    private Set<String> menuPermission;
+
+    /**
+     * 角色权限
+     */
+    private Set<String> rolePermission;
 
 }

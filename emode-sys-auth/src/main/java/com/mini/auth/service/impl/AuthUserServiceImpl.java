@@ -18,6 +18,7 @@ import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.service.IAuthUserService;
 import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
+import com.mini.common.enums.str.UserType;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.mybatis.CommonMybatisUtil;
 import com.mini.common.utils.webmvc.IDGenerator;
@@ -26,9 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author zhl
@@ -168,6 +167,27 @@ public class AuthUserServiceImpl implements IAuthUserService {
     public AuthUserDetailDTO getUserById(long id) {
         checkUserExist(id);
         return authUserMapper.getUserById(id);
+    }
+
+    @Override
+    public AuthUserDTO getUserByUsernameAndUserType(String username, UserType userType) {
+        LambdaQueryWrapper<AuthUser> wrapper = Wrappers.lambdaQuery(AuthUser.class);
+        wrapper.eq(AuthUser::getUsername, username)
+                .eq(AuthUser::getUserType, userType)
+                .eq(AuthUser::getDelFlag, Delete.NO)
+                .last(LastSql.LIMIT_ONE);
+        AuthUser authUser = authUserMapper.selectOne(wrapper);
+        return AuthUserStructMapper.INSTANCE.entity2Dto(authUser);
+    }
+
+    @Override
+    public Set<String> getUserPermissionByIdForSet(long id) {
+        return authUserMapper.getUserPermissionByIdForSet(id);
+    }
+
+    @Override
+    public Set<String> getUserRoleByIdForSet(long id) {
+        return authUserMapper.getUserRoleByIdForSet(id);
     }
 
     /**

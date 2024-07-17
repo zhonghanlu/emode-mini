@@ -1,5 +1,6 @@
 package com.mini.auth.model.dto;
 
+import com.mini.common.enums.str.UserType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -29,6 +30,10 @@ public class AuthUserDetailDTO {
      * 头像id
      */
     private String avatarUrl;
+    /**
+     * 用户类型
+     */
+    private UserType userType;
     /**
      * 角色集合
      */

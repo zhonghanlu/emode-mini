@@ -207,7 +207,7 @@ security:
 
 # 验证码配置
 captcha:
-  enabled: true
+  enabled: false
   weight: 130
   height: 48
   len: 4

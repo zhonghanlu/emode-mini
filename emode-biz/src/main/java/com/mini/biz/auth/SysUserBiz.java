@@ -1,30 +1,40 @@
 package com.mini.biz.auth;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.mapperstruct.AuthUserRoleStructMapper;
 import com.mini.auth.mapperstruct.AuthUserStructMapper;
-import com.mini.auth.model.dto.AuthUserDTO;
-import com.mini.auth.model.dto.AuthUserDetailDTO;
-import com.mini.auth.model.dto.AuthUserRoleDTO;
+import com.mini.auth.model.dto.*;
 import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.query.AuthUserQuery;
+import com.mini.auth.model.request.AuthLoginRequest;
 import com.mini.auth.model.request.AuthUserRequest;
 import com.mini.auth.model.request.AuthUserRoleRequest;
 import com.mini.auth.model.vo.AuthPermissionVo;
 import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
-import com.mini.auth.service.IAuthRoleService;
 import com.mini.auth.service.IAuthUserService;
+import com.mini.common.constant.RedisConstant;
 import com.mini.common.enums.str.UserQueryType;
+import com.mini.common.enums.str.UserType;
+import com.mini.common.exception.service.EModeServiceException;
+import com.mini.common.model.LoginModel;
+import com.mini.common.model.LoginUser;
+import com.mini.common.utils.LoginUtils;
 import com.mini.common.utils.SmCryptoUtil;
 import com.mini.common.utils.TreeUtils;
+import com.mini.common.utils.redis.RedisUtils;
+import com.mini.core.config.properties.CaptchaProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author zhl
@@ -36,6 +46,8 @@ import java.util.List;
 public class SysUserBiz {
 
     private final IAuthUserService authUserService;
+
+    private final CaptchaProperties captchaProperties;
 
     /**
      * 新增用户
@@ -103,5 +115,62 @@ public class SysUserBiz {
             authUserDetailVo.setAuthPermissionVoList(TreeUtils.build(authPermissionVoList));
         }
         return authUserDetailVo;
+    }
+
+    /**
+     * 登录,三端登录汇总
+     */
+    public LoginModel login(AuthLoginRequest request) {
+
+        if (UserType.MINI.equals(request.getUserType())) {
+            throw new EModeServiceException("请键入PC端类型");
+        }
+
+        // 校验验证码
+        if (captchaProperties.isEnabled()) {
+            checkCaptcha(request.getCode(), request.getUuid());
+        }
+
+        // 根据用户类型查询账户是否存在
+        AuthUserDTO authUserDTO = authUserService.getUserByUsernameAndUserType(request.getUsername(), request.getUserType());
+
+        if (Objects.isNull(authUserDTO)) {
+            throw new EModeServiceException("当前登录用户不存在本系统，请先前往注册");
+        }
+
+        // 校验账户密码  sm2解密之后再进行hash，一致则为相同
+        if (ObjectUtils.notEqual(SmCryptoUtil.doHashValue(SmCryptoUtil.doSm2Decrypt(request.getPassword())), authUserDTO.getPassword())) {
+            throw new EModeServiceException("密码错误");
+        }
+
+        // 执行登录逻辑
+        LoginUser loginUser = new LoginUser();
+        loginUser.setUserId(authUserDTO.getId());
+        loginUser.setUsername(authUserDTO.getUsername());
+        loginUser.setUserType(request.getUserType());
+        loginUser.setMenuPermission(authUserService.getUserPermissionByIdForSet(authUserDTO.getId()));
+        loginUser.setRolePermission(authUserService.getUserRoleByIdForSet(authUserDTO.getId()));
+        LoginUtils.loginByDevice(loginUser, request.getUserType(), request.getDeviceBy());
+
+        // 记录登录日志
+
+        // 封装数据返回
+        return LoginModel.builder().token(StpUtil.getTokenValue()).build();
+    }
+
+    /**
+     * 校验验证码
+     */
+    private void checkCaptcha(String code, String uuid) {
+        String redisKey = RedisConstant.CAPTCHA_CODE_KEY + uuid;
+        String cacheCode = String.valueOf(
+                Objects.nonNull(RedisUtils.getCacheObject(redisKey)) ? RedisUtils.getCacheObject(redisKey) : ""
+        );
+        if (StringUtils.isBlank(cacheCode)) {
+            throw new EModeServiceException("验证码已失效");
+        }
+        if (ObjectUtils.notEqual(cacheCode, code)) {
+            throw new EModeServiceException("验证码有误");
+        }
     }
 }

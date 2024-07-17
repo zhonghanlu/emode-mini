@@ -9,6 +9,8 @@ import com.mini.auth.model.query.AuthUserQuery;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Set;
+
 /**
  * ;(auth_user)表数据库访问层
  *
@@ -41,4 +43,14 @@ public interface AuthUserMapper extends BaseMapper<AuthUser> {
      * 根据id获取角色信息
      */
     AuthUserDetailDTO getUserById(@Param("id") long id);
+
+    /**
+     * 根据id查询用户所有权限
+     */
+    Set<String> getUserPermissionByIdForSet(long id);
+
+    /**
+     * 根据id查询用户所有角色
+     */
+    Set<String> getUserRoleByIdForSet(long id);
 }

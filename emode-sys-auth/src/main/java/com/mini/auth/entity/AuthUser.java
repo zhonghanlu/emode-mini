@@ -2,6 +2,7 @@ package com.mini.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.mini.common.enums.str.UserType;
 import com.mini.common.utils.webmvc.CommonEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -50,4 +51,9 @@ public class AuthUser extends CommonEntity {
      */
     @Schema(name = "手机号")
     private String phone;
+    /**
+     * 用户类型
+     */
+    @Schema(name = "用户类型")
+    private UserType userType;
 }

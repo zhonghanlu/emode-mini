@@ -46,4 +46,9 @@ public interface AuthUserStructMapper {
     @Mapping(source = "authRoleDTOList", target = "authRoleVoList")
     @Mapping(source = "authPermissionDTOList", target = "authPermissionVoList")
     AuthUserDetailVo dtoDetail2Vo(AuthUserDetailDTO authUserDetailDTO);
+
+    /**
+     * entity2dto
+     */
+    AuthUserDTO entity2Dto(AuthUser authUser);
 }

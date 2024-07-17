@@ -1,5 +1,6 @@
 package com.mini.auth.model.vo;
 
+import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -34,6 +35,11 @@ public class AuthUserDetailVo {
      */
     @Schema(title = "头像url")
     private String avatarUrl;
+    /**
+     * 用户类型
+     */
+    @Schema(name = "用户类型")
+    private UserType userType;
     /**
      * 角色集合
      */
