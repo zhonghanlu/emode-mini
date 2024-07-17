@@ -184,14 +184,18 @@ sa-token:
   # 是否输出操作日志
   is-log: true
 
+# 自定义 token续期 秒
+token-renew:
+  pc: 7200
+  mini: 86400
+
+
 # security配置
 security:
   # 排除路径
   excludes:
-    # TODO:删除
-    - /**
     # 登录接口
-    - /login
+    - /sys-auth/login
     # knife4j接口文档
     - /doc.html
     - /druid/**

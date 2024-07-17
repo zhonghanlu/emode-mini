@@ -1,8 +1,6 @@
 package com.mini.web.controller.auth;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.mini.auth.mapperstruct.AuthUserStructMapper;
-import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.model.request.AuthUserRequest;
@@ -15,7 +13,6 @@ import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.annotations.Param;
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -68,6 +65,13 @@ public class SysUserController {
                                                                @PathVariable("type") UserQueryType type) {
         return Restful.OBJECT(sysUserBiz.getUserRolePermissionById(id, type)).build();
     }
+
+    @Operation(summary = "获取用户基本信息")
+    @GetMapping("/user-detail-base")
+    public Restful<AuthUserDetailVo> getUserInfoBase() {
+        return Restful.OBJECT(sysUserBiz.getUserInfoBase()).build();
+    }
+
 
 }
 

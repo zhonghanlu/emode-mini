@@ -1,6 +1,9 @@
 package com.mini.core.satoken;
 
 import cn.dev33.satoken.stp.StpInterface;
+import com.mini.common.enums.str.UserType;
+import com.mini.common.model.LoginUser;
+import com.mini.common.utils.LoginUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +19,15 @@ public class SaPermissionImpl implements StpInterface {
      */
     @Override
     public List<String> getPermissionList(Object loginId, String loginType) {
-//        LoginUser loginUser = LoginHelper.getLoginUser();
-//        UserType userType = UserType.getUserType(loginUser.getUserType());
-//        if (userType == UserType.SYS_USER) {
-//            return new ArrayList<>(loginUser.getMenuPermission());
-//        } else if (userType == UserType.APP_USER) {
-//            // 其他端 自行根据业务编写
-//        }
+        LoginUser loginUser = LoginUtils.getLoginUser();
+        UserType userType = UserType.get(loginUser.getUserType().getStringValue());
+        if (userType == UserType.MANAGER) {
+            return new ArrayList<>(loginUser.getMenuPermission());
+        } else if (userType == UserType.PC) {
+            // TODO pc客户端的权限
+        } else if (userType == UserType.MINI) {
+            // TODO 小程序端权限
+        }
         return new ArrayList<>();
     }
 
@@ -31,13 +36,15 @@ public class SaPermissionImpl implements StpInterface {
      */
     @Override
     public List<String> getRoleList(Object loginId, String loginType) {
-//        LoginUser loginUser = LoginHelper.getLoginUser();
-//        UserType userType = UserType.getUserType(loginUser.getUserType());
-//        if (userType == UserType.SYS_USER) {
-//            return new ArrayList<>(loginUser.getRolePermission());
-//        } else if (userType == UserType.APP_USER) {
-//            // 其他端 自行根据业务编写
-//        }
+        LoginUser loginUser = LoginUtils.getLoginUser();
+        UserType userType = UserType.get(loginUser.getUserType().getStringValue());
+        if (userType == UserType.MANAGER) {
+            return new ArrayList<>(loginUser.getRolePermission());
+        } else if (userType == UserType.PC) {
+            // TODO pc 端角色
+        } else if (userType == UserType.MINI) {
+            // TODO  小程序端角色
+        }
         return new ArrayList<>();
     }
 }

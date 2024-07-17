@@ -4,7 +4,9 @@ import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.mapperstruct.AuthUserRoleStructMapper;
 import com.mini.auth.mapperstruct.AuthUserStructMapper;
-import com.mini.auth.model.dto.*;
+import com.mini.auth.model.dto.AuthUserDTO;
+import com.mini.auth.model.dto.AuthUserDetailDTO;
+import com.mini.auth.model.dto.AuthUserRoleDTO;
 import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.model.request.AuthLoginRequest;
@@ -128,6 +130,9 @@ public class SysUserBiz {
 
         // 校验验证码
         if (captchaProperties.isEnabled()) {
+            if (Objects.isNull(request.getUuid()) || StringUtils.isBlank(request.getCode())) {
+                throw new EModeServiceException("验证码不能为空");
+            }
             checkCaptcha(request.getCode(), request.getUuid());
         }
 
@@ -171,6 +176,42 @@ public class SysUserBiz {
         }
         if (ObjectUtils.notEqual(cacheCode, code)) {
             throw new EModeServiceException("验证码有误");
+        }
+    }
+
+    /**
+     * 登录之后获取用户基本信息
+     */
+    public AuthUserDetailVo getUserInfoBase() {
+        LoginUser loginUser = LoginUtils.getLoginUser();
+        Long userId = loginUser.getUserId();
+        AuthUserDetailDTO authUserDetailDTO;
+        // 小程序不需要权限，不做动态
+        if (UserType.MINI.equals(loginUser.getUserType())) {
+            authUserDetailDTO = authUserService.getUserById(userId);
+        } else {
+            authUserDetailDTO = authUserService.getUserRolePermissionById(userId);
+        }
+        AuthUserDetailVo authUserDetailVo = AuthUserStructMapper.INSTANCE.dtoDetail2Vo(authUserDetailDTO);
+        List<AuthPermissionVo> authPermissionVoList = authUserDetailVo.getAuthPermissionVoList();
+        if (CollectionUtils.isNotEmpty(authPermissionVoList)) {
+            authUserDetailVo.setAuthPermissionVoList(TreeUtils.build(authPermissionVoList));
+        }
+        return authUserDetailVo;
+    }
+
+
+    /**
+     * 登出操作
+     */
+    public void logout() {
+        try {
+            LoginUser loginUser = LoginUtils.getLoginUser();
+
+            // 记录登出日志
+
+        } finally {
+            StpUtil.logout();
         }
     }
 }

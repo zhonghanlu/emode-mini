@@ -34,4 +34,11 @@ public class LoginController {
         return Restful.OBJECT(sysUserBiz.login(request)).build();
     }
 
+    @Operation(summary = "登出")
+    @PostMapping("/logout")
+    public Restful<?> logout() {
+        sysUserBiz.logout();
+        return Restful.SUCCESS().build();
+    }
+
 }
