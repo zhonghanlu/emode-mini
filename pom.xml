@@ -16,6 +16,7 @@
         <module>emode-core</module>
         <module>emode-sys-auth</module>
         <module>emode-sys-file</module>
+        <module>emode-sys-base</module>
     </modules>
 
     <properties>
