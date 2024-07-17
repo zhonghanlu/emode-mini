@@ -28,7 +28,7 @@
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <knife4j.version>4.5.0</knife4j.version>
-        <kaptcha.version>2.3.3</kaptcha.version>
+        <kaptcha.version>2.2.3</kaptcha.version>
         <commons.io.version>2.13.0</commons.io.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <poi.version>5.2.1</poi.version>
@@ -99,8 +99,8 @@
 
             <!-- 验证码 -->
             <dependency>
-                <groupId>pro.fessional</groupId>
-                <artifactId>kaptcha</artifactId>
+                <groupId>io.springboot.plugin</groupId>
+                <artifactId>captcha-core</artifactId>
                 <version>${kaptcha.version}</version>
             </dependency>
 

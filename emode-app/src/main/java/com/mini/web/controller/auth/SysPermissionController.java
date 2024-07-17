@@ -24,7 +24,7 @@ import javax.validation.Valid;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/sys-auth")
+@RequestMapping("/sys-permission")
 public class SysPermissionController {
 
     private final SysPermissionBiz sysPermissionBiz;

@@ -1,6 +1,7 @@
 package com.mini.core.config;
 
 import com.mini.core.aop.ApiMessageAdvisor;
+import com.mini.core.aop.RateLimiterAspect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +11,12 @@ import org.springframework.context.annotation.Configuration;
 public class AopConfig {
 
     @Bean
-    public ApiMessageAdvisor createAop() {
+    public ApiMessageAdvisor createApiMessageAdvisorAspect() {
         return new ApiMessageAdvisor();
+    }
+
+    @Bean
+    public RateLimiterAspect createRateLimiterAspect() {
+        return new RateLimiterAspect();
     }
 }
