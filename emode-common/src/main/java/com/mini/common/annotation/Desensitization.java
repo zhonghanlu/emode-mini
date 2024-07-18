@@ -12,6 +12,7 @@ import java.lang.annotation.Target;
 
 /**
  * @author zhl
+ * @source_auth hutool Desensitization
  * 数据脱敏
  */
 @Target(ElementType.FIELD)

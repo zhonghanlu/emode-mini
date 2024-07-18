@@ -20,6 +20,7 @@ import java.util.Objects;
 /**
  * @author zhl
  * redis配置
+ * @source_auth ruoyi-plus
  */
 @Slf4j
 @Configuration

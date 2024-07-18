@@ -22,6 +22,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * @author zhl
+ * 全局唯一requestId
+ */
 @Aspect
 @Order
 @Slf4j

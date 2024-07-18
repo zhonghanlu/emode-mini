@@ -18,6 +18,7 @@ import java.util.Objects;
 
 /**
  * @author zhl
+ * @source_auth hutool Desensitization
  * 自定义序列化类
  */
 @AllArgsConstructor

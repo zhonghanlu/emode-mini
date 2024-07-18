@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author zhl
+ * @source_auth ruoyi
  */
 @Component
 public final class SpringBean implements BeanFactoryPostProcessor, ApplicationContextAware {

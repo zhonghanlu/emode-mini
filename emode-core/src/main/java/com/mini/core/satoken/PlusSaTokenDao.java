@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @author zhl
  * Sa-Token持久层接口(使用框架自带RedisUtils实现 协议统一)
+ * @source_auth ruoyi-plus
  */
 public class PlusSaTokenDao implements SaTokenDao {
 

@@ -12,6 +12,7 @@ import java.util.Locale;
 /**
  * @author zhl
  * 国际化配置
+ * @source_auth ruoyi
  */
 @Configuration
 public class I18nConfig {

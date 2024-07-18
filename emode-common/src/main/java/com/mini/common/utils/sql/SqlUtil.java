@@ -5,8 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * sql操作工具类
- *
- * @author ruoyi
+ * @author zhl
+ * @source_author ruoyi
  */
 public class SqlUtil {
 

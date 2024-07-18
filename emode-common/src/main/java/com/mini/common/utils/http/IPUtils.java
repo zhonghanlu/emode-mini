@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.net.UnknownHostException;
 import java.util.Enumeration;
 
 public class IPUtils {
@@ -51,5 +52,22 @@ public class IPUtils {
         }
         return null;
     }
+
+
+    public static String getServerIP() {
+        InetAddress[] inetAdds;
+        String serverIP = null;
+        try {
+            inetAdds = InetAddress.getAllByName(InetAddress.getLocalHost().getHostName());
+            for (int i = 0; i < inetAdds.length; i++) {
+                serverIP = inetAdds[i].getHostAddress();
+            }
+
+        } catch (UnknownHostException e) {
+            LOGGER.error("读取IP地址异常", e);
+        }
+        return serverIP;
+    }
+
 
 }

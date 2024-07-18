@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author zhl
+ * aop全局配置
+ */
 @Configuration
 @ComponentScan("com.mini.core.aop")
 public class AopConfig {

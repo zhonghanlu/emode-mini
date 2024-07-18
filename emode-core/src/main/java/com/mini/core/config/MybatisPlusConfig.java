@@ -39,6 +39,7 @@ public class MybatisPlusConfig {
             registry.register(FileType.class, StringEnumTypeHandler.class);
             registry.register(MenuType.class, StringEnumTypeHandler.class);
             registry.register(UserType.class, StringEnumTypeHandler.class);
+            registry.register(LoginOptType.class, StringEnumTypeHandler.class);
         };
     }
 

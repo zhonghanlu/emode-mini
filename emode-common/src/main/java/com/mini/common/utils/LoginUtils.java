@@ -13,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
  * 为适配多端登录而封装
  *
  * @author zhl
+ * @source_auth ruoyi-plus
  */
 public class LoginUtils {
 

@@ -48,6 +48,8 @@
         <satoken.version>1.37.0</satoken.version>
         <httpclient.version>4.5.14</httpclient.version>
         <sm.crypto.version>0.3.2</sm.crypto.version>
+        <userAgent.version>1.20</userAgent.version>
+        <ip2region.version>2.6.4</ip2region.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -243,6 +245,21 @@
                 <artifactId>sm-crypto</artifactId>
                 <version>${sm.crypto.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${userAgent.version}</version>
+            </dependency>
+
+            <!-- IP地址转归属地 -->
+            <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>${ip2region.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

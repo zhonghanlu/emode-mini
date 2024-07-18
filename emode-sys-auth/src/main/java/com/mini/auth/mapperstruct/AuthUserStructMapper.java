@@ -4,6 +4,7 @@ import com.mini.auth.entity.AuthUser;
 import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.dto.AuthUserDetailDTO;
 import com.mini.auth.model.edit.AuthUserEdit;
+import com.mini.auth.model.request.AuthRegisterRequest;
 import com.mini.auth.model.request.AuthUserRequest;
 import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
@@ -51,4 +52,9 @@ public interface AuthUserStructMapper {
      * entity2dto
      */
     AuthUserDTO entity2Dto(AuthUser authUser);
+
+    /**
+     * register2dto
+     */
+    AuthUserDTO reqRegister2Dto(AuthRegisterRequest request);
 }

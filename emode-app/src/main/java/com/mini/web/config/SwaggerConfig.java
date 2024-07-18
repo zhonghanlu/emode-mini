@@ -1,6 +1,5 @@
 package com.mini.web.config;
 
-import com.mini.common.utils.http.IPUtils;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,6 @@ public class SwaggerConfig {
 
     @Bean
     public OpenAPI openApi() {
-        log.info("openApi3接口地址：http://{}:18099/doc.html", IPUtils.getIp());
         return new OpenAPI()
                 // 基本信息配置
                 .info(new Info()

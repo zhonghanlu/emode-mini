@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author zhl
  * Security 配置属性
+ * @source_auth ruoyi-plus
  */
 @Data
 @Component

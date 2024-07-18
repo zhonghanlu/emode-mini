@@ -182,7 +182,7 @@ sa-token:
   # jwt秘钥
   jwt-secret-key: abcdefghijklmnopqrstuvwxyz
   # 是否输出操作日志
-  is-log: true
+  is-log: false
 
 # 自定义 token续期 秒
 token-renew:
@@ -197,6 +197,8 @@ security:
     # 登录接口
     - /sys-auth/login
     # knife4j接口文档
+    - /favicon.ico
+    - /error
     - /doc.html
     - /druid/**
     - /*/api-docs
@@ -221,7 +223,7 @@ captcha:
 # 日志配置
 logging:
   level:
-    com.mini: debug
+    com.mini: warn
     org.springframework: warn
   config: classpath:logback.xml
 
@@ -249,6 +251,9 @@ spring-doc:
     - group: '文件模块'
       paths-to-match: '/**'
       packages-to-scan: com.mini.web.controller.file
+    - group: '日志模块'
+      paths-to-match: '/**'
+      packages-to-scan: com.mini.web.controller.log
 
 # knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
 knife4j:

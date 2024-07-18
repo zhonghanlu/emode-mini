@@ -6,6 +6,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 
 /**
  * @author zhl
+ * @source_auth ruoyi
  */
 public class MessageUtils {
     private MessageUtils() {

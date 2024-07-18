@@ -5,6 +5,12 @@ import com.antherd.smcrypto.sm3.Sm3;
 import com.antherd.smcrypto.sm4.Sm4;
 import com.antherd.smcrypto.sm4.Sm4Options;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.lionsoul.ip2region.xdb.Searcher;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 加密工具类，本框架目前使用 https://github.com/antherd/sm-crypto 项目中一些加解密方式
@@ -12,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
  * 如果不涉及到加密机方面的内容，请更改公私要为自己重新生成的，生成方式请看集成的sm-crypto主页
  *
  * @author zhl
+ * @source_auth snowy 小诺
  * @create 2024/7/5 17:34
  */
 @Slf4j
@@ -101,10 +108,24 @@ public class SmCryptoUtil {
     }
 
 
-    public static void main(String[] args) {
-        String encrypt = doSm2Encrypt("123456");
-        System.out.println(encrypt);
+    public static void main(String[] args) throws UnknownHostException {
+        System.out.println(doSm2Encrypt("123456"));
         System.out.println(doHashValue("123456"));
+
+//        try {
+//            // 1、创建 searcher 对象
+//            Searcher searcher = Searcher.newWithFileOnly("emode-app/src/main/resources/ip/ip2region.xdb");
+//            // 2、查询
+//            long sTime = System.nanoTime();
+//            String region = searcher.search("192.168.0.221");
+//            long cost = TimeUnit.NANOSECONDS.toMicros(System.nanoTime() - sTime);
+//            region = region.replace("|0", "");
+//            log.info("{地区: {}, IO操作数: {}, 耗时: {} μs}", region, searcher.getIOCount(), cost);
+//        } catch (Exception e) {
+//            log.error("获取IP地址异常：{} ", e.getMessage());
+//            throw new RuntimeException("获取IP地址异常");
+//        }
+
     }
 
 }

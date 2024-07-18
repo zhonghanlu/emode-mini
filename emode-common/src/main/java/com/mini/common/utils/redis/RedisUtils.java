@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 
 /**
  * @author zhl
+ * @source_auth ruoyi-plus
  * redis 工具类
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

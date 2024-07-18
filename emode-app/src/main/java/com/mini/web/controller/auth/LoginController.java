@@ -1,6 +1,7 @@
 package com.mini.web.controller.auth;
 
 import com.mini.auth.model.request.AuthLoginRequest;
+import com.mini.auth.model.request.AuthRegisterRequest;
 import com.mini.biz.auth.SysUserBiz;
 import com.mini.common.model.LoginModel;
 import com.mini.common.utils.webmvc.Restful;
@@ -36,9 +37,18 @@ public class LoginController {
 
     @Operation(summary = "登出")
     @PostMapping("/logout")
-    public Restful<?> logout() {
+    public Restful<Void> logout() {
         sysUserBiz.logout();
         return Restful.SUCCESS().build();
     }
+
+    @Operation(summary = "注册")
+    @PostMapping("/register")
+    public Restful<Void> register(@RequestBody @Valid AuthRegisterRequest request) {
+        sysUserBiz.register(request);
+        return Restful.SUCCESS().build();
+    }
+
+
 
 }
