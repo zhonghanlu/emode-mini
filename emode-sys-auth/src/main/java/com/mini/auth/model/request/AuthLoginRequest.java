@@ -25,11 +25,9 @@ public class AuthLoginRequest {
     @Schema(title = "密码")
     private String password;
 
-    @NotBlank(message = "验证码uuid不可为空")
     @Schema(title = "验证码uuid，验证码若关闭，可不传")
     private String uuid;
 
-    @NotBlank(message = "验证码不可为空")
     @Schema(title = "验证码")
     private String code;
 

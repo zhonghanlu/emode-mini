@@ -43,6 +43,7 @@
         SELECT au.id,
                au.username,
                au.nickname,
+               au.user_type,
                sf.file_url AS avatarUrl,
                ar.id       AS roleId,
                ar.role_name,

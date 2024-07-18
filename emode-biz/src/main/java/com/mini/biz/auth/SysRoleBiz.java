@@ -1,5 +1,6 @@
 package com.mini.biz.auth;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.mapperstruct.AuthRoleStructMapper;
 import com.mini.auth.model.dto.AuthRoleRelationDTO;
@@ -9,14 +10,19 @@ import com.mini.auth.model.request.AuthRoleRelationRequest;
 import com.mini.auth.model.vo.AuthRoleDetailVo;
 import com.mini.auth.model.vo.AuthRoleVo;
 import com.mini.auth.service.IAuthRoleService;
+import com.mini.auth.service.IAuthUserRoleService;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.TreeUtils;
+import com.mini.common.utils.str.StrUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author zhl
@@ -29,6 +35,7 @@ public class SysRoleBiz {
 
     private final IAuthRoleService authRoleService;
 
+    private final IAuthUserRoleService authUserRoleService;
 
     /**
      * 角色关联分页
@@ -80,6 +87,35 @@ public class SysRoleBiz {
         }
 
         authRoleService.update(dto);
+
+        // 处理在线用户的 此角色的 token 问题，直接退出
+        handlerOnlineUserRoleById(dto.getId(), dto.getRoleCode());
+    }
+
+    /**
+     * 处理在线用户的角色权限
+     */
+    private void handlerOnlineUserRoleById(long roleId, String roleCode) {
+        long num = authUserRoleService.getCountByRoleId(roleId);
+        if (num <= 0) {
+            return;
+        }
+        List<String> sessionIdList = StpUtil.searchSessionId("", 0, -1, false);
+
+        if (CollectionUtils.isEmpty(sessionIdList)) {
+            return;
+        }
+
+        List<String> loginIdList = sessionIdList.stream()
+                .map(s -> StrUtil.getPartAfterLastDelimiter(s, ":"))
+                .collect(Collectors.toList());
+
+        loginIdList.parallelStream().forEach(t -> {
+            if (StpUtil.hasRole(t, roleCode)) {
+                StpUtil.logoutByTokenValue(t);
+            }
+        });
+
     }
 
 }
