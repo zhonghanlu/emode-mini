@@ -1,4 +1,4 @@
-package com.mini.base.entity;
+package com.mini.base.model.dto;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -16,24 +16,24 @@ import java.time.LocalDateTime;
  * @date : 2024-7-17
  */
 
-@Schema(description = "站内信消息内容表")
+@Schema(description = "系统角色表")
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("t_message_content")
-public class TMessageContent {
+public class TMessageContentDTO {
 
     /**
      * 消息的id
      */
     @Schema(name = "消息的id")
-    private Long cId;
+    private Integer cId;
     /**
      * 消息发送者的id
      */
     @Schema(name = "消息发送者的id")
-    private Long sendId;
+    private Integer sendId;
     /**
      * 消息的内容
      */
@@ -43,7 +43,7 @@ public class TMessageContent {
      * 消息的类型
      */
     @Schema(name = "消息的类型")
-    private String type;
+    private Integer type;
     /**
      * 消息发送的时间
      */
