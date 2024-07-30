@@ -40,4 +40,6 @@ build/
 ### SonarLint ###
 .idea/sonarlint/
 
+.idea
+
 logs/
