@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_message_content")
+@TableName("sys_message_content")
 public class TMessageContentDTO {
 
     /**

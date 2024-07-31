@@ -1,9 +1,8 @@
 package com.mini.base.mapperstruct;
 
-import com.mini.base.entity.TMessageContent;
+import com.mini.base.entity.SysMessageContent;
 import com.mini.base.model.dto.SysLoginOptInfoDTO;
 import com.mini.base.model.query.SaveMessageContent;
-import com.mini.base.model.vo.SysLoginOptVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -20,10 +19,10 @@ public interface MessageContentMapper {
     /**
      * dtoInfo2vo
      */
-    TMessageContent dto2vo(SysLoginOptInfoDTO dto);
+    SysMessageContent dto2vo(SysLoginOptInfoDTO dto);
 
     /**
      * saveInfo2vo
      */
-    SaveMessageContent save2vo(TMessageContent saveMessageContent);
+    SaveMessageContent save2vo(SysMessageContent saveMessageContent);
 }

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @date : 2024-7-18
  */
 @Data
-public class MessageContentRecordVo {
+public class SysMessageContentRecordVo {
 
 
     /**

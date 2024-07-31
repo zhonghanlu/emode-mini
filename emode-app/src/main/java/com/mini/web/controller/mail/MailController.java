@@ -1,13 +1,11 @@
 package com.mini.web.controller.mail;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.mini.auth.model.vo.AuthRoleVo;
 import com.mini.base.model.dto.MessageContentRecordDTO;
 import com.mini.base.model.query.BatchSaveMessageRecord;
-import com.mini.base.model.query.MessageContentRecordQuery;
 import com.mini.base.model.query.SaveMessageContent;
-import com.mini.base.service.MessageContentService;
-import com.mini.biz.auth.SysRoleBiz;
+import com.mini.base.model.query.SysMessageContentRecordQuery;
+import com.mini.base.service.ISysMessageContentService;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -36,7 +34,7 @@ public class MailController {
     /**
      * 消息模板服务层
      */
-    private final MessageContentService messageContentService;
+    private final ISysMessageContentService messageContentService;
 
 
     @Operation(summary = "站内信发送")
@@ -50,7 +48,7 @@ public class MailController {
 
     @Operation(summary = "站内信接受")
     @PostMapping(path = "/mailAccept")
-    public Restful<IPage<MessageContentRecordDTO>> mailAccept(@RequestBody @Valid MessageContentRecordQuery messageContentRecordQuery) {
+    public Restful<IPage<MessageContentRecordDTO>> mailAccept(@RequestBody @Valid SysMessageContentRecordQuery messageContentRecordQuery) {
 
         IPage<MessageContentRecordDTO> messageContentRecordDTOIPage = messageContentService.queryMessageContentRecord(messageContentRecordQuery);
         return Restful.OBJECT(messageContentRecordDTOIPage).build();

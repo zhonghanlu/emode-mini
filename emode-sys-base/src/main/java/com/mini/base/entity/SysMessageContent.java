@@ -1,5 +1,6 @@
 package com.mini.base.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -21,12 +22,13 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("t_message_content")
-public class TMessageContent {
+@TableName("sys_message_content")
+public class SysMessageContent {
 
     /**
      * 消息的id
      */
+    @TableId
     @Schema(name = "消息的id")
     private Long cId;
     /**

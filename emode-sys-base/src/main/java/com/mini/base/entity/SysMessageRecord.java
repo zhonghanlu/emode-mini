@@ -1,5 +1,6 @@
 package com.mini.base.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -22,11 +23,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("t_message_record")
-public class TMessageRecord {
+public class SysMessageRecord {
 
     /**
      * 阅读记录的id
      */
+    @TableId
     @Schema(name = "阅读记录的id")
     private Long rId;
 

@@ -17,7 +17,7 @@ import java.util.Locale;
  * @date : 2024-7-18
  */
 @Data
-public class MessageContentRecordQuery extends PageQuery {
+public class SysMessageContentRecordQuery extends PageQuery {
 
     /**
      * 消息接收者的id
