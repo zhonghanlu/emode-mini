@@ -1,4 +1,4 @@
-package com.mini.web.controller.mail;
+package com.mini.web.controller.base;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.base.model.dto.MessageContentRecordDTO;
