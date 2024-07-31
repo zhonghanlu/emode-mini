@@ -11,9 +11,9 @@ import org.mapstruct.factory.Mappers;
  * @create 2024/7/18 15:32
  */
 @Mapper
-public interface MessageContentMapper {
+public interface SysMessageContentMapper {
 
-    MessageContentMapper INSTANCE = Mappers.getMapper(MessageContentMapper.class);
+    SysMessageContentMapper INSTANCE = Mappers.getMapper(SysMessageContentMapper.class);
 
 
     /**

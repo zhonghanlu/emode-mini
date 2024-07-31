@@ -3,7 +3,7 @@ package com.mini.file.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.mini.common.enums.str.Device;
-import com.mini.common.utils.webmvc.CommonEntity;
+import com.mini.common.model.CommonEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;

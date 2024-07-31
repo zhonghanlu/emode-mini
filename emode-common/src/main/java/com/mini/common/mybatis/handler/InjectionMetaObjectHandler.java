@@ -5,7 +5,7 @@ import com.mini.common.constant.HttpStatus;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.model.LoginUser;
 import com.mini.common.utils.LoginUtils;
-import com.mini.common.utils.webmvc.CommonEntity;
+import com.mini.common.model.CommonEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 

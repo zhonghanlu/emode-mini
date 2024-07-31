@@ -1,4 +1,4 @@
-package com.mini.common.utils.webmvc;
+package com.mini.common.model;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

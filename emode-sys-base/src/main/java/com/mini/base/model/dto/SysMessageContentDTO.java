@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("sys_message_content")
-public class TMessageContentDTO {
+public class SysMessageContentDTO {
 
     /**
      * 消息的id

@@ -10,8 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.simpleframework.xml.Order;
 import org.slf4j.MDC;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.annotation.Annotation;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -27,9 +29,9 @@ import java.util.UUID;
  * 全局唯一requestId
  */
 @Aspect
-@Order
+@Order(1)
 @Slf4j
-public class ApiMessageAdvisor {
+public class ApiMessageAdvisor implements Ordered {
 
 
     @Around("execution(public * com.mini.web.controller..*Controller.*(..))")
@@ -161,5 +163,10 @@ public class ApiMessageAdvisor {
         String apiClassName = pjp.getTarget().getClass().getSimpleName();
         String methodName = pjp.getSignature().getName();
         return apiClassName.concat(":").concat(methodName);
+    }
+
+    @Override
+    public int getOrder() {
+        return 1;
     }
 }

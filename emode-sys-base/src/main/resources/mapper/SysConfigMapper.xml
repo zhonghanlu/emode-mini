@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.base.mapper.SysConfigMapper">
+    <select id="selectPage" resultType="com.mini.base.model.dto.SysConfigDTO">
+        SELECT id, config_name, config_key, config_value, config_status
+        FROM sys_config
+        <where>
+            del_flag = 1
+            AND show_status = 'yes'
+            AND config_status = 'yes'
+            <if test="query.configName != '' and query.configName != null">
+                AND config_name LIKE CONCAT('%', #{query.configName}, '%')
+            </if>
+            <if test="query.configKey != '' and query.configKey != null">
+                AND config_key LIKE CONCAT('%', #{query.configKey}, '%')
+            </if>
+            <if test="query.configStatus != null">
+                AND config_status = #{query.configStatus}
+            </if>
+        </where>
+    </select>
+</mapper>

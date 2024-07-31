@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
-import com.mini.common.utils.webmvc.CommonEntity;
+import com.mini.common.model.CommonEntity;
 
 import java.util.Objects;
 

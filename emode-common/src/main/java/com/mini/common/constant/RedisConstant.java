@@ -6,6 +6,9 @@ package com.mini.common.constant;
  */
 public final class RedisConstant {
 
+    public RedisConstant() {
+    }
+
     /**
      * 验证码相关
      */
@@ -15,4 +18,11 @@ public final class RedisConstant {
      * 限流 redis key
      */
     public static final String RATE_LIMIT_KEY = "rate_limit:";
+
+    ///////////////////////////////////////参数redisKey//////////////////////////////////////////////
+    /**
+     * 系统参数redis key
+     */
+    public static final String SYS_CONFIG_KEY = "sys_config:";
+
 }
