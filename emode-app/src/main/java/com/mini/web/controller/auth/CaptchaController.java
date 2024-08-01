@@ -1,5 +1,6 @@
 package com.mini.web.controller.auth;
 
+import com.mini.common.annotation.OptLog;
 import com.mini.common.annotation.RateLimiter;
 import com.mini.common.constant.RedisConstant;
 import com.mini.common.enums.LimitType;
@@ -35,6 +36,7 @@ public class CaptchaController {
     /**
      * 生成验证码
      */
+    @OptLog
     @RateLimiter(time = 1, count = 2, limitType = LimitType.IP)
     @Operation(summary = "生成验证码")
     @GetMapping("/captcha-image")

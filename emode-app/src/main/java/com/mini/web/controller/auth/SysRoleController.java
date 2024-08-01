@@ -7,6 +7,7 @@ import com.mini.auth.model.request.AuthRoleRelationRequest;
 import com.mini.auth.model.vo.AuthRoleDetailVo;
 import com.mini.auth.model.vo.AuthRoleVo;
 import com.mini.biz.auth.SysRoleBiz;
+import com.mini.common.annotation.OptLog;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,18 +32,21 @@ public class SysRoleController {
 
     private final SysRoleBiz sysRoleBiz;
 
+    @OptLog
     @Operation(summary = "角色分页")
     @GetMapping("/page")
     public Restful<IPage<AuthRoleVo>> rolePage(@ParameterObject AuthRoleQuery query) {
         return Restful.OBJECT(sysRoleBiz.page(query)).build();
     }
 
+    @OptLog
     @Operation(summary = "角色详情")
     @GetMapping("/detail/{roleId}")
     public Restful<AuthRoleDetailVo> getRoleById(@PathVariable("roleId") Long id) {
         return Restful.OBJECT(sysRoleBiz.getRoleById(id)).build();
     }
 
+    @OptLog
     @Operation(summary = "新增角色信息")
     @PostMapping("/add")
     public Restful<Void> insert(@RequestBody @Valid AuthRoleRelationRequest request) {
@@ -50,6 +54,7 @@ public class SysRoleController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "删除角色信息")
     @PostMapping("/del")
     public Restful<Void> del(long id) {
@@ -57,6 +62,7 @@ public class SysRoleController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "修改角色信息")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Valid AuthRoleRelationEdit edit) {

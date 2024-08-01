@@ -94,12 +94,7 @@ public class OptLogAspect implements Ordered {
             setRequestValue(joinPoint, sysUserOptDTO);
 
             // 处理全局唯一requestId
-//            if (Objects.nonNull(joinPoint)) {
-//                if (joinPoint instanceof Restful) {
-//                    Restful response = (Restful) joinPoint;
-//                    sysUserOptDTO.setRequestId(response.getRequestId());
-//                }
-//            }
+            sysUserOptDTO.setRequestId(RequestIdUtils.getRequestId().toString());
 
             if (Objects.nonNull(e)) {
                 sysUserOptDTO.setOptStatus(YesOrNo.NO);
@@ -123,7 +118,7 @@ public class OptLogAspect implements Ordered {
             String params = argsArrayToString(joinPoint.getArgs());
             optDTO.setOptBody(StringUtils.substring(params, 0, 2000));
         } else {
-            Map<?, ?> paramsMap = (Map<?, ?>) ServletUtil.getRequest().getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
+            Map<?, ?> paramsMap = (Map<?, ?>) Objects.requireNonNull(ServletUtil.getRequest()).getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
             optDTO.setOptBody(StringUtils.substring(paramsMap.toString(), 0, 2000));
         }
     }
@@ -133,7 +128,7 @@ public class OptLogAspect implements Ordered {
      */
     private String argsArrayToString(Object[] paramsArray) {
         StringBuilder params = new StringBuilder();
-        if (paramsArray != null && paramsArray.length > 0) {
+        if (paramsArray != null) {
             for (Object o : paramsArray) {
                 if (Objects.nonNull(o) && !isFilterObject(o)) {
                     try {

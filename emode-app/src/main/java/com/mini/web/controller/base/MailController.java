@@ -6,6 +6,7 @@ import com.mini.base.model.query.BatchSaveMessageRecord;
 import com.mini.base.model.query.SaveMessageContent;
 import com.mini.base.model.query.SysMessageContentRecordQuery;
 import com.mini.base.service.ISysMessageContentService;
+import com.mini.common.annotation.OptLog;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -37,6 +38,7 @@ public class MailController {
     private final ISysMessageContentService messageContentService;
 
 
+    @OptLog
     @Operation(summary = "站内信发送")
     @PostMapping(path = "/mailSend")
     public Restful<Void> mailSend(@RequestBody @Valid BatchSaveMessageRecord batchSaveMessageRecord) {
@@ -46,6 +48,7 @@ public class MailController {
     }
 
 
+    @OptLog
     @Operation(summary = "站内信接受")
     @PostMapping(path = "/mailAccept")
     public Restful<IPage<MessageContentRecordDTO>> mailAccept(@RequestBody @Valid SysMessageContentRecordQuery messageContentRecordQuery) {
@@ -59,6 +62,7 @@ public class MailController {
      *
      * @return
      */
+    @OptLog
     @Operation(summary = "消息模板录入")
     @PostMapping(path = "/messageTemplateInput")
     public Restful<Void> messageTemplateInput(@RequestBody @Valid SaveMessageContent saveMessageContent) {

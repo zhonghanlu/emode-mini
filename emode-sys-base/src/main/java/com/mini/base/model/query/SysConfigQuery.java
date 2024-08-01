@@ -10,11 +10,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class SysConfigQuery extends PageQuery {
     /**
-     * 主键id
-     */
-    @Parameter(description = "主键id")
-    private Long id;
-    /**
      * 配置名称
      */
     @Parameter(description = "配置名称")

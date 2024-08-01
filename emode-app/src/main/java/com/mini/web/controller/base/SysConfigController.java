@@ -30,6 +30,7 @@ public class SysConfigController {
 
     private final SysConfigBiz sysConfigBiz;
 
+    @OptLog
     @Operation(summary = "参数新增")
     @PostMapping("/add")
     public Restful<Void> add(@RequestBody @Valid SysConfigRequest request) {
@@ -37,6 +38,7 @@ public class SysConfigController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "删除参数信息")
     @PostMapping("/del")
     public Restful<Void> del(long id) {
@@ -44,6 +46,7 @@ public class SysConfigController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "参数修改")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Valid SysConfigEdit edit) {

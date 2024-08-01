@@ -6,6 +6,7 @@ import com.mini.auth.model.query.AuthPermissionQuery;
 import com.mini.auth.model.request.AuthPermissionRequest;
 import com.mini.auth.model.vo.AuthPermissionVo;
 import com.mini.biz.auth.SysPermissionBiz;
+import com.mini.common.annotation.OptLog;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -29,12 +30,14 @@ public class SysPermissionController {
 
     private final SysPermissionBiz sysPermissionBiz;
 
+    @OptLog
     @Operation(summary = "权限分页")
     @GetMapping("/page")
     public Restful<IPage<AuthPermissionVo>> rolePage(@ParameterObject AuthPermissionQuery query) {
         return Restful.OBJECT(sysPermissionBiz.page(query)).build();
     }
 
+    @OptLog
     @Operation(summary = "新增权限信息")
     @PostMapping("/add")
     public Restful<Void> insert(@RequestBody @Valid AuthPermissionRequest request) {
@@ -42,6 +45,7 @@ public class SysPermissionController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "删除权限信息")
     @PostMapping("/del")
     public Restful<Void> del(long id) {
@@ -49,6 +53,7 @@ public class SysPermissionController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "修改权限信息")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Valid AuthPermissionEdit edit) {

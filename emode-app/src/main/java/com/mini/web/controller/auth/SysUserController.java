@@ -8,6 +8,7 @@ import com.mini.auth.model.request.AuthUserRoleRequest;
 import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.biz.auth.SysUserBiz;
+import com.mini.common.annotation.OptLog;
 import com.mini.common.enums.str.UserQueryType;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,6 +33,7 @@ public class SysUserController {
 
     private final SysUserBiz sysUserBiz;
 
+    @OptLog
     @Operation(summary = "用户新增")
     @PostMapping("/add")
     public Restful<Void> add(@RequestBody @Valid AuthUserRequest request) {
@@ -39,6 +41,7 @@ public class SysUserController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "用户修改")
     @PostMapping("/update")
     public Restful<Void> update(@RequestBody @Valid AuthUserEdit edit) {
@@ -46,12 +49,14 @@ public class SysUserController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "用户分页")
     @GetMapping("/page")
     public Restful<IPage<AuthUserVo>> page(@ParameterObject AuthUserQuery query) {
         return Restful.OBJECT(sysUserBiz.page(query)).build();
     }
 
+    @OptLog
     @Operation(summary = "用户角色关联")
     @PostMapping("/user-role-relation")
     public Restful<Void> relation(@RequestBody @Valid AuthUserRoleRequest request) {
@@ -59,6 +64,7 @@ public class SysUserController {
         return Restful.SUCCESS().build();
     }
 
+    @OptLog
     @Operation(summary = "用户详情")
     @GetMapping("/user-detail-type/{id}/{type}")
     public Restful<AuthUserDetailVo> getUserRolePermissionById(@PathVariable("id") long id,
@@ -66,6 +72,7 @@ public class SysUserController {
         return Restful.OBJECT(sysUserBiz.getUserRolePermissionById(id, type)).build();
     }
 
+    @OptLog
     @Operation(summary = "获取用户基本信息")
     @GetMapping("/user-detail-base")
     public Restful<AuthUserDetailVo> getUserInfoBase() {
