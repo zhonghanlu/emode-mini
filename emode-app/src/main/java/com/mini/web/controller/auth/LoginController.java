@@ -3,7 +3,6 @@ package com.mini.web.controller.auth;
 import com.mini.auth.model.request.AuthLoginRequest;
 import com.mini.auth.model.request.AuthRegisterRequest;
 import com.mini.biz.auth.SysUserBiz;
-import com.mini.common.annotation.OptLog;
 import com.mini.common.model.LoginModel;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,14 +29,12 @@ public class LoginController {
 
     private final SysUserBiz sysUserBiz;
 
-    @OptLog
     @Operation(summary = "账户密码登录")
     @PostMapping("/login")
     public Restful<LoginModel> login(@RequestBody @Valid AuthLoginRequest request) {
         return Restful.OBJECT(sysUserBiz.login(request)).build();
     }
 
-    @OptLog
     @Operation(summary = "登出")
     @PostMapping("/logout")
     public Restful<Void> logout() {
@@ -45,14 +42,11 @@ public class LoginController {
         return Restful.SUCCESS().build();
     }
 
-    @OptLog
     @Operation(summary = "注册")
     @PostMapping("/register")
     public Restful<Void> register(@RequestBody @Valid AuthRegisterRequest request) {
         sysUserBiz.register(request);
         return Restful.SUCCESS().build();
     }
-
-
 
 }

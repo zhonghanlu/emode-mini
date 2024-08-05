@@ -2,9 +2,10 @@ package com.mini.web.controller.log;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.base.model.query.SysLoginOptQuery;
+import com.mini.base.model.query.SysUserOptQuery;
 import com.mini.base.model.vo.SysLoginOptVo;
+import com.mini.base.model.vo.SysUserOptVo;
 import com.mini.biz.auth.SysLogBiz;
-import com.mini.common.annotation.OptLog;
 import com.mini.common.utils.webmvc.Restful;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -29,10 +30,15 @@ public class LogController {
 
     private final SysLogBiz sysLogBiz;
 
-    @OptLog
     @Operation(summary = "登入登出日志分页")
     @GetMapping("/login-page")
-    public Restful<IPage<SysLoginOptVo>> rolePage(@ParameterObject SysLoginOptQuery query) {
+    public Restful<IPage<SysLoginOptVo>> loginPage(@ParameterObject SysLoginOptQuery query) {
+        return Restful.OBJECT(sysLogBiz.page(query)).build();
+    }
+
+    @Operation(summary = "用户操作日志分页")
+    @GetMapping("/opt-page")
+    public Restful<IPage<SysUserOptVo>> userOptPage(@ParameterObject SysUserOptQuery query) {
         return Restful.OBJECT(sysLogBiz.page(query)).build();
     }
 

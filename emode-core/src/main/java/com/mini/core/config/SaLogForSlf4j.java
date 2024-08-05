@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 将 Sa-Token log 信息转接到 Slf4j
  * @author 官网示例
  */
-@Component
+//@Component
 public class SaLogForSlf4j implements SaLog {
     Logger log = LoggerFactory.getLogger(SaLogForSlf4j.class);
 

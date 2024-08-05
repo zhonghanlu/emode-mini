@@ -1,10 +1,15 @@
 package com.mini.base.model.vo;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -51,7 +56,7 @@ public class SysUserOptVo {
      * 操作方法类型
      */
     @Schema(title = "操作方法类型")
-    private String optMethod;
+    private MethodType optMethod;
     /**
      * 请求地址
      */
@@ -71,5 +76,7 @@ public class SysUserOptVo {
      * 操作时间
      */
     @Schema(title = "操作时间")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime optTime;
 }

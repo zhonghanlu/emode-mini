@@ -2,6 +2,7 @@ package com.mini.base.mapperstruct;
 
 import com.mini.base.entity.SysUserOpt;
 import com.mini.base.model.dto.SysUserOptDTO;
+import com.mini.base.model.vo.SysUserOptVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -18,4 +19,9 @@ public interface SysUserOptStructMapper {
      * dto2entity
      */
     SysUserOpt dto2Entity(SysUserOptDTO dto);
+
+    /**
+     * dto2vo
+     */
+    SysUserOptVo dto2vo(SysUserOptDTO dto);
 }

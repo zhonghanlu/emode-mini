@@ -2,6 +2,7 @@ package com.mini.base.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -64,7 +65,7 @@ public class SysUserOpt {
      * 操作方法类型
      */
     @Schema(title = "操作方法类型")
-    private String optMethod;
+    private MethodType optMethod;
     /**
      * 请求地址
      */

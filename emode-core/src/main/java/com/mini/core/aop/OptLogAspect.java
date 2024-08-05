@@ -1,6 +1,7 @@
 package com.mini.core.aop;
 
 import com.mini.base.service.ISysUserOptService;
+import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;
 
 import java.time.LocalDateTime;
@@ -88,7 +89,7 @@ public class OptLogAspect implements Ordered {
             sysUserOptDTO.setSystemOs(systemOs);
             sysUserOptDTO.setOptTime(LocalDateTime.now());
             sysUserOptDTO.setOptUrl(request.getRequestURI());
-            sysUserOptDTO.setOptMethod(request.getMethod());
+            sysUserOptDTO.setOptMethod(MethodType.get(request.getMethod()));
 
             // 填充请求参数
             setRequestValue(joinPoint, sysUserOptDTO);
@@ -113,7 +114,7 @@ public class OptLogAspect implements Ordered {
      * 获取请求的参数，放到log中
      */
     private void setRequestValue(JoinPoint joinPoint, SysUserOptDTO optDTO) {
-        String requestMethod = optDTO.getOptMethod();
+        String requestMethod = optDTO.getOptMethod().getStringValue();
         if (HttpMethod.PUT.name().equals(requestMethod) || HttpMethod.POST.name().equals(requestMethod)) {
             String params = argsArrayToString(joinPoint.getArgs());
             optDTO.setOptBody(StringUtils.substring(params, 0, 2000));

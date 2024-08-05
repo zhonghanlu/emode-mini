@@ -1,5 +1,6 @@
 package com.mini.base.model.dto;
 
+import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,7 +43,7 @@ public class SysUserOptDTO {
     /**
      * 操作方法类型
      */
-    private String optMethod;
+    private MethodType optMethod;
     /**
      * 请求地址
      */

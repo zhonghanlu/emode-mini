@@ -2,7 +2,7 @@ package com.mini.base.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.base.model.dto.SysUserOptDTO;
-import com.mini.base.model.query.SysConfigQuery;
+import com.mini.base.model.query.SysUserOptQuery;
 
 /**
  * @author zhl
@@ -18,7 +18,7 @@ public interface ISysUserOptService {
     /**
      * 分页查询
      */
-    IPage<SysUserOptDTO> selectPage(SysConfigQuery query);
+    IPage<SysUserOptDTO> selectPage(SysUserOptQuery query);
 
 
 }

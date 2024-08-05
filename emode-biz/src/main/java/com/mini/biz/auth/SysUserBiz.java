@@ -19,6 +19,7 @@ import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.auth.service.IAuthUserService;
 import com.mini.base.model.dto.SysLoginOptDTO;
 import com.mini.base.service.ISysLoginOptService;
+import com.mini.common.constant.LoginConstant;
 import com.mini.common.constant.RedisConstant;
 import com.mini.common.enums.str.LoginOptType;
 import com.mini.common.enums.str.UserQueryType;
@@ -28,6 +29,7 @@ import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.model.LoginModel;
 import com.mini.common.model.LoginUser;
 import com.mini.common.utils.LoginUtils;
+import com.mini.common.utils.SmCryptoCacheUtil;
 import com.mini.common.utils.SmCryptoUtil;
 import com.mini.common.utils.TreeUtils;
 import com.mini.common.utils.http.ServletUtil;
@@ -152,12 +154,12 @@ public class SysUserBiz {
         }
 
         // 校验账户密码  sm2解密之后再进行hash，一致则为相同
-        if (ObjectUtils.notEqual(SmCryptoUtil.doHashValue(SmCryptoUtil.doSm2Decrypt(request.getPassword())), authUserDTO.getPassword())) {
+        if (ObjectUtils.notEqual(SmCryptoUtil.doHashValue(SmCryptoCacheUtil.doSm2Decrypt(request.getPassword())), authUserDTO.getPassword())) {
             SysLoginOptDTO dto = SysLoginOptDTO.builder().username(authUserDTO.getUsername())
                     .request(ServletUtil.getRequest())
                     .optType(LoginOptType.LOGIN)
                     .status(YesOrNo.NO)
-                    .optMsg("LOGIN FAIL")
+                    .optMsg(LoginConstant.ACCOUNT_PASSWORD_ERROR)
                     .build();
             asyncLoginOptService.addLoginOptInfo(dto);
             throw new EModeServiceException("密码错误");
@@ -183,7 +185,7 @@ public class SysUserBiz {
                 .request(ServletUtil.getRequest())
                 .optType(LoginOptType.LOGIN)
                 .status(YesOrNo.YES)
-                .optMsg("LOGIN SUCCESS")
+                .optMsg(LoginConstant.LOGIN_SUCCESS)
                 .build();
         asyncLoginOptService.addLoginOptInfo(dto);
 
@@ -241,10 +243,10 @@ public class SysUserBiz {
                     .request(ServletUtil.getRequest())
                     .optType(LoginOptType.LOGOUT)
                     .status(YesOrNo.YES)
-                    .optMsg("LOGOUT SUCCESS")
+                    .optMsg(LoginConstant.LOGOUT_SUCCESS)
                     .build();
             asyncLoginOptService.addLoginOptInfo(dto);
-        }finally {
+        } finally {
             StpUtil.logout();
         }
     }

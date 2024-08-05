@@ -42,7 +42,6 @@ public class MailController {
     @Operation(summary = "站内信发送")
     @PostMapping(path = "/mailSend")
     public Restful<Void> mailSend(@RequestBody @Valid BatchSaveMessageRecord batchSaveMessageRecord) {
-
         messageContentService.batchSaveMessageRecord(batchSaveMessageRecord);
         return Restful.SUCCESS().build();
     }

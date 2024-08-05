@@ -5,12 +5,6 @@ import com.antherd.smcrypto.sm3.Sm3;
 import com.antherd.smcrypto.sm4.Sm4;
 import com.antherd.smcrypto.sm4.Sm4Options;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-import org.lionsoul.ip2region.xdb.Searcher;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 加密工具类，本框架目前使用 https://github.com/antherd/sm-crypto 项目中一些加解密方式
@@ -108,7 +102,7 @@ public class SmCryptoUtil {
     }
 
 
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) {
         System.out.println(doSm2Encrypt("123456"));
         System.out.println(doHashValue("123456"));
 

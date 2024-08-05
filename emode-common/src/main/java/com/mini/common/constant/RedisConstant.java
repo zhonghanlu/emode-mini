@@ -25,4 +25,10 @@ public final class RedisConstant {
      */
     public static final String SYS_CONFIG_KEY = "sys_config:";
 
+    ///////////////////////////////////////加密redisKey//////////////////////////////////////////////
+    /**
+     * sm解密参数redis key
+     */
+    public static final String SM2_CACHE_KEY_PREFIX = "sm2-decrypt-cache:";
+
 }

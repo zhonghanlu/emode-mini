@@ -6,6 +6,7 @@ import com.mini.base.mapper.SysUserOptMapper;
 import com.mini.base.mapperstruct.SysUserOptStructMapper;
 import com.mini.base.model.dto.SysUserOptDTO;
 import com.mini.base.model.query.SysConfigQuery;
+import com.mini.base.model.query.SysUserOptQuery;
 import com.mini.base.service.ISysUserOptService;
 import com.mini.common.utils.webmvc.IDGenerator;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +38,7 @@ public class SysUserOptServiceImpl implements ISysUserOptService {
     }
 
     @Override
-    public IPage<SysUserOptDTO> selectPage(SysConfigQuery query) {
-        return null;
+    public IPage<SysUserOptDTO> selectPage(SysUserOptQuery query) {
+        return sysUserOptMapper.selectPage(query,query.build());
     }
 }

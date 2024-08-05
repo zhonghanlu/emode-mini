@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.base.mapper.SysUserOptMapper">
+    <select id="selectPage" resultType="com.mini.base.model.dto.SysUserOptDTO">
+        SELECT
+        id,
+        request_id,
+        username,
+        opt_ip,
+        opt_address,
+        browser,
+        system_os,
+        opt_method,
+        opt_url,
+        opt_body,
+        opt_status,
+        opt_time
+        FROM
+        sys_user_opt
+        <where>
+            <if test="query.requestId != null and query.requestId != ''">
+                AND request_id = #{query.request_id}
+            </if>
+            <if test="query.username != null and query.username != ''">
+                AND username LIKE CONCAT('%', #{query.username}, '%')
+            </if>
+            <if test="query.optMethod != null and query.optMethod">
+                AND opt_method = #{query.optMethod}
+            </if>
+            <if test="query.optStatus != null">
+                AND opt_status = #{query.optStatus}
+            </if>
+            <if test="query.optTimeStart != null and query.optTimeEnd != null ">
+                AND opt_time BETWEEN #{query.optTimeStart} AND #{query.optTimeEnd}
+            </if>
+        </where>
+    </select>
+</mapper>
