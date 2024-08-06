@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.base.mapper.SysUserNoticeMapper">
+    <insert id="batchInsert">
+        INSERT INTO sys_user_notice
+        (id,notice_id,user_id,phone,email,read_status,del_flag,create_time,create_by,update_time,update_by)
+        <foreach collection="userNoticeList" item="item" open="(" close=")" separator=",">
+            #{item.id},#{item.noticeId},#{item.userId},
+            #{item.phone},#{item.email},
+            #{item.readStatus},#{item.delFlag},
+            #{item.createTime},#{item.createBy},
+            #{item.updateTime},#{item.updateBy}
+        </foreach>
+    </insert>
+</mapper>
