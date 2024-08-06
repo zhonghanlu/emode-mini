@@ -6,7 +6,7 @@ package com.mini.common.constant;
  */
 public final class RedisConstant {
 
-    public RedisConstant() {
+    private RedisConstant() {
     }
 
     /**

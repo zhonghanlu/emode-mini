@@ -17,6 +17,9 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class LoginUtils {
 
+    private LoginUtils() {
+    }
+
     private final static String LOGIN_USER_KEY = "loginUser";
 
     /**

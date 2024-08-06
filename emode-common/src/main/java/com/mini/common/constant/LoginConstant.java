@@ -6,7 +6,7 @@ package com.mini.common.constant;
  */
 public final class LoginConstant {
 
-    public LoginConstant() {
+    private LoginConstant() {
     }
 
     // 账户或者密码错误

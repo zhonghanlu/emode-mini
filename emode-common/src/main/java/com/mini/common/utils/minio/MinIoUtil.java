@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.activation.FileTypeMap;
-import javax.activation.MimetypesFileTypeMap;
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;

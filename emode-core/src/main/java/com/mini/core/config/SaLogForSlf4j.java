@@ -3,7 +3,6 @@ package com.mini.core.config;
 import cn.dev33.satoken.log.SaLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * 将 Sa-Token log 信息转接到 Slf4j

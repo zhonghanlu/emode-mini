@@ -10,6 +10,9 @@ import static com.mini.common.constant.RedisConstant.SM2_CACHE_KEY_PREFIX;
  */
 public class SmCryptoCacheUtil {
 
+    private SmCryptoCacheUtil() {
+    }
+
     public static String doSm2Decrypt(String str) {
         String redisKey = SM2_CACHE_KEY_PREFIX + str;
         // 先从缓存中获取解密后的明文

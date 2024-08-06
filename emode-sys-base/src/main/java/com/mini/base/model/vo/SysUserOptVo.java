@@ -1,7 +1,5 @@
 package com.mini.base.model.vo;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;

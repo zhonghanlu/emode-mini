@@ -14,6 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class AddressByIpUtil {
 
+    private AddressByIpUtil() {
+    }
+
     // ip2region.xdb 文件地址常量（本地xdb文件路径）
     private static String XDB_PATH = "emode-app/src/main/resources/ip/ip2region.xdb";
 

@@ -103,8 +103,8 @@ public class SmCryptoUtil {
 
 
     public static void main(String[] args) {
-        System.out.println(doSm2Encrypt("123456"));
-        System.out.println(doHashValue("123456"));
+//        System.out.println(doSm2Encrypt("123456"));
+//        System.out.println(doHashValue("123456"));
 
 //        try {
 //            // 1、创建 searcher 对象
