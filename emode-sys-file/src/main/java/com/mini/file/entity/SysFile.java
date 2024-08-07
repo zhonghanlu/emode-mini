@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Data
 @Schema(description = "文件存储表")
 @TableName("sys_file")
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysFile extends CommonEntity implements Serializable {

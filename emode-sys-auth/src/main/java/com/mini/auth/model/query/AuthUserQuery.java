@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * @create 2024/5/21 11:20
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class AuthUserQuery extends PageQuery {
 
     /**

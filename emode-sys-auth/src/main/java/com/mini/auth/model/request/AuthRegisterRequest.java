@@ -3,7 +3,6 @@ package com.mini.auth.model.request;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -13,7 +12,6 @@ import javax.validation.constraints.NotEmpty;
  * @create 2024/7/18 15:10
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRegisterRequest {
 
     /**

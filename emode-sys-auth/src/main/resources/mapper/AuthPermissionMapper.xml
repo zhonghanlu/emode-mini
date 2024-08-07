@@ -5,8 +5,9 @@
 
     <insert id="batchInsert">
         INSERT INTO auth_permission (id,auth_menu,auth_opt,auth_data,del_flag)
-        <foreach collection="authPermissionList" item="item" open="(" close=")" separator=",">
-            #{item.id},#{item.authMenu},#{item.authOpt},#{item.authData},#{item.delFlag}
+        VALUES
+        <foreach collection="authPermissionList" item="item" separator=",">
+            (#{item.id},#{item.authMenu},#{item.authOpt},#{item.authData},#{item.delFlag})
         </foreach>
     </insert>
 

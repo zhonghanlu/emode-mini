@@ -6,7 +6,6 @@ import com.mini.common.enums.str.LoginOptType;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -18,7 +17,6 @@ import java.time.LocalDateTime;
  * @date : 2024-7-18
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysLoginOptVo {
     /**
      * 主键id

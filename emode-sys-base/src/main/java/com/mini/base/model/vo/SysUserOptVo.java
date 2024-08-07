@@ -4,16 +4,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mini.common.enums.str.MethodType;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class SysUserOptVo {
     /**
      * 主键id

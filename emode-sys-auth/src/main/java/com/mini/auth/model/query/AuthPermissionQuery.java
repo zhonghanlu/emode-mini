@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * @create 2024/7/4 15:47
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class AuthPermissionQuery extends PageQuery {
 
     /**

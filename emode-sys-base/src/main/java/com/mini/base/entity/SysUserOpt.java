@@ -7,7 +7,6 @@ import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -20,7 +19,6 @@ import java.time.LocalDateTime;
  */
 @Data
 @Schema(description = "用户操作日志记录")
-@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("sys_user_opt")

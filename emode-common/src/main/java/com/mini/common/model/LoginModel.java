@@ -11,7 +11,6 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 public class LoginModel {
 
     @Schema(title = "token")

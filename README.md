@@ -257,3 +257,11 @@ sa-token Helper编写，区分两种情况：
 - 修复部分issue
 - 站内信重构，增加策略模式
 - 策略模式优化，缺暴露分页与发布接口
+
+### 2024年8月7日17:05:22
+
+- 完善站内信
+- 完善equal与hashcode继承重写问题，
+- 有继承使用@EqualsAndHashCode(callSuper = true)
+- 无继承使用@EqualsAndHashCode(callSuper = false)
+- 优化部分issue

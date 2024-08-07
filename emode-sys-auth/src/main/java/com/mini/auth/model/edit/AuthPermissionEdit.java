@@ -3,7 +3,6 @@ package com.mini.auth.model.edit;
 import com.mini.common.enums.str.MenuType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotNull;
 
@@ -13,7 +12,6 @@ import javax.validation.constraints.NotNull;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthPermissionEdit {
     /**
      * 主键id

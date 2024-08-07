@@ -2,7 +2,6 @@ package com.mini.common.model;
 
 import com.mini.common.enums.str.UserType;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.Set;
 
@@ -11,7 +10,6 @@ import java.util.Set;
  * @create 2024/7/16 17:23
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class LoginUser {
 
     /**

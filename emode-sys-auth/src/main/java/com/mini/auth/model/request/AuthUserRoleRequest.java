@@ -1,7 +1,6 @@
 package com.mini.auth.model.request;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
  * @create 2024/7/16 15:24
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserRoleRequest {
 
     /**

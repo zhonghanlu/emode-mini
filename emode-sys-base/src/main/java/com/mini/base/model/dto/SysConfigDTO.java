@@ -2,10 +2,8 @@ package com.mini.base.model.dto;
 
 import com.mini.common.enums.str.YesOrNo;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysConfigDTO {
     /**
      * 主键id

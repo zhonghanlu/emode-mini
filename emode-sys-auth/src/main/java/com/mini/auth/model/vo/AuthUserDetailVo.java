@@ -3,7 +3,6 @@ package com.mini.auth.model.vo;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -12,7 +11,6 @@ import java.util.List;
  * @create 2024/7/16 16:17
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserDetailVo {
 
     /**

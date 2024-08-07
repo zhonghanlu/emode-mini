@@ -3,7 +3,6 @@ package com.mini.auth.model.vo;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * 系统角色表;
@@ -11,7 +10,6 @@ import lombok.EqualsAndHashCode;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRoleVo {
 
     /**

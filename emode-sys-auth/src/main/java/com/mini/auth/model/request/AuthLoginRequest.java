@@ -4,7 +4,6 @@ import com.mini.common.enums.str.Device;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,7 +13,6 @@ import javax.validation.constraints.NotNull;
  * @create 2024/7/17 15:15
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthLoginRequest {
 
     @NotBlank(message = "账户名不可为空")

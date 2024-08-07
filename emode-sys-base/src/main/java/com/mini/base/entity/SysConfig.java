@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @TableName("sys_config")
 @Schema(description = "全局参数配置表")
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysConfig extends CommonEntity {

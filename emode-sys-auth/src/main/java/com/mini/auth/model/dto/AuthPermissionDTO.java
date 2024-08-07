@@ -3,7 +3,6 @@ package com.mini.auth.model.dto;
 import com.mini.common.enums.str.MenuType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * 系统权限详细记录表;
@@ -11,7 +10,6 @@ import lombok.EqualsAndHashCode;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthPermissionDTO {
     /**
      * 主键id

@@ -1,31 +1,20 @@
-package com.mini.base.entity;
+package com.mini.base.model.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.mini.common.enums.str.MessageStatus;
 import com.mini.common.enums.str.NoticeType;
-import com.mini.common.model.CommonEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 /**
- * 站内信表;
- *
- * @author : zhl
- * @date : 2024-8-6
+ * @author zhl
+ * @create 2024/8/7 15:20
  */
 @Data
-@TableName("sys_notice")
-@Schema(description = "站内信表")
-@EqualsAndHashCode(callSuper = true)
-@AllArgsConstructor
-@NoArgsConstructor
-public class SysNotice extends CommonEntity {
+public class SysNoticeVo {
+
     /**
      * 主键id
      */
@@ -45,8 +34,8 @@ public class SysNotice extends CommonEntity {
     /**
      * 消息发送者的id
      */
-    @Schema(title = "消息发送者的id")
-    private Long sendId;
+    @Schema(title = "消息发送人姓名")
+    private String sendName;
     /**
      * 消息的类型
      */
@@ -58,8 +47,9 @@ public class SysNotice extends CommonEntity {
     @Schema(title = "发送时间")
     private LocalDateTime sendTime;
     /**
-     * 消息状态
+     * 消息状态yes no
      */
-    @Schema(title = "消息状态")
+    @Schema(title = "消息状态yes no")
     private MessageStatus messageStatus;
+
 }

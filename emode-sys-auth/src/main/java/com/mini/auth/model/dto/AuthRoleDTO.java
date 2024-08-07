@@ -3,14 +3,12 @@ package com.mini.auth.model.dto;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author zhl
  * @create 2024/7/15 16:21
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRoleDTO {
     /**
      * 主键id

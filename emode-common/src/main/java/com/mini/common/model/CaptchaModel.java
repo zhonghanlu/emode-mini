@@ -11,7 +11,6 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 public class CaptchaModel {
 
     @Schema(title = "验证码唯一uuid")

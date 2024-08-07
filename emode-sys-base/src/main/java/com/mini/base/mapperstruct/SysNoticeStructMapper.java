@@ -2,6 +2,8 @@ package com.mini.base.mapperstruct;
 
 import com.mini.base.entity.SysNotice;
 import com.mini.base.model.dto.SysNoticeDTO;
+import com.mini.base.model.request.SysNoticeRequest;
+import com.mini.base.model.vo.SysNoticeVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -18,4 +20,20 @@ public interface SysNoticeStructMapper {
      * dto2entity
      */
     SysNotice dto2Entity(SysNoticeDTO sysNoticeDTO);
+
+    /**
+     * entity2dto
+     */
+    SysNoticeDTO entity2Dto(SysNotice sysNotice);
+
+    /**
+     * req2dto
+     */
+    SysNoticeDTO request2Dto(SysNoticeRequest request);
+
+    /**
+     * dto2vo
+     */
+    SysNoticeVo dto2vo(SysNoticeDTO dto);
+
 }

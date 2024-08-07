@@ -5,7 +5,6 @@ import com.mini.common.enums.str.LoginOptType;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 
@@ -14,7 +13,6 @@ import java.time.LocalDateTime;
  * @create 2024/7/18 17:06
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysLoginOptInfoDTO {
 
     /**

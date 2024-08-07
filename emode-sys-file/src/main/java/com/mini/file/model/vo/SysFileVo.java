@@ -3,18 +3,12 @@ package com.mini.file.model.vo;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.Device;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * @author zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor
-@NoArgsConstructor
 public class SysFileVo {
     /**
      * 主键id

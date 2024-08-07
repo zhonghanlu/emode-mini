@@ -2,7 +2,6 @@ package com.mini.auth.model.dto;
 
 import com.mini.common.enums.str.UserType;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -11,7 +10,6 @@ import java.util.List;
  * @create 2024/7/16 15:56
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserDetailDTO {
 
     /**

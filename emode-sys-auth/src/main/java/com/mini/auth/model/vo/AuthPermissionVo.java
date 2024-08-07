@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * @create 2024/7/4 16:40
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class AuthPermissionVo extends TreeNode<AuthPermissionVo> {
 
     /**

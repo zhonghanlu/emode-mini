@@ -2,14 +2,12 @@ package com.mini.base.model.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author zhl
  * @create 2024/8/6 17:31
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysSendRequest {
 
     /**

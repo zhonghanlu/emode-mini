@@ -4,7 +4,6 @@ import com.mini.common.enums.str.LoginOptType;
 import com.mini.common.enums.str.YesOrNo;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Data
 @Builder
-@EqualsAndHashCode(callSuper = false)
 public class SysLoginOptDTO {
     /**
      * 用户账户名

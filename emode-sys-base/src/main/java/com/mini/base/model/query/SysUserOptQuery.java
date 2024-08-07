@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * @create 2024/7/31 16:31
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class SysUserOptQuery extends PageQuery {
 
     /**

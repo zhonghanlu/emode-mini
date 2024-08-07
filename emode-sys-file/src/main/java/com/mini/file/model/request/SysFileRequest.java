@@ -3,14 +3,12 @@ package com.mini.file.model.request;
 import com.mini.common.enums.str.Device;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author zhl
  */
 @Data
 @Schema(description = "文件存储表")
-@EqualsAndHashCode(callSuper = false)
 public class SysFileRequest {
     /**
      * 文件名

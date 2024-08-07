@@ -8,27 +8,23 @@ import java.util.Arrays;
 
 /**
  * @author zhl
- * @create 2024/8/6 15:46
+ * @create 2024/8/7 14:36
  */
-public enum NoticeType implements StringEnum {
+public enum MessageStatus implements StringEnum {
 
-    // 站内信
-    LOCAL("local"),
-
-    // 短信
-    MSG("msg"),
-
-    // 邮箱
-    EMAIL("email");
+    // 广播 全部发送
+    BROADCAST("broadcast"),
+    // 独立发送
+    ALONE("alone");
 
     private String value;
 
-    NoticeType(String value) {
+    MessageStatus(String value) {
         this.value = value;
     }
 
     @JsonCreator
-    public static NoticeType get(String val) {
+    public static MessageStatus get(String val) {
         return Arrays.stream(values()).filter(e -> e.getStringValue().equalsIgnoreCase(val)).findFirst().orElse(null);
     }
 

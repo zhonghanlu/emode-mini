@@ -2,7 +2,6 @@ package com.mini.auth.model.edit;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRoleRelationEdit {
     /**
      * 主键id

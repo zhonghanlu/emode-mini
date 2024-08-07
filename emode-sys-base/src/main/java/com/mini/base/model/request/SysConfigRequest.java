@@ -3,7 +3,6 @@ package com.mini.base.model.request;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -13,7 +12,6 @@ import javax.validation.constraints.NotNull;
  * @create 2024/7/31 14:41
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysConfigRequest {
     /**
      * 配置名称

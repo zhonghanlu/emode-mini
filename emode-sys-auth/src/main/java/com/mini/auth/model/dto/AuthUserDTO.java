@@ -2,13 +2,11 @@ package com.mini.auth.model.dto;
 
 import com.mini.common.enums.str.UserType;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserDTO  {
     /**
      * 用户表主键

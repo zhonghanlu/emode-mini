@@ -3,10 +3,8 @@ package com.mini.base.model.vo;
 import com.mini.common.enums.str.YesOrNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysConfigVo {
     /**
      * 主键id

@@ -27,7 +27,7 @@ import java.util.Map;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/file")
+@RequestMapping("/sys-file")
 public class FileController {
 
     private final CommonFileBiz commonFileBiz;

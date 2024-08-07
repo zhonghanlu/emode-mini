@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Schema(description = "用户表")
 @TableName("auth_user")
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthUser extends CommonEntity {

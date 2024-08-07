@@ -3,15 +3,13 @@ package com.mini.auth.model.vo;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * @author zhl
  * @create 2024/5/14 15:34
  */
-@Setter
-@Getter
+@Data
 public class AuthUserVo {
 
     /**

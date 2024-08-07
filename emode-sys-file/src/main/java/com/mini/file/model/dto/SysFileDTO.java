@@ -3,14 +3,12 @@ package com.mini.file.model.dto;
 import com.mini.common.enums.str.Device;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
  * @author zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysFileDTO {

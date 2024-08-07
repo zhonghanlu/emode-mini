@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
  * @date : 2024-7-18
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class SysLoginOptQuery extends PageQuery {
 
     /**

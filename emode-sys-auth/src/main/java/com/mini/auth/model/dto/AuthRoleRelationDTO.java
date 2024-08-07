@@ -3,7 +3,6 @@ package com.mini.auth.model.dto;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import java.util.List;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRoleRelationDTO {
 
     /**

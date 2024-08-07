@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Schema(description = "消息用户关联表")
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("sys_user_notice")

@@ -3,7 +3,6 @@ package com.mini.auth.model.vo;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -12,7 +11,6 @@ import java.util.List;
  * @create 2024/7/15 15:42
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthRoleDetailVo {
     /**
      * 主键id

@@ -2,7 +2,6 @@ package com.mini.base.model.dto;
 
 import com.mini.common.enums.str.YesOrNo;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * 消息用户关联表;
@@ -11,7 +10,6 @@ import lombok.EqualsAndHashCode;
  * @date : 2024-8-6
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class SysUserNoticeDTO {
     /**
      * 主键id

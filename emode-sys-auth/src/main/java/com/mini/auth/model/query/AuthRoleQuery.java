@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * @author : zhl
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class AuthRoleQuery extends PageQuery {
     /**
      * 角色名

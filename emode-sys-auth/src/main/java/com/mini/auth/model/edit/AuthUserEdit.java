@@ -2,7 +2,6 @@ package com.mini.auth.model.edit;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.validation.constraints.NotNull;
 
@@ -11,7 +10,6 @@ import javax.validation.constraints.NotNull;
  * @create 2024/5/14 15:34
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserEdit {
     /**
      * 用户表主键

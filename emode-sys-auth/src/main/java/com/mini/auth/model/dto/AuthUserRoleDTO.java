@@ -1,7 +1,6 @@
 package com.mini.auth.model.dto;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -10,7 +9,6 @@ import java.util.List;
  * @create 2024/7/16 14:58
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class AuthUserRoleDTO {
 
     /**

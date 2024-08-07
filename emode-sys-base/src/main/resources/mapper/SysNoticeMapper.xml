@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.base.mapper.SysNoticeMapper">
+    <select id="selectPage" resultType="com.mini.base.model.dto.SysNoticeDTO">
+        SELECT
+        sn.id,sn.title,sn.content,sn.send_id,sn.notice_type,sn.send_time,sn.message_status,sn.create_time,sn.create_by,sn.update_time,sn.update_by,
+        sn.del_flag,au.username AS sendName
+        FROM sys_notice sn
+        LEFT JOIN auth_user au ON sn.send_id = au.id
+        <where>
+            sn.del_flag = 1
+            <if test="query.title != null and query.title != ''">
+                AND sn.title LIKE CONCAT('%',#{query.title},'%')
+            </if>
+            <if test="query.noticeType != null">
+                AND sn.notice_type = #{query.noticeType}
+            </if>
+            <if test="query.messageStatus != null">
+                AND sn.message_status = #{query.messageStatus}
+            </if>
+        </where>
+    </select>
+</mapper>
