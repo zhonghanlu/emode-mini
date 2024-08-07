@@ -23,7 +23,7 @@ import static com.mini.common.constant.NoticeConstant.THREAD_NOTICE_PREFIX;
  * @create 2024/8/6 16:33
  */
 @Component
-public abstract class NoticeAbstract {
+public abstract class AbstractNotice {
 
     // 暂且写死线程池
     public final ExecutorService executorService = new ThreadPoolExecutor(5,

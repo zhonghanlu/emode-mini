@@ -6,7 +6,7 @@ import com.mini.base.mapper.SysNoticeMapper;
 import com.mini.base.mapper.SysUserNoticeMapper;
 import com.mini.base.mapperstruct.SysNoticeStructMapper;
 import com.mini.base.model.dto.SysNoticeDTO;
-import com.mini.base.service.NoticeAbstract;
+import com.mini.base.service.AbstractNotice;
 import com.mini.base.service.NoticeStrategy;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.enums.str.MessageStatus;
@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -33,7 +32,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class LocalNoticeStrategy extends NoticeAbstract implements NoticeStrategy {
+public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrategy {
 
     private final SysNoticeMapper sysNoticeMapper;
 

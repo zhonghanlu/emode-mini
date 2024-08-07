@@ -1,7 +1,7 @@
 package com.mini.base.service.impl;
 
 import com.mini.base.model.dto.SysNoticeDTO;
-import com.mini.base.service.NoticeAbstract;
+import com.mini.base.service.AbstractNotice;
 import com.mini.base.service.NoticeStrategy;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 短信通知策略实现
  */
 @Service
-public class MsgNoticeStrategy extends NoticeAbstract implements NoticeStrategy {
+public class MsgNoticeStrategy extends AbstractNotice implements NoticeStrategy {
     @Override
     public void send(SysNoticeDTO sysNoticeDTO) {
 
