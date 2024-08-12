@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 public class TreeUtils {
 
-    public TreeUtils() {
+    private TreeUtils() {
     }
 
     /**

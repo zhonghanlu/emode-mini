@@ -44,6 +44,11 @@ public class IdCardNumberUtil {
     private static final int SECOND_ID_CARD_CHECK_MOD = 11;
 
     /**
+     * 标识
+     */
+    private static final String ERROR_ID_CARD = "idCard error!";
+
+    /**
      * 性别表示的值
      */
     private static final int MALE_SEX_INT = 1;
@@ -87,7 +92,7 @@ public class IdCardNumberUtil {
      */
     public static String getBirthDayFromIdCard(String idCard) {
         if (!isIdCard(idCard)) {
-            return "idCard error!";
+            return ERROR_ID_CARD;
         }
         // 获取身份证的出生年月日串
         String birth = getIdCardBirthDayStr(idCard);
@@ -176,7 +181,7 @@ public class IdCardNumberUtil {
      */
     public static String idCardNumber15To18(String idCard) {
         if (!isIdCard(idCard) || idCard.length() != FIRST_ID_CARD_LENGTH) {
-            return "idCard error!";
+            return ERROR_ID_CARD;
         }
         StringBuilder idCardBuilder = new StringBuilder(idCard);
         // 在 第6位后插入年份
@@ -232,10 +237,10 @@ public class IdCardNumberUtil {
     }
 
     public static void main(String[] args) {
-        String idCard = "32108319820127583X";
-        System.out.println(isIdCard(idCard));
-        System.out.println(getBirthDayFromIdCard(idCard));
-        System.out.println(getSexFromIdCard(idCard));
+//        String idCard = "32108319820127583X";
+//        System.out.println(isIdCard(idCard));
+//        System.out.println(getBirthDayFromIdCard(idCard));
+//        System.out.println(getSexFromIdCard(idCard));
     }
 
 }

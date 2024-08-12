@@ -23,7 +23,7 @@ public class BigNumberSerializer extends NumberSerializer {
 	/**
 	 * 提供实例
 	 */
-	public static final BigNumberSerializer INSTANCE = new BigNumberSerializer(Number.class);
+	public static final BigNumberSerializer BIG_NUMBER_SERIALIZER_INSTANCE = new BigNumberSerializer(Number.class);
 
 	public BigNumberSerializer(Class<? extends Number> rawType) {
 		super(rawType);

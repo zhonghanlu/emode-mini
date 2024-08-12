@@ -33,9 +33,9 @@ public class JacksonConfig {
 		ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 		// 全局配置序列化返回 JSON 处理
 		SimpleModule simpleModule = new SimpleModule();
-		simpleModule.addSerializer(Long.class, BigNumberSerializer.INSTANCE);
-		simpleModule.addSerializer(Long.TYPE, BigNumberSerializer.INSTANCE);
-		simpleModule.addSerializer(BigInteger.class, BigNumberSerializer.INSTANCE);
+		simpleModule.addSerializer(Long.class, BigNumberSerializer.BIG_NUMBER_SERIALIZER_INSTANCE);
+		simpleModule.addSerializer(Long.TYPE, BigNumberSerializer.BIG_NUMBER_SERIALIZER_INSTANCE);
+		simpleModule.addSerializer(BigInteger.class, BigNumberSerializer.BIG_NUMBER_SERIALIZER_INSTANCE);
 		simpleModule.addSerializer(BigDecimal.class, ToStringSerializer.instance);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(jacksonProperties.getDateFormat());
 		simpleModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(formatter));

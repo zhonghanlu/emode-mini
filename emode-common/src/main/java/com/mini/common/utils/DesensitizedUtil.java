@@ -15,6 +15,8 @@ public class DesensitizedUtil {
 
     private static final int BANK_CARD_NO_LENGTH = 9;
 
+    public static final Long USER_ID = 0L;
+
     public DesensitizedUtil() {
         // 无参构造
     }
@@ -26,7 +28,7 @@ public class DesensitizedUtil {
             String newStr = String.valueOf(str);
             switch (desensitizedType) {
                 case USER_ID:
-                    newStr = String.valueOf(userId());
+                    newStr = String.valueOf(USER_ID);
                     break;
                 case CHINESE_NAME:
                     newStr = chineseName(String.valueOf(str));
@@ -60,10 +62,6 @@ public class DesensitizedUtil {
 
             return newStr;
         }
-    }
-
-    public static Long userId() {
-        return 0L;
     }
 
     public static String chineseName(String fullName) {

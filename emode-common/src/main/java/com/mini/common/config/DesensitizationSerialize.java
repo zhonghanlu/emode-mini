@@ -39,7 +39,7 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
                 break;
             // userId脱敏
             case USER_ID:
-                jsonGenerator.writeString(String.valueOf(DesensitizedUtil.userId()));
+                jsonGenerator.writeString(String.valueOf(DesensitizedUtil.USER_ID));
                 break;
             // 中文姓名脱敏
             case CHINESE_NAME:

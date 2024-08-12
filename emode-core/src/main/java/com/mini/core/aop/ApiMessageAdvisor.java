@@ -95,7 +95,7 @@ public class ApiMessageAdvisor implements Ordered {
      */
     private void handleRequestId(Object returnValue) {
         if (returnValue instanceof Restful) {
-            Restful response = (Restful) returnValue;
+            Restful<?> response = (Restful<?>) returnValue;
             response.setRequestId(RequestIdUtils.getRequestId().toString());
         }
     }

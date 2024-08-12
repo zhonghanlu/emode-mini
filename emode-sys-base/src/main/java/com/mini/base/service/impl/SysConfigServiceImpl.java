@@ -75,7 +75,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
             throw new EModeServiceException("id有误，id：" + id);
         }
 
-        SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper, SysConfig.class);
+        SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper);
 
         if (Objects.isNull(sysConfig)) {
             throw new EModeServiceException("当前id不存在");
@@ -96,7 +96,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
     @Override
     public void update(SysConfigDTO dto) {
         long id = dto.getId();
-        SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper, SysConfig.class);
+        SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper);
 
         if (Objects.isNull(sysConfig)) {
             throw new EModeServiceException("当前id不存在");

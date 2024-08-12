@@ -7,13 +7,13 @@ import com.mini.common.utils.redis.RedisUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @author zhl
@@ -27,9 +27,12 @@ public class ModeAppRunner implements ApplicationRunner {
 
     private final SysConfigBiz sysConfigBiz;
 
+    @Value("${server.port}")
+    private String serverPort;
+
     @Override
     public void run(ApplicationArguments args) {
-        log.info("openApi3接口地址：http://{}:18099/doc.html", IPUtils.getIp());
+        log.info("openApi3接口地址 http://{}:{}/doc.html", IPUtils.getIp(), serverPort);
 
         // 参数缓存
         Map<String, String> map = sysConfigBiz.selectAllForMap();

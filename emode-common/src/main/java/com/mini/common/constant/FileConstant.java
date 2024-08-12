@@ -4,7 +4,7 @@ package com.mini.common.constant;
  * @author zhl
  * @create 2024/5/16 14:36
  */
-public class FileConstant {
+public final class FileConstant {
     private FileConstant() {
     }
 

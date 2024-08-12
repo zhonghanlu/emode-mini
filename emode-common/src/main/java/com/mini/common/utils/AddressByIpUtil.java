@@ -1,5 +1,6 @@
 package com.mini.common.utils;
 
+import com.mini.common.exception.service.EModeServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.lionsoul.ip2region.xdb.Searcher;
@@ -18,14 +19,14 @@ public class AddressByIpUtil {
     }
 
     // ip2region.xdb 文件地址常量（本地xdb文件路径）
-    private static String XDB_PATH = "emode-app/src/main/resources/ip/ip2region.xdb";
+    private static final String IP_DB_PATH = "emode-app/src/main/resources/ip/ip2region.xdb";
 
 
     private static final ThreadLocal<Searcher> SEARCHER_THREAD_LOCAL = ThreadLocal.withInitial(() -> {
         try {
-            return Searcher.newWithFileOnly(XDB_PATH);
+            return Searcher.newWithFileOnly(IP_DB_PATH);
         } catch (IOException e) {
-            throw new RuntimeException("Failed to create Searcher instance", e);
+            throw new EModeServiceException("Failed to create Searcher instance");
         }
     });
 
@@ -47,10 +48,22 @@ public class AddressByIpUtil {
                 return region;
             } catch (Exception e) {
                 log.error("获取IP地址异常：{} ", e.getMessage());
-                throw new RuntimeException("获取IP地址异常");
+                throw new EModeServiceException("获取IP地址异常");
             }
         }
         return "未知";
+    }
+
+    /**
+     * 刷新ip库
+     */
+    public static void refreshThreadLocal() {
+        SEARCHER_THREAD_LOCAL.remove();
+        try {
+            SEARCHER_THREAD_LOCAL.set(Searcher.newWithFileOnly(IP_DB_PATH));
+        } catch (IOException e) {
+            throw new EModeServiceException("ip库异常");
+        }
     }
 
 }

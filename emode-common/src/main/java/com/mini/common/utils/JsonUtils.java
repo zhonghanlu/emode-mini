@@ -3,6 +3,7 @@ package com.mini.common.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.bean.SpringBean;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ import java.util.Objects;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JsonUtils {
 
-    private static ObjectMapper objectMapper = SpringBean.getBean(ObjectMapper.class);
+    private static final ObjectMapper objectMapper = SpringBean.getBean(ObjectMapper.class);
 
     public static String toJsonString(Object object) {
         if (Objects.isNull(object)) {
@@ -31,7 +32,7 @@ public class JsonUtils {
         try {
             return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 
@@ -42,7 +43,7 @@ public class JsonUtils {
         try {
             return objectMapper.readValue(text, clazz);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 
@@ -53,7 +54,7 @@ public class JsonUtils {
         try {
             return objectMapper.readValue(bytes, clazz);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 
@@ -64,7 +65,7 @@ public class JsonUtils {
         try {
             return objectMapper.readValue(text, typeReference);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 
@@ -76,7 +77,7 @@ public class JsonUtils {
             return objectMapper.readValue(text, new TypeReference<Map<String, T>>() {
             });
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 
@@ -87,7 +88,7 @@ public class JsonUtils {
         try {
             return objectMapper.readValue(text, objectMapper.getTypeFactory().constructCollectionType(List.class, clazz));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new EModeServiceException(e.getMessage());
         }
     }
 

@@ -37,13 +37,13 @@ public enum Gender implements StringEnum {
     }
 
     public String chinese() {
-        String value = "未知";
+        String res = "未知";
         if (Gender.FEMALE == this) {
-            value = "女";
+            res = "女";
         } else if (Gender.MALE == this) {
-            value = "男";
+            res = "男";
         }
-        return value;
+        return res;
     }
 
     @JsonValue

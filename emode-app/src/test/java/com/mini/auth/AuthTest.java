@@ -1,6 +1,5 @@
 package com.mini.auth;
 
-import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.biz.auth.SysUserBiz;
 import com.mini.web.ModeApplication;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +20,19 @@ class AuthTest {
     SysUserBiz sysUserBiz;
 
     @Test
-    void test() {
+    void test1() {
+    }
+
+    @Test
+    void test2() {
+    }
+
+    @Test
+    void test3() {
+    }
+
+    @Test
+    void test4() {
     }
 
 }

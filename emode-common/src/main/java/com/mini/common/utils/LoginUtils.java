@@ -20,7 +20,7 @@ public class LoginUtils {
     private LoginUtils() {
     }
 
-    private final static String LOGIN_USER_KEY = "loginUser";
+    private static final String LOGIN_USER_KEY = "loginUser";
 
     /**
      * 登录系统

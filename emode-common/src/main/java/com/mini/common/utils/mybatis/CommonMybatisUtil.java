@@ -20,8 +20,8 @@ public class CommonMybatisUtil {
     /**
      * 根据id判断库内数据是否存在
      */
-    public static <T extends CommonEntity> boolean isExistById(long id, BaseMapper<T> baseMapper, Class<T> tClass) {
-        T byId = getById(id, baseMapper, tClass);
+    public static <T extends CommonEntity> boolean isExistById(long id, BaseMapper<T> baseMapper) {
+        T byId = getById(id, baseMapper);
         if (Objects.isNull(byId)) {
             return Boolean.FALSE;
         }
@@ -31,7 +31,7 @@ public class CommonMybatisUtil {
     /**
      * 根据id获得库内数据
      */
-    public static <T extends CommonEntity> T getById(long id, BaseMapper<T> baseMapper, Class<T> tClass) {
+    public static <T extends CommonEntity> T getById(long id, BaseMapper<T> baseMapper) {
         QueryWrapper<T> queryWrapper = Wrappers.query();
 
         queryWrapper.eq("id", id)

@@ -109,7 +109,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
         List<AuthRole> authRoleList = checkRoleIdExist(roleIdList);
 
         // 检查修改用户是否存在
-        AuthUser authUser = CommonMybatisUtil.getById(userId, authUserMapper, AuthUser.class);
+        AuthUser authUser = CommonMybatisUtil.getById(userId, authUserMapper);
         if (Objects.isNull(authUser)) {
             throw new EModeServiceException("当前修改用户信息不存在");
         }
@@ -194,7 +194,7 @@ public class AuthUserServiceImpl implements IAuthUserService {
      * 校验用户id数据是否存在
      */
     private void checkUserExist(long id) {
-        boolean b = CommonMybatisUtil.isExistById(id, authUserMapper, AuthUser.class);
+        boolean b = CommonMybatisUtil.isExistById(id, authUserMapper);
         if (!b) {
             throw new EModeServiceException("用户不存在,id:" + id);
         }

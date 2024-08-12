@@ -46,7 +46,7 @@ public class SysFileServiceImpl implements ISysFileService {
             throw new EModeServiceException("删除主键id有误，id:" + id);
         }
 
-        SysFile sysFile = CommonMybatisUtil.getById(id, sysFileMapper, SysFile.class);
+        SysFile sysFile = CommonMybatisUtil.getById(id, sysFileMapper);
 
         if (Objects.isNull(sysFile)) {
             throw new EModeServiceException("待删除数据不存在，id:" + id);

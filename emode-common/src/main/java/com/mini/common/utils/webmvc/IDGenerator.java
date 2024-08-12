@@ -1,5 +1,6 @@
 package com.mini.common.utils.webmvc;
 
+import com.mini.common.exception.service.EModeServiceException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetAddress;
@@ -17,7 +18,7 @@ public class IDGenerator {
     private IDGenerator() {
     }
 
-    private static final Pattern PATTERN_HOSTNAME = Pattern.compile("^.*\\D+([0-9]+)$");
+    private static final Pattern PATTERN_HOSTNAME = Pattern.compile("^.*\\D+(\\d+)$");
 
     private static final long OFFSET = LocalDate.of(2000, 1, 1).atStartOfDay(ZoneId.of("Z")).toEpochSecond();
 
@@ -25,7 +26,7 @@ public class IDGenerator {
 
     private static final long SHARD_ID = getServerIdAsLong();
 
-    private static long offset = 0;
+    private static long COUNT = 0;
 
     private static long lastEpoch = 0;
 
@@ -45,8 +46,8 @@ public class IDGenerator {
             lastEpoch = epochSecond;
             reset();
         }
-        offset++;
-        long next = offset & MAX_NEXT;
+        COUNT++;
+        long next = COUNT & MAX_NEXT;
         if (next == 0) {
             return nextId(epochSecond + 1);
         }
@@ -54,7 +55,7 @@ public class IDGenerator {
     }
 
     private static void reset() {
-        offset = 0;
+        COUNT = 0;
     }
 
     private static long generateId(long epochSecond, long next, long shardId) {
@@ -62,8 +63,9 @@ public class IDGenerator {
     }
 
     private static long getServerIdAsLong() {
+        String hostname = null;
         try {
-            String hostname = InetAddress.getLocalHost().getHostName();
+            hostname = InetAddress.getLocalHost().getHostName();
             Matcher matcher = PATTERN_HOSTNAME.matcher(hostname);
             if (matcher.matches()) {
                 long n = Long.parseLong(matcher.group(1));
@@ -72,6 +74,7 @@ public class IDGenerator {
                 }
             }
         } catch (UnknownHostException e) {
+            throw new EModeServiceException("ip get exception");
         }
         return 0;
     }
