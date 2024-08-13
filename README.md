@@ -1,5 +1,9 @@
 # Emode开发规范文档
 
+```angular2html
+代码提交到 review 分支
+```
+
 ## 1.项目结构
 
 ### 1.1 app模块
