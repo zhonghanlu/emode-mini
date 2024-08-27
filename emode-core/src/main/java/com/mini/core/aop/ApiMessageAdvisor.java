@@ -16,11 +16,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.annotation.Annotation;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -122,7 +121,7 @@ public class ApiMessageAdvisor implements Ordered {
         Object[] args = pjp.getArgs();
         if (log.isInfoEnabled() && args != null) {
             for (Object o : args) {
-                if (!(o instanceof HttpServletRequest) && !(o instanceof HttpServletResponse) && !(o instanceof CommonsMultipartFile)) {
+                if (!(o instanceof HttpServletRequest) && !(o instanceof HttpServletResponse) && !(o instanceof MultipartFile)) {
                     log.info("@@{} 【started】, request: {}", apiName, JsonUtils.toJsonString(o));
                 }
             }
