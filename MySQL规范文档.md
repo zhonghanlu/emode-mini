@@ -1,4 +1,4 @@
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">MySQL规范文档</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">MySQL文档</h1>
 
 ### 库
 1. 库名使用小写字母，下划线分隔

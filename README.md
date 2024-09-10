@@ -1,4 +1,4 @@
-# Emode开发规范文档
+# Emode开发文档
 
 ```angular2html
 代码提交到 review 分支
