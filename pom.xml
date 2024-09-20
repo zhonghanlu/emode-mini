@@ -32,6 +32,7 @@
         <commons.io.version>2.13.0</commons.io.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <poi.version>5.2.1</poi.version>
+        <easyexcel.version>3.3.4</easyexcel.version>
         <jwt.version>0.9.1</jwt.version>
         <lombok.version>1.18.16</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
@@ -83,6 +84,12 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
             </dependency>
 
             <!-- collections工具类 -->

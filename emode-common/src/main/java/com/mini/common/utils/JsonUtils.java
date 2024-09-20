@@ -8,6 +8,7 @@ import com.mini.common.utils.bean.SpringBean;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,11 @@ public class JsonUtils {
         if (Objects.isNull(object)) {
             return null;
         }
+
+        if (object instanceof MultipartFile[]) {
+            return null;
+        }
+
         try {
             return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
