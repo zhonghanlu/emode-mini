@@ -2,8 +2,10 @@ package com.mini.common.utils;
 
 import com.mini.common.exception.service.EModeServiceException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.lionsoul.ip2region.xdb.Searcher;
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -19,13 +21,15 @@ public class AddressByIpUtil {
     }
 
     // ip2region.xdb 文件地址常量（本地xdb文件路径）
-    private static final String IP_DB_PATH = "emode-app/src/main/resources/ip/ip2region.xdb";
+    private static final String IP_DB_PATH = "ip/ip2region.xdb";
 
 
     private static final ThreadLocal<Searcher> SEARCHER_THREAD_LOCAL = ThreadLocal.withInitial(() -> {
         try {
-            return Searcher.newWithFileOnly(IP_DB_PATH);
+            ClassPathResource cpr = new ClassPathResource(IP_DB_PATH);
+            return Searcher.newWithBuffer(IOUtils.toByteArray(cpr.getInputStream()));
         } catch (IOException e) {
+            log.error("创建ip库异常：{} ", e.getMessage());
             throw new EModeServiceException("Failed to create Searcher instance");
         }
     });
