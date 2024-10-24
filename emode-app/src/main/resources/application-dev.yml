@@ -253,7 +253,7 @@ spring-doc:
       - com.mini.web.controller.log
       - com.mini.web.controller.base
 
-# knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
+# knife4j  configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
 knife4j:
   enable: true
   production: false
