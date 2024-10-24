@@ -29,7 +29,7 @@ public class LoginController {
 
     private final SysUserBiz sysUserBiz;
 
-    @Operation(summary = "账户密码登录")
+    @Operation(summary = "账户密码登录", description = "密码使用sm-crypto sm2加密传输")
     @PostMapping("/login")
     public Restful<LoginModel> login(@RequestBody @Valid AuthLoginRequest request) {
         return Restful.OBJECT(sysUserBiz.login(request)).build();
@@ -42,7 +42,7 @@ public class LoginController {
         return Restful.SUCCESS().build();
     }
 
-    @Operation(summary = "注册")
+    @Operation(summary = "注册", description = "密码使用sm-crypto sm2加密传输")
     @PostMapping("/register")
     public Restful<Void> register(@RequestBody @Valid AuthRegisterRequest request) {
         sysUserBiz.register(request);

@@ -30,7 +30,7 @@ public class AuthLoginRequest {
     private String code;
 
     @NotNull(message = "用户类型不可为空")
-    @Schema(title = "用户类型小程序:mini,管理端：manager，电脑端：PC")
+    @Schema(title = "用户类型小程序:mini,管理端：manager，电脑端：pc")
     private UserType userType;
 
     @NotNull(message = "设备类型不可为空")

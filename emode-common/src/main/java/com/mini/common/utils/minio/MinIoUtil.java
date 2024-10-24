@@ -191,17 +191,14 @@ public class MinIoUtil {
      * @param bytes      文件字节数组
      */
     public void storageFile(String bucketName, String key, byte[] bytes) {
-        ByteArrayInputStream byteArrayInputStream = null;
-        try {
+        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes)) {
             initClient();
-            byteArrayInputStream = new ByteArrayInputStream(bytes);
             PutObjectArgs putObjectArgs = PutObjectArgs.builder().bucket(bucketName).object(key)
                     .contentType(getFileContentType(key)).stream(byteArrayInputStream, bytes.length, -1).build();
             client.putObject(putObjectArgs);
+            IoUtil.close(byteArrayInputStream);
         } catch (Exception e) {
             throw new EModeServiceException(e.getMessage());
-        } finally {
-            IoUtil.close(byteArrayInputStream);
         }
     }
 
@@ -430,6 +427,7 @@ public class MinIoUtil {
      */
     public void deleteFile(String bucketName, String key) {
         try {
+            initClient();
             RemoveObjectArgs removeObjectArgs = RemoveObjectArgs.builder().bucket(bucketName).object(key).build();
             client.removeObject(removeObjectArgs);
         } catch (Exception e) {

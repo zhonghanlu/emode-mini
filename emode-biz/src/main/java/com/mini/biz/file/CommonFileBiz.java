@@ -1,15 +1,20 @@
 package com.mini.biz.file;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.common.constant.FileConstant;
 import com.mini.common.enums.str.Device;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.DeviceUtil;
 import com.mini.common.utils.file.FileUtil;
 import com.mini.common.utils.minio.MinIoUtil;
+import com.mini.file.mapperstruct.SysFileStructMapper;
 import com.mini.file.model.dto.SysFileDTO;
+import com.mini.file.model.query.SysFileQuery;
+import com.mini.file.model.vo.SysFileVo;
 import com.mini.file.service.ISysFileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +34,9 @@ public class CommonFileBiz {
     private final MinIoUtil minIoUtil;
 
     private final ISysFileService sysFileService;
+
+    @Value("${minio.defaultBucketName}")
+    private String minioDefaultBucketName;
 
     /**
      * 多文件上传
@@ -57,35 +65,28 @@ public class CommonFileBiz {
         sysFileDTO.setFileUrl(bucketUrl);
         sysFileDTO.setFileType(fileBaseSource.get(FileConstant.FILE_TYPE));
         sysFileDTO.setFileDeviceBy(device);
-        return sysFileService.insert(sysFileDTO);
+        sysFileDTO.setBucketName(minioDefaultBucketName);
+        return sysFileService.saveOrUpdate(sysFileDTO);
     }
 
     /**
-     * 多文件删除
+     * 库内文件检索
      */
-    public void batchFileDel(MultipartFile[] files) {
-        // TODO
+    public IPage<SysFileVo> page(SysFileQuery query) {
+        IPage<SysFileDTO> page = sysFileService.page(query);
+        return page.convert(SysFileStructMapper.INSTANCE::dto2Vo);
     }
 
     /**
      * 单文件删除
      */
-    public void singleFileDel(MultipartFile file) {
-        // TODO
+    @Transactional(rollbackFor = Exception.class)
+    public void del(long id) {
+        // 取出当前对象
+        SysFileDTO sysFileDTO = sysFileService.getById(id);
+        // 执行库内删除
+        sysFileService.del(id);
+        // 执行minio删除
+        minIoUtil.deleteFile(sysFileDTO.getBucketName(), sysFileDTO.getFileUrl());
     }
-
-    /**
-     * 多文件下载
-     */
-    public void batchFileDownload(MultipartFile[] files) {
-        // TODO
-    }
-
-    /**
-     * 单文件下载
-     */
-    public void singleFileDownLoad(MultipartFile file) {
-        // TODO
-    }
-
 }

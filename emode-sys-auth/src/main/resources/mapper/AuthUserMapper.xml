@@ -9,6 +9,7 @@
         <result column="nickname" property="nickname"/>
         <result column="avatarUrl" property="avatarUrl"/>
         <result column="user_type" property="userType"/>
+        <result column="sex" property="sex"/>
 
         <collection property="authRoleDTOList" ofType="com.mini.auth.model.dto.AuthRoleDTO">
             <id column="roleId" property="id"/>
@@ -34,7 +35,10 @@
         FROM auth_user
         <where>
             <if test="query.username != null and query.username != ''">
-                username LIKE CONCAT('%', #{query.username}, '%')
+                AND username LIKE CONCAT('%', #{query.username}, '%')
+            </if>
+            <if test="query.userType != null">
+                AND user_type = #{query.userType}
             </if>
         </where>
     </select>
@@ -44,6 +48,7 @@
                au.username,
                au.nickname,
                au.user_type,
+               au.sex,
                sf.file_url AS avatarUrl,
                ar.id       AS roleId,
                ar.role_name,
@@ -57,39 +62,39 @@
                ap.icon,
                ap.sort
         FROM auth_user au
-                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
-                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
-                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
-                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id AND aur.del_flag = 1
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id AND ar.del_flag = 1
+                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id AND arp.del_flag = 1
+                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id AND ap.del_flag = 1
                  LEFT JOIN sys_file sf ON au.avatar = sf.id
         WHERE au.id = ${id}
-          AND aur.del_flag = 1
-          AND ar.del_flag = 1
-          AND arp.del_flag = 1
-          AND ap.del_flag = 1
+          AND au.del_flag = 1
     </select>
 
     <select id="getUserRoleById" resultMap="rolePermissionMap">
         SELECT au.id,
                au.username,
                au.nickname,
+               au.user_type,
+               au.sex,
                sf.file_url AS avatarUrl,
                ar.id       AS roleId,
                ar.role_name,
                ar.role_code
         FROM auth_user au
-                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
-                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id AND aur.del_flag = 1
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id AND ar.del_flag = 1
                  LEFT JOIN sys_file sf ON au.avatar = sf.id
         WHERE au.id = ${id}
-          AND aur.del_flag = 1
-          AND ar.del_flag = 1
+          AND au.del_flag = 1
     </select>
 
     <select id="getUserPermissionById" resultMap="rolePermissionMap">
         SELECT au.id,
                au.username,
                au.nickname,
+               au.user_type,
+               au.sex,
                sf.file_url AS avatarUrl,
                ap.id       AS permissionId,
                ap.parent_id,
@@ -100,28 +105,27 @@
                ap.icon,
                ap.sort
         FROM auth_user au
-                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id
-                 LEFT JOIN auth_role ar ON aur.role_id = ar.id
-                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id
-                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id
+                 LEFT JOIN auth_user_role aur ON au.id = aur.user_id AND aur.del_flag = 1
+                 LEFT JOIN auth_role ar ON aur.role_id = ar.id AND ar.del_flag = 1
+                 LEFT JOIN auth_role_permission arp ON ar.id = arp.role_id AND arp.del_flag = 1
+                 LEFT JOIN auth_permission ap ON arp.permission_id = ap.id AND ap.del_flag = 1
                  LEFT JOIN sys_file sf ON au.avatar = sf.id
         WHERE au.id = ${id}
-          AND aur.del_flag = 1
-          AND ar.del_flag = 1
-          AND arp.del_flag = 1
-          AND ap.del_flag = 1
+          AND au.del_flag = 1
     </select>
 
     <select id="getUserById" resultMap="rolePermissionMap">
         SELECT au.id,
                au.username,
                au.nickname,
+               au.user_type,
+               au.sex,
                sf.file_url AS avatarUrl
         FROM auth_user au
                  LEFT JOIN auth_user_role aur ON au.id = aur.user_id
                  LEFT JOIN sys_file sf ON au.avatar = sf.id
         WHERE au.id = ${id}
-          AND aur.del_flag = 1
+          AND au.del_flag = 1
     </select>
 
     <select id="getUserPermissionByIdForSet" resultType="java.lang.String">

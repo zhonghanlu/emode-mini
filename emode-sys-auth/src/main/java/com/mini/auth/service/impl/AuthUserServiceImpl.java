@@ -20,6 +20,7 @@ import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.enums.str.UserType;
 import com.mini.common.exception.service.EModeServiceException;
+import com.mini.common.utils.LoginUtils;
 import com.mini.common.utils.mybatis.CommonMybatisUtil;
 import com.mini.common.utils.webmvc.IDGenerator;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +29,9 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+
+import static com.mini.common.constant.UserConstant.SUPER_ADMIN_PERMISSION;
+import static com.mini.common.constant.UserConstant.SUPER_ADMIN_ROLE;
 
 /**
  * @author zhl
@@ -182,12 +186,24 @@ public class AuthUserServiceImpl implements IAuthUserService {
 
     @Override
     public Set<String> getUserPermissionByIdForSet(long id) {
-        return authUserMapper.getUserPermissionByIdForSet(id);
+        Set<String> permissionList = new HashSet<>();
+        if (LoginUtils.isSuperAdmin(id)) {
+            permissionList.add(SUPER_ADMIN_PERMISSION);
+        } else {
+            permissionList.addAll(authUserMapper.getUserPermissionByIdForSet(id));
+        }
+        return permissionList;
     }
 
     @Override
     public Set<String> getUserRoleByIdForSet(long id) {
-        return authUserMapper.getUserRoleByIdForSet(id);
+        Set<String> roleList = new HashSet<>();
+        if (LoginUtils.isSuperAdmin(id)) {
+            roleList.add(SUPER_ADMIN_ROLE);
+        } else {
+            roleList.addAll(authUserMapper.getUserRoleByIdForSet(id));
+        }
+        return roleList;
     }
 
     /**

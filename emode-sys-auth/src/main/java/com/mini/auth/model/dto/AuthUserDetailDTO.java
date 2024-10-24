@@ -1,5 +1,6 @@
 package com.mini.auth.model.dto;
 
+import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.UserType;
 import lombok.Data;
 
@@ -24,6 +25,10 @@ public class AuthUserDetailDTO {
      * 昵称
      */
     private String nickname;
+    /**
+     * 性别
+     */
+    private Gender sex;
     /**
      * 头像id
      */

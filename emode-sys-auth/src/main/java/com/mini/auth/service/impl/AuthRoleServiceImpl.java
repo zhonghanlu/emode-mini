@@ -211,6 +211,11 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
      * 根据角色id和权限id构建关联关系list
      */
     private static List<AuthRolePermission> getAuthRolePermissionList(List<Long> permissionIdList, long roleId) {
+
+        if (CollectionUtils.isEmpty(permissionIdList)) {
+            throw new EModeServiceException("构建权限关系，权限集合不可为空");
+        }
+
         List<AuthRolePermission> authRolePermissionList = new ArrayList<>();
         permissionIdList.forEach(e -> {
             AuthRolePermission authRolePermission = new AuthRolePermission();

@@ -29,7 +29,7 @@
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <knife4j.version>4.5.0</knife4j.version>
         <kaptcha.version>2.2.3</kaptcha.version>
-        <commons.io.version>2.13.0</commons.io.version>
+        <commons.io.version>2.14.0</commons.io.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <poi.version>5.2.1</poi.version>
         <easyexcel.version>3.3.4</easyexcel.version>

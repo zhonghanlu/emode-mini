@@ -2,6 +2,7 @@ package com.mini.common.utils;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.mini.common.constant.UserConstant;
 import com.mini.common.enums.str.Device;
 import com.mini.common.enums.str.UserType;
 import com.mini.common.exception.service.EModeServiceException;
@@ -97,6 +98,14 @@ public class LoginUtils {
         String loginId = StpUtil.getLoginIdAsString();
         return getUserType(loginId);
     }
+
+    /**
+     * 判断当前id是否为超管
+     */
+    public static boolean isSuperAdmin(long userId) {
+        return UserConstant.SUPER_ADMIN_ID.equals(userId);
+    }
+
 
     public static UserType getUserType(Object loginId) {
         if (StringUtils.contains(loginId.toString(), UserType.PC.getStringValue())) {

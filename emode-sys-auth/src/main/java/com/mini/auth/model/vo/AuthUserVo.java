@@ -1,6 +1,7 @@
 package com.mini.auth.model.vo;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -29,6 +30,11 @@ public class AuthUserVo {
     @Schema(title = "昵称")
     private String nickname;
     /**
+     * 性别
+     */
+    @Schema(title = "性别")
+    private Gender sex;
+    /**
      * 头像id
      */
     @Schema(title = "头像id")
@@ -41,7 +47,7 @@ public class AuthUserVo {
     /**
      * 用户类型
      */
-    @Schema(name = "用户类型")
+    @Schema(title = "用户类型")
     private UserType userType;
 
 }

@@ -2,6 +2,7 @@ package com.mini.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.UserType;
 import com.mini.common.model.CommonEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -41,6 +42,11 @@ public class AuthUser extends CommonEntity {
      */
     @Schema(name = "昵称")
     private String nickname;
+    /**
+     * 性别
+     */
+    @Schema(name = "性别")
+    private Gender sex;
     /**
      * 头像id
      */

@@ -9,7 +9,6 @@ import com.mini.auth.model.request.AuthUserRequest;
 import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -44,8 +43,8 @@ public interface AuthUserStructMapper {
     /**
      * detail2vo
      */
-    @Mapping(source = "authRoleDTOList", target = "authRoleVoList")
-    @Mapping(source = "authPermissionDTOList", target = "authPermissionVoList")
+//    @Mapping(source = "authRoleDTOList", target = "authRoleVoList")
+//    @Mapping(source = "authPermissionDTOList", target = "authPermissionVoList")
     AuthUserDetailVo dtoDetail2Vo(AuthUserDetailDTO authUserDetailDTO);
 
     /**

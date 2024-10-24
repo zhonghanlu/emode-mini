@@ -5,6 +5,7 @@ import com.mini.auth.model.edit.AuthUserEdit;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.auth.model.request.AuthUserRequest;
 import com.mini.auth.model.request.AuthUserRoleRequest;
+import com.mini.auth.model.vo.AuthUserDetailRouterVo;
 import com.mini.auth.model.vo.AuthUserDetailVo;
 import com.mini.auth.model.vo.AuthUserVo;
 import com.mini.biz.auth.SysUserBiz;
@@ -19,6 +20,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author zhl
@@ -65,7 +67,7 @@ public class SysUserController {
     }
 
     @OptLog
-    @Operation(summary = "用户详情")
+    @Operation(summary = "用户详情-【废弃，暂不使用】")
     @GetMapping("/user-detail-type/{id}/{type}")
     public Restful<AuthUserDetailVo> getUserRolePermissionById(@PathVariable("id") long id,
                                                                @PathVariable("type") UserQueryType type) {
@@ -77,6 +79,13 @@ public class SysUserController {
     @GetMapping("/user-detail-base")
     public Restful<AuthUserDetailVo> getUserInfoBase() {
         return Restful.OBJECT(sysUserBiz.getUserInfoBase()).build();
+    }
+
+    @OptLog
+    @Operation(summary = "获取用户基本路由信息")
+    @GetMapping("/user-detail-router")
+    public Restful<List<AuthUserDetailRouterVo>> getUserInfoRouter() {
+        return Restful.OBJECT(sysUserBiz.getUserInfoRouter()).build();
     }
 
 

@@ -37,6 +37,15 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
     public void insert(AuthPermissionDTO dto) {
         AuthPermission authPermission = AuthPermissionStructMapper.INSTANCE.dto2Entity(dto);
 
+        // 菜单名重复直接返回
+        LambdaQueryWrapper<AuthPermission> wrapper = Wrappers.lambdaQuery(AuthPermission.class);
+        wrapper.eq(AuthPermission::getMenuName, authPermission.getMenuName())
+                .last(LastSql.LIMIT_ONE);
+        AuthPermission permission = authPermissionMapper.selectOne(wrapper);
+        if (Objects.nonNull(permission)) {
+            throw new EModeServiceException("菜单名重复，请重新输入");
+        }
+
         authPermission.setId(IDGenerator.next());
         authPermission.setDelFlag(Delete.NO);
 
@@ -101,6 +110,13 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
     public IPage<AuthPermissionDTO> pagePermission(AuthPermissionQuery query) {
         IPage<AuthPermissionDTO> page = query.build();
         return authPermissionMapper.selectPage(query, page);
+    }
+
+    @Override
+    public List<AuthPermissionDTO> selectAll() {
+        LambdaQueryWrapper<AuthPermission> wrapper = Wrappers.lambdaQuery(AuthPermission.class);
+        wrapper.eq(AuthPermission::getDelFlag, Delete.NO);
+        return AuthPermissionStructMapper.INSTANCE.entityList2DtoList(authPermissionMapper.selectList(wrapper));
     }
 
     /**

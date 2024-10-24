@@ -19,16 +19,17 @@ public class SaPermissionImpl implements StpInterface {
      */
     @Override
     public List<String> getPermissionList(Object loginId, String loginType) {
+        List<String> permissionList = new ArrayList<>();
         LoginUser loginUser = LoginUtils.getLoginUser();
         UserType userType = UserType.get(loginUser.getUserType().getStringValue());
         if (userType == UserType.MANAGER) {
-            return new ArrayList<>(loginUser.getMenuPermission());
+            permissionList.addAll(loginUser.getMenuPermission());
         } else if (userType == UserType.PC) {
             // TODO pc客户端的权限
         } else if (userType == UserType.MINI) {
             // TODO 小程序端权限
         }
-        return new ArrayList<>();
+        return permissionList;
     }
 
     /**
@@ -36,15 +37,16 @@ public class SaPermissionImpl implements StpInterface {
      */
     @Override
     public List<String> getRoleList(Object loginId, String loginType) {
+        List<String> roleList = new ArrayList<>();
         LoginUser loginUser = LoginUtils.getLoginUser();
         UserType userType = UserType.get(loginUser.getUserType().getStringValue());
         if (userType == UserType.MANAGER) {
-            return new ArrayList<>(loginUser.getRolePermission());
+            roleList.addAll(loginUser.getRolePermission());
         } else if (userType == UserType.PC) {
             // TODO pc 端角色
         } else if (userType == UserType.MINI) {
             // TODO  小程序端角色
         }
-        return new ArrayList<>();
+        return roleList;
     }
 }
