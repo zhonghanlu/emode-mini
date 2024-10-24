@@ -44,11 +44,8 @@ public class AddressByIpUtil {
                 // 1、创建 searcher 对象
                 Searcher searcher = SEARCHER_THREAD_LOCAL.get();
                 // 2、查询
-                long sTime = System.nanoTime();
                 String region = searcher.search(ip);
-                long cost = TimeUnit.NANOSECONDS.toMicros(System.nanoTime() - sTime);
                 region = region.replace("|0", "");
-                log.info("{地区: {}, IO操作数: {}, 耗时: {} μs}", region, searcher.getIOCount(), cost);
                 return region;
             } catch (Exception e) {
                 log.error("获取IP地址异常：{} ", e.getMessage());

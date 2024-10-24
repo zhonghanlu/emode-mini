@@ -52,4 +52,10 @@ public class SysFile extends CommonEntity implements Serializable {
      */
     @Schema(description = "文件存储端")
     private Device fileDeviceBy;
+
+    /**
+     * 存储桶名称
+     */
+    @Schema(description = "存储桶名称")
+    private String bucketName;
 }

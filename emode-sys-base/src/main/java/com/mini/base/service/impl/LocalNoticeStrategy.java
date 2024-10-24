@@ -51,7 +51,7 @@ public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrateg
         sysNotice.setSendTime(LocalDateTime.now());
         sysNotice.setDelFlag(Delete.NO);
 
-        // 下面逻辑针对独立发送
+        // 广播发送
         if (MessageStatus.BROADCAST.equals(sysNoticeDTO.getMessageStatus())) {
             int b1 = sysNoticeMapper.insert(sysNotice);
 
@@ -64,7 +64,8 @@ public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrateg
         // 异步存入关联表
         List<SysUserNotice> userNoticeList = super.convert(noticeId, sysNoticeDTO);
 
-        if (CollectionUtils.isEmpty(userNoticeList)) {
+        if (CollectionUtils.isEmpty(userNoticeList) ||
+                (1 == userNoticeList.size() && 0 == userNoticeList.get(0).getUserId())) {
             throw new EModeServiceException("非广播发送，请键入发送对象");
         }
 

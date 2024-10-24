@@ -36,4 +36,9 @@ public class SysFileDTO {
      * 文件存储端
      */
     private Device fileDeviceBy;
+
+    /**
+     * 存储桶名称
+     */
+    private String bucketName;
 }

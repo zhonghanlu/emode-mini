@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.model.dto.AuthPermissionDTO;
 import com.mini.auth.model.query.AuthPermissionQuery;
 
+import java.util.List;
+
 /**
  * @author zhl
  * @create 2024/6/3 15:43
@@ -29,5 +31,10 @@ public interface IAuthPermissionService {
      * 权限分页
      */
     IPage<AuthPermissionDTO> pagePermission(AuthPermissionQuery authPermissionQuery);
+
+    /**
+     * 所有权限
+     */
+    List<AuthPermissionDTO> selectAll();
 
 }

@@ -103,7 +103,8 @@ public class SmCryptoUtil {
 
 
     public static void main(String[] args) {
-//        System.out.println(doSm2Encrypt("123456"));
+//        System.out.println(doSm2Decrypt("d4ce88f78f02c6007cfd26f992a2007b3da543772b1ecaf2c2302b7998cf573218c72a85c982d2458782d95442101320444f945edd7b57468a8b2566019eb728497f0c610aaced2bd4d265439b07845d7fa50aa5cb415a507da2b08103f9e0f6654296c0244a"));
+        System.out.println(doSm2Encrypt("000000"));
 //        System.out.println(doHashValue("123456"));
 
 //        try {

@@ -5,6 +5,7 @@ import com.mini.auth.model.dto.AuthPermissionDTO;
 import com.mini.auth.model.edit.AuthPermissionEdit;
 import com.mini.auth.model.request.AuthPermissionRequest;
 import com.mini.auth.model.vo.AuthPermissionVo;
+import com.mini.auth.model.vo.AuthUserDetailRouterVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -22,6 +23,11 @@ public interface AuthPermissionStructMapper {
      * dto2entity List
      */
     List<AuthPermission> dtoList2EntityList(List<AuthPermissionDTO> permissionList);
+
+    /**
+     * entity2dto List
+     */
+    List<AuthPermissionDTO> entityList2DtoList(List<AuthPermission> permissionList);
 
     /**
      * dto2entity
@@ -47,4 +53,9 @@ public interface AuthPermissionStructMapper {
      * edit2dto
      */
     AuthPermissionDTO edit2Dto(AuthPermissionEdit edit);
+
+    /**
+     * dto2routerVo
+     */
+    List<AuthUserDetailRouterVo> dtoList2RouterVoList(List<AuthPermissionDTO> authPermissionDTOList);
 }

@@ -1,11 +1,12 @@
 package com.mini.auth.model.request;
 
+import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author zhl
@@ -32,6 +33,11 @@ public class AuthUserRequest {
     @NotEmpty(message = "昵称不可为空")
     private String nickname;
     /**
+     * 性别
+     */
+    @Schema(title = "性别")
+    private Gender sex;
+    /**
      * 头像id
      */
     @Schema(title = "头像id")
@@ -45,7 +51,7 @@ public class AuthUserRequest {
     /**
      * 用户类型
      */
-    @NotBlank(message = "用户类型不可为空")
-    @Schema(title = "用户类型小程序:mini,管理端：manager，电脑端：PC")
+    @NotNull(message = "用户类型不可为空")
+    @Schema(title = "用户类型小程序:mini,管理端：manager，电脑端：pc")
     private UserType userType;
 }

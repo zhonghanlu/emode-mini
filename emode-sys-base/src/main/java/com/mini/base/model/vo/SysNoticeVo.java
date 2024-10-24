@@ -49,7 +49,7 @@ public class SysNoticeVo {
     /**
      * 消息状态yes no
      */
-    @Schema(title = "消息状态yes no")
+    @Schema(title = "消息状态 广播 全部发送：broadcast 独立发送：alone")
     private MessageStatus messageStatus;
 
 }

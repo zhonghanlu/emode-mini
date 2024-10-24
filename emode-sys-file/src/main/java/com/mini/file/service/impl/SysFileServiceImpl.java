@@ -1,5 +1,10 @@
 package com.mini.file.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.mybatis.CommonMybatisUtil;
@@ -8,6 +13,7 @@ import com.mini.file.entity.SysFile;
 import com.mini.file.mapper.SysFileMapper;
 import com.mini.file.mapperstruct.SysFileStructMapper;
 import com.mini.file.model.dto.SysFileDTO;
+import com.mini.file.model.query.SysFileQuery;
 import com.mini.file.service.ISysFileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,6 +47,25 @@ public class SysFileServiceImpl implements ISysFileService {
     }
 
     @Override
+    public long saveOrUpdate(SysFileDTO dto) {
+        LambdaQueryWrapper<SysFile> wrapper = Wrappers.lambdaQuery(SysFile.class);
+        wrapper.eq(SysFile::getFileName, dto.getFileName())
+                .eq(SysFile::getBucketName,dto.getBucketName())
+                .eq(SysFile::getDelFlag, Delete.NO)
+                .last(LastSql.LIMIT_ONE);
+        SysFile sysFile = sysFileMapper.selectOne(wrapper);
+
+        // 不存在新增
+        if (Objects.isNull(sysFile)) {
+            return this.insert(dto);
+        }
+
+        // 存在修改
+        sysFileMapper.updateById(sysFile);
+        return sysFile.getId();
+    }
+
+    @Override
     public void del(long id) {
         if (id <= 0) {
             throw new EModeServiceException("删除主键id有误，id:" + id);
@@ -60,5 +85,19 @@ public class SysFileServiceImpl implements ISysFileService {
             throw new EModeServiceException("删除异常，id:" + id);
         }
 
+    }
+
+    @Override
+    public SysFileDTO getById(long id) {
+        SysFile sysFile = CommonMybatisUtil.getById(id, sysFileMapper);
+        return SysFileStructMapper.INSTANCE.entity2Dto(sysFile);
+    }
+
+    @Override
+    public IPage<SysFileDTO> page(SysFileQuery query) {
+        LambdaQueryWrapper<SysFile> wrapper = Wrappers.lambdaQuery(SysFile.class);
+        wrapper.eq(SysFile::getDelFlag, Delete.NO);
+        Page<SysFile> sysFilePage = sysFileMapper.selectPage(query.build(), wrapper);
+        return sysFilePage.convert(SysFileStructMapper.INSTANCE::entity2Dto);
     }
 }
