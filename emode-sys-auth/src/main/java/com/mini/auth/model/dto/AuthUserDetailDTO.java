@@ -34,6 +34,10 @@ public class AuthUserDetailDTO {
      */
     private String avatarUrl;
     /**
+     * 手机号
+     */
+    private String phone;
+    /**
      * 用户类型
      */
     private UserType userType;

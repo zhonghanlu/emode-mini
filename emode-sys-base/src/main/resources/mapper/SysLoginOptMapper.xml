@@ -30,5 +30,6 @@
                 AND opt_time BETWEEN #{query.optTimeStart} AND #{query.optTimeEnd}
             </if>
         </where>
+        ORDER BY opt_time DESC
     </select>
 </mapper>

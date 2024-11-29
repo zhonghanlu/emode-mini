@@ -11,11 +11,32 @@
     <description>核心业务交互层</description>
 
     <dependencies>
+        <!-- 框架核心层 -->
         <dependency>
             <groupId>com.mini</groupId>
             <artifactId>emode-core</artifactId>
             <version>1.6-SNAPSHOT</version>
         </dependency>
+
+        <!-- 框架基础层 -->
+        <dependency>
+            <groupId>com.mini</groupId>
+            <artifactId>emode-sys-auth</artifactId>
+            <version>1.6-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mini</groupId>
+            <artifactId>emode-sys-base</artifactId>
+            <version>1.6-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mini</groupId>
+            <artifactId>emode-sys-file</artifactId>
+            <version>1.6-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

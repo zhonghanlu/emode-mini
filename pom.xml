@@ -36,8 +36,6 @@
         <jwt.version>0.9.1</jwt.version>
         <lombok.version>1.18.16</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <commons.dbutils>1.7</commons.dbutils>
-        <amqp.version>3.1.5</amqp.version>
         <mysql.version>8.0.33</mysql.version>
         <dynamic-ds.version>4.2.0</dynamic-ds.version>
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
@@ -49,8 +47,10 @@
         <satoken.version>1.37.0</satoken.version>
         <httpclient.version>4.5.14</httpclient.version>
         <sm.crypto.version>0.3.2</sm.crypto.version>
+        <bcprov.jdk15on.version>1.70</bcprov.jdk15on.version>
         <userAgent.version>1.20</userAgent.version>
         <ip2region.version>2.6.4</ip2region.version>
+        <netty.version>4.1.97.Final</netty.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -147,20 +147,8 @@
             </dependency>
 
             <dependency>
-                <groupId>commons-dbutils</groupId>
-                <artifactId>commons-dbutils</artifactId>
-                <version>${commons.dbutils}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-amqp</artifactId>
-                <version>${amqp.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
 
@@ -221,6 +209,7 @@
                 <artifactId>sa-token-spring-boot-starter</artifactId>
                 <version>${satoken.version}</version>
             </dependency>
+
             <!-- Sa-Token 整合 jwt -->
             <dependency>
                 <groupId>cn.dev33</groupId>
@@ -233,6 +222,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
             <dependency>
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-core</artifactId>
@@ -253,6 +243,13 @@
                 <version>${sm.crypto.version}</version>
             </dependency>
 
+            <!-- bcprov-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bcprov.jdk15on.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
             <dependency>
                 <groupId>eu.bitwalker</groupId>
@@ -267,6 +264,12 @@
                 <version>${ip2region.version}</version>
             </dependency>
 
+            <!-- netty all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

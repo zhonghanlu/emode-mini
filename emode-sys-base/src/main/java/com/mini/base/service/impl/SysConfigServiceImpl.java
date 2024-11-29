@@ -9,6 +9,7 @@ import com.mini.base.mapperstruct.SysConfigStructMapper;
 import com.mini.base.model.dto.SysConfigDTO;
 import com.mini.base.model.query.SysConfigQuery;
 import com.mini.base.service.ISysConfigService;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.constant.LastSql;
 import com.mini.common.constant.RedisConstant;
 import com.mini.common.enums.number.Delete;
@@ -17,7 +18,9 @@ import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.mybatis.CommonMybatisUtil;
 import com.mini.common.utils.redis.RedisUtils;
 import com.mini.common.utils.webmvc.IDGenerator;
+
 import java.util.Collections;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -51,7 +54,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
         SysConfig sysConfig = sysConfigMapper.selectOne(queryWrapper);
 
         if (Objects.nonNull(sysConfig)) {
-            throw new EModeServiceException("当前key重复，key:" + configKey);
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "当前key重复，key:" + configKey);
         }
 
         dto.setId(IDGenerator.next());
@@ -62,7 +65,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
         int b = sysConfigMapper.insert(sysConfig1);
 
         if (b <= 0) {
-            throw new EModeServiceException("新增失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "新增失败");
         }
 
         // 键入缓存
@@ -72,13 +75,13 @@ public class SysConfigServiceImpl implements ISysConfigService {
     @Override
     public void del(long id) {
         if (id <= 0) {
-            throw new EModeServiceException("id有误，id：" + id);
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "id有误，id：" + id);
         }
 
         SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper);
 
         if (Objects.isNull(sysConfig)) {
-            throw new EModeServiceException("当前id不存在");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "当前id不存在");
         }
 
         sysConfig.setDelFlag(Delete.YES);
@@ -86,7 +89,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
         int b = sysConfigMapper.updateById(sysConfig);
 
         if (b <= 0) {
-            throw new EModeServiceException("删除失败，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "删除失败，id:" + id);
         }
 
         // 删除缓存
@@ -99,7 +102,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
         SysConfig sysConfig = CommonMybatisUtil.getById(id, sysConfigMapper);
 
         if (Objects.isNull(sysConfig)) {
-            throw new EModeServiceException("当前id不存在");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "当前id不存在");
         }
 
         SysConfig sysConfig1 = SysConfigStructMapper.INSTANCE.dto2Entity(dto);
@@ -107,7 +110,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
         int b = sysConfigMapper.updateById(sysConfig1);
 
         if (b <= 0) {
-            throw new EModeServiceException("更新失败，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "更新失败，id:" + id);
         }
 
         // 键入缓存

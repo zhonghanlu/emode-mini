@@ -40,6 +40,11 @@ public class AuthUserDetailVo {
     @Schema(title = "头像url")
     private String avatarUrl;
     /**
+     * 手机号
+     */
+    @Schema(title = "手机号")
+    private String phone;
+    /**
      * 用户类型
      */
     @Schema(title = "用户类型")

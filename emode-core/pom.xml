@@ -32,19 +32,13 @@
 
         <dependency>
             <groupId>com.mini</groupId>
-            <artifactId>emode-sys-auth</artifactId>
+            <artifactId>emode-common</artifactId>
             <version>1.6-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.mini</groupId>
             <artifactId>emode-sys-base</artifactId>
-            <version>1.6-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.mini</groupId>
-            <artifactId>emode-sys-file</artifactId>
             <version>1.6-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -13,7 +13,7 @@ public final class UserConstant {
     public static final Long SUPER_ADMIN_ID = 1L;
 
     // 超管权限
-    public static final String SUPER_ADMIN_PERMISSION = "*.*.*";
+    public static final String SUPER_ADMIN_PERMISSION = "*:*:*";
 
     // 超管角色名
     public static final String SUPER_ADMIN_ROLE = "superAdmin";

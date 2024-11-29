@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
@@ -41,7 +42,7 @@ public class SysFileServiceImpl implements ISysFileService {
 
         int b = sysFileMapper.insert(sysFile);
         if (b <= 0) {
-            throw new EModeServiceException("新增失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "新增失败");
         }
         return next;
     }
@@ -50,7 +51,7 @@ public class SysFileServiceImpl implements ISysFileService {
     public long saveOrUpdate(SysFileDTO dto) {
         LambdaQueryWrapper<SysFile> wrapper = Wrappers.lambdaQuery(SysFile.class);
         wrapper.eq(SysFile::getFileName, dto.getFileName())
-                .eq(SysFile::getBucketName,dto.getBucketName())
+                .eq(SysFile::getBucketName, dto.getBucketName())
                 .eq(SysFile::getDelFlag, Delete.NO)
                 .last(LastSql.LIMIT_ONE);
         SysFile sysFile = sysFileMapper.selectOne(wrapper);
@@ -68,13 +69,13 @@ public class SysFileServiceImpl implements ISysFileService {
     @Override
     public void del(long id) {
         if (id <= 0) {
-            throw new EModeServiceException("删除主键id有误，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "删除主键id有误，id:" + id);
         }
 
         SysFile sysFile = CommonMybatisUtil.getById(id, sysFileMapper);
 
         if (Objects.isNull(sysFile)) {
-            throw new EModeServiceException("待删除数据不存在，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "待删除数据不存在，id:" + id);
         }
 
         sysFile.setDelFlag(Delete.YES);
@@ -82,7 +83,7 @@ public class SysFileServiceImpl implements ISysFileService {
         int b = sysFileMapper.updateById(sysFile);
 
         if (b <= 0) {
-            throw new EModeServiceException("删除异常，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "删除异常，id:" + id);
         }
 
     }

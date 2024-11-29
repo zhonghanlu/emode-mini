@@ -1,6 +1,5 @@
 package com.mini.base.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mini.common.enums.str.LoginOptType;
 import com.mini.common.enums.str.YesOrNo;
@@ -22,7 +21,6 @@ public class SysLoginOptVo {
      * 主键id
      */
     @Schema(title = "主键id")
-    @TableId
     private Long id;
     /**
      * 用户账户名

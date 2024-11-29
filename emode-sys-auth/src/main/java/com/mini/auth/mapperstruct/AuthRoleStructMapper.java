@@ -11,6 +11,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 /**
  * @author zhl
  * @create 2024/6/3 15:39
@@ -50,4 +52,14 @@ public interface AuthRoleStructMapper {
      * entity2dto
      */
     AuthRoleDTO entity2Dto(AuthRole authRole);
+
+    /**
+     * entityList2dtoList
+     */
+    List<AuthRoleDTO> entityList2DtoList(List<AuthRole> authRoleList);
+
+    /**
+     * dtoList2voList
+     */
+    List<AuthRoleVo> dtoList2VoList(List<AuthRoleDTO> all);
 }

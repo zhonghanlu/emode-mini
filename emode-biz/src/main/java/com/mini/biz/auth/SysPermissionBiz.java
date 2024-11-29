@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @author zhl
  * @create 2024/7/4 16:38
@@ -60,4 +62,10 @@ public class SysPermissionBiz {
         return TreeUtils.buildByPage(voIPage);
     }
 
+    /**
+     * 所有权限
+     */
+    public List<AuthPermissionVo> all() {
+        return TreeUtils.build(AuthPermissionStructMapper.INSTANCE.dtoList2VoList(authPermissionService.selectAll()));
+    }
 }

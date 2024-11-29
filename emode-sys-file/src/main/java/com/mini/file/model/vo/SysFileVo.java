@@ -1,6 +1,5 @@
 package com.mini.file.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.Device;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -14,7 +13,6 @@ public class SysFileVo {
      * 主键id
      */
     @Schema(description = "主键id")
-    @TableId
     private Long id;
 
     /**

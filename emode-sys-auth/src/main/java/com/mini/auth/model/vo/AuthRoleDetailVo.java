@@ -1,6 +1,5 @@
 package com.mini.auth.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -16,7 +15,6 @@ public class AuthRoleDetailVo {
      * 主键id
      */
     @Schema(title = "主键id")
-    @TableId
     private Long id;
     /**
      * 角色名

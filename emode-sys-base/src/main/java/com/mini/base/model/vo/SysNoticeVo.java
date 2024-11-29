@@ -1,6 +1,5 @@
 package com.mini.base.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.MessageStatus;
 import com.mini.common.enums.str.NoticeType;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,7 +18,6 @@ public class SysNoticeVo {
      * 主键id
      */
     @Schema(title = "主键id")
-    @TableId
     private Long id;
     /**
      * 消息标头

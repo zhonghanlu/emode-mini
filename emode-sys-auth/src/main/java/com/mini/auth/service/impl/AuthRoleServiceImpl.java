@@ -10,9 +10,11 @@ import com.mini.auth.mapper.AuthPermissionMapper;
 import com.mini.auth.mapper.AuthRoleMapper;
 import com.mini.auth.mapper.AuthRolePermissionMapper;
 import com.mini.auth.mapperstruct.AuthRoleStructMapper;
+import com.mini.auth.model.dto.AuthRoleDTO;
 import com.mini.auth.model.dto.AuthRoleRelationDTO;
 import com.mini.auth.model.query.AuthRoleQuery;
 import com.mini.auth.service.IAuthRoleService;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
@@ -47,9 +49,17 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
     }
 
     @Override
+    public List<AuthRoleDTO> all() {
+        LambdaQueryWrapper<AuthRole> wrapper = Wrappers.lambdaQuery(AuthRole.class);
+        wrapper.eq(AuthRole::getDelFlag, Delete.NO);
+        List<AuthRole> authRoleList = authRoleMapper.selectList(wrapper);
+        return AuthRoleStructMapper.INSTANCE.entityList2DtoList(authRoleList);
+    }
+
+    @Override
     public AuthRoleRelationDTO getRoleById(long id) {
         if (id <= 0) {
-            throw new EModeServiceException("主键id有误");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "主键id有误");
         }
         return authRoleMapper.getRoleById(id);
     }
@@ -62,7 +72,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         // 校验权限集合
         List<Long> authPermissionIdList = dto.getAuthPermissionIdList();
         if (CollectionUtils.isEmpty(authPermissionIdList)) {
-            throw new EModeServiceException("角色至少需要一个权限，请重新选择");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "角色至少需要一个权限，请重新选择");
         }
 
         // 校验权限是否与当前符合
@@ -76,7 +86,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         int b1 = authRoleMapper.insert(authRoleDb);
 
         if (b1 <= 0) {
-            throw new EModeServiceException("角色入库失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色入库失败");
         }
 
         // 入库角色和权限关联信息
@@ -86,21 +96,21 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         int b2 = authRolePermissionMapper.batchInsert(authRolePermissionList);
 
         if (b2 <= 0) {
-            throw new EModeServiceException("角色和权限关联入库失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色和权限关联入库失败");
         }
     }
 
     @Override
     public void del(long id) {
         if (id <= 0) {
-            throw new EModeServiceException("主键id有误");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "主键id有误");
         }
 
         // 获取角色信息
         AuthRole authRole = getAuthRole(id);
 
         if (Objects.isNull(authRole)) {
-            throw new EModeServiceException("删除信息不存在");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "删除信息不存在");
         }
 
         // 根据角色id获取 关联信息
@@ -110,7 +120,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         authRole.setDelFlag(Delete.YES);
         int b = authRoleMapper.updateById(authRole);
         if (b <= 0) {
-            throw new EModeServiceException("角色信息删除失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色信息删除失败");
         }
 
         // 关联信息
@@ -118,7 +128,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
             authRolePermissionList.forEach(e -> e.setDelFlag(Delete.YES));
             int b1 = authRolePermissionMapper.batchUpdate(authRolePermissionList);
             if (b1 <= 0) {
-                throw new EModeServiceException("角色和权限关联信息删除失败");
+                throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色和权限关联信息删除失败");
             }
         }
     }
@@ -131,7 +141,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
 
         AuthRole authRole = getAuthRole(roleId);
         if (Objects.isNull(authRole)) {
-            throw new EModeServiceException("修改信息不存在");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "修改信息不存在");
         }
 
         // 校验权限
@@ -143,7 +153,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         if (CollectionUtils.isNotEmpty(authRolePermissionList)) {
             int b = authRolePermissionMapper.batchUpdate(authRolePermissionList);
             if (b <= 0) {
-                throw new EModeServiceException("更新角色权限关联信息失败");
+                throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "更新角色权限关联信息失败");
             }
         }
 
@@ -154,7 +164,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
             int b1 = authRolePermissionMapper.batchInsert(authRolePermissionList1);
 
             if (b1 <= 0) {
-                throw new EModeServiceException("角色权限关联关系插入失败");
+                throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色权限关联关系插入失败");
             }
         }
 
@@ -163,7 +173,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         int b2 = authRoleMapper.updateById(authRole1);
 
         if (b2 <= 0) {
-            throw new EModeServiceException("角色信息更新失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "角色信息更新失败");
         }
     }
 
@@ -213,7 +223,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
     private static List<AuthRolePermission> getAuthRolePermissionList(List<Long> permissionIdList, long roleId) {
 
         if (CollectionUtils.isEmpty(permissionIdList)) {
-            throw new EModeServiceException("构建权限关系，权限集合不可为空");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "构建权限关系，权限集合不可为空");
         }
 
         List<AuthRolePermission> authRolePermissionList = new ArrayList<>();
@@ -263,7 +273,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         AuthRole authRole = authRoleMapper.selectOne(wrapper);
 
         if (Objects.nonNull(authRole)) {
-            throw new EModeServiceException("角色名或角色编码已存在");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "角色名或角色编码已存在");
         }
     }
 
@@ -281,7 +291,7 @@ public class AuthRoleServiceImpl implements IAuthRoleService {
         List<AuthPermission> authPermissionList = authPermissionMapper.selectList(wrapper);
 
         if (authPermissionList.size() != authPermissionIdList.size()) {
-            throw new EModeServiceException("新增角色所属权限不存在");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "新增角色所属权限不存在");
         }
     }
 }

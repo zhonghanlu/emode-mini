@@ -157,7 +157,7 @@ mybatis-plus:
 minio:
   accessKey: minioadmin
   secretKey: minioadmin
-  endPoint: http://192.168.0.47:9000
+  endPoint: http://124.220.79.217:9000
   defaultBucketName: e-mode-bucket
   appStaticBucketName: e-mode-app-static
 
@@ -194,8 +194,12 @@ token-renew:
 security:
   # 排除路径
   excludes:
+    # 验证码
+    - /sys-captcha/captcha-image
+    - /sys-auth/captcha-enable
     # 登录接口
     - /sys-auth/login
+    - /sys-auth/register
     # knife4j接口文档
     - /favicon.ico
     - /error
@@ -245,15 +249,12 @@ spring-doc:
   api-docs:
     path: /v3/api-docs
   group-configs:
-    - group: '系统管理'
+    - group: 'pc管理端-系统功能'
       paths-to-match: '/**'
       packages-to-scan:
-      - com.mini.web.controller.auth
-      - com.mini.web.controller.file
-      - com.mini.web.controller.log
-      - com.mini.web.controller.base
+        - com.mini.web.controller.sys
 
-# knife4j  configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
+# knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
 knife4j:
   enable: true
   production: false

@@ -8,6 +8,7 @@
         <result column="username" property="username"/>
         <result column="nickname" property="nickname"/>
         <result column="avatarUrl" property="avatarUrl"/>
+        <result column="phone" property="phone"/>
         <result column="user_type" property="userType"/>
         <result column="sex" property="sex"/>
 
@@ -21,6 +22,7 @@
             <id column="permissionId" property="id"/>
             <result column="parent_id" property="parentId"/>
             <result column="menu_name" property="menuName"/>
+            <result column="menu_path" property="menuPath"/>
             <result column="menu_url" property="menuUrl"/>
             <result column="permissions" property="permissions"/>
             <result column="menu_type" property="menuType"/>
@@ -31,8 +33,16 @@
     </resultMap>
 
     <select id="selectPage" resultType="com.mini.auth.model.dto.AuthUserDTO">
-        SELECT *
-        FROM auth_user
+        SELECT
+        au.id,
+        sf.file_url AS avatarUrl,
+        au.username,
+        au.nickname,
+        au.sex,
+        au.phone,
+        au.user_type
+        FROM auth_user au
+        LEFT JOIN sys_file sf ON au.avatar = sf.id
         <where>
             <if test="query.username != null and query.username != ''">
                 AND username LIKE CONCAT('%', #{query.username}, '%')
@@ -49,6 +59,7 @@
                au.nickname,
                au.user_type,
                au.sex,
+               au.phone,
                sf.file_url AS avatarUrl,
                ar.id       AS roleId,
                ar.role_name,
@@ -56,6 +67,7 @@
                ap.id       AS permissionId,
                ap.parent_id,
                ap.menu_name,
+               ap.menu_path,
                ap.menu_url,
                ap.permissions,
                ap.menu_type,
@@ -99,6 +111,7 @@
                ap.id       AS permissionId,
                ap.parent_id,
                ap.menu_name,
+               ap.menu_path,
                ap.menu_url,
                ap.permissions,
                ap.menu_type,

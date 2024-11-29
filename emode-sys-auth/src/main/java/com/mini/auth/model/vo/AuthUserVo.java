@@ -1,6 +1,5 @@
 package com.mini.auth.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.Gender;
 import com.mini.common.enums.str.UserType;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -17,7 +16,6 @@ public class AuthUserVo {
      * 用户表主键
      */
     @Schema(title = "用户表主键")
-    @TableId
     private Long id;
     /**
      * 用户名
@@ -35,10 +33,10 @@ public class AuthUserVo {
     @Schema(title = "性别")
     private Gender sex;
     /**
-     * 头像id
+     * 头像Url
      */
-    @Schema(title = "头像id")
-    private Long avatar;
+    @Schema(title = "头像Url")
+    private String avatarUrl;
     /**
      * 手机号
      */

@@ -1,6 +1,5 @@
 package com.mini.auth.model.vo;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.mini.common.enums.str.MenuType;
 import com.mini.common.utils.TreeNode;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,7 +17,6 @@ public class AuthPermissionVo extends TreeNode<AuthPermissionVo> {
     /**
      * 主键id
      */
-    @TableId
     @Schema(title = "主键id")
     private Long id;
 
@@ -35,6 +33,12 @@ public class AuthPermissionVo extends TreeNode<AuthPermissionVo> {
     private String menuName;
 
     /**
+     * 菜单path
+     */
+    @Schema(title = "菜单path")
+    private String menuPath;
+
+    /**
      * 菜单url
      */
     @Schema(title = "菜单url")
@@ -49,7 +53,7 @@ public class AuthPermissionVo extends TreeNode<AuthPermissionVo> {
     /**
      * 按钮类型 按钮 菜单
      */
-    @Schema(title = "按钮类型：按钮、菜单")
+    @Schema(title = "类型：目录、按钮、菜单")
     private MenuType menuType;
 
     /**

@@ -193,6 +193,12 @@
             <artifactId>ip2region</artifactId>
         </dependency>
 
+        <!-- netty all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

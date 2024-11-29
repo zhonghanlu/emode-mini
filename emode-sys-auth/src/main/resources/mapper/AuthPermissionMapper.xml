@@ -18,6 +18,9 @@
         <if test="query.menuName != null and query.menuName != ''">
             AND menu_name LIKE CONCAT('%', #{query.menuName}, '%')
         </if>
+        <if test="query.menuPath != null and query.menuPath != ''">
+            AND menu_path LIKE CONCAT('%', #{query.menuPath}, '%')
+        </if>
         <if test="query.menuUrl != null and query.menuUrl != ''">
             AND menu_url LIKE CONCAT('%', #{query.menuUrl}, '%')
         </if>

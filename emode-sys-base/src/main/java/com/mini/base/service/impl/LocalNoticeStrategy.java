@@ -8,6 +8,7 @@ import com.mini.base.mapperstruct.SysNoticeStructMapper;
 import com.mini.base.model.dto.SysNoticeDTO;
 import com.mini.base.service.AbstractNotice;
 import com.mini.base.service.NoticeStrategy;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.enums.str.MessageStatus;
 import com.mini.common.exception.service.EModeServiceException;
@@ -56,7 +57,7 @@ public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrateg
             int b1 = sysNoticeMapper.insert(sysNotice);
 
             if (b1 <= 0) {
-                throw new EModeServiceException("本地站内信，消息创建失败");
+                throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "本地站内信，消息创建失败");
             }
             return;
         }
@@ -66,7 +67,7 @@ public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrateg
 
         if (CollectionUtils.isEmpty(userNoticeList) ||
                 (1 == userNoticeList.size() && 0 == userNoticeList.get(0).getUserId())) {
-            throw new EModeServiceException("非广播发送，请键入发送对象");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "非广播发送，请键入发送对象");
         }
 
         // 异步执行
@@ -79,7 +80,7 @@ public class LocalNoticeStrategy extends AbstractNotice implements NoticeStrateg
                 int b = sysUserNoticeMapper.batchInsert(userNoticeList);
 
                 if (b <= 0) {
-                    throw new EModeServiceException("本地站内信，消息发送失败");
+                    throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "本地站内信，消息发送失败");
                 }
 
                 transactionManager.commit(status);

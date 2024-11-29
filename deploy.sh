@@ -1,5 +1,4 @@
 #!/bin
-
 ## service name
 SERVICE_ROOT=$(dirname $(dirname "$PWD"))
 SERVICE_DIR=$(cd $(dirname $0); pwd)

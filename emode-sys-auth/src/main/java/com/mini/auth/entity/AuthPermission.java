@@ -40,6 +40,12 @@ public class AuthPermission {
     private String menuName;
 
     /**
+     * 菜单path
+     */
+    @Schema(name = "菜单path")
+    private String menuPath;
+
+    /**
      * 菜单url
      */
     @Schema(name = "菜单url")
@@ -54,7 +60,7 @@ public class AuthPermission {
     /**
      * 按钮类型 按钮 菜单
      */
-    @Schema(name = "按钮类型：按钮、菜单")
+    @Schema(name = "按钮类型：目录、按钮、菜单")
     private MenuType menuType;
 
     /**

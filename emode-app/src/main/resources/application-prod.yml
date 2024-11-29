@@ -1,0 +1,264 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 18099
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  # undertow 配置
+  undertow:
+    # HTTP post内容的最大大小。当值为-1时，默认值为大小是无限的
+    max-http-post-size: -1
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
+    buffer-size: 512
+    # 是否分配的直接内存
+    direct-buffers: true
+    threads:
+      # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+      io: 8
+      # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+      worker: 256
+
+# Spring配置
+spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 300MB
+      # 设置总上传的文件大小
+      max-request-size: 1024MB
+  jackson:
+    # 日期格式化
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      # 格式化输出
+      indent_output: false
+      # 忽略无法转换的对象
+      fail_on_empty_beans: false
+    deserialization:
+      # 允许对象忽略json中不存在的属性
+      fail_on_unknown_properties: false
+  # redis 配置
+  redis:
+    # 地址
+    host: 10.0.16.3
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码
+    password: Aa123456
+    # 连接超时时间
+    timeout: 10s
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+
+# redisson 配置
+redisson:
+  # 线程池数量
+  threads: 16
+  # Netty线程池数量
+  nettyThreads: 32
+  # 传输模式
+  transportMode: "NIO"
+  # 单节点配置
+  singleServerConfig:
+    # 客户端名称
+    clientName: "E-Mode"
+    # 最小空闲连接数
+    connectionMinimumIdleSize: 32
+    # 连接池大小
+    connectionPoolSize: 64
+    # 连接空闲超时，单位：毫秒
+    idleConnectionTimeout: 10000
+    # 命令等待超时，单位：毫秒
+    timeout: 3000
+    # 如果尝试在此限制之内发送成功，则开始启用 timeout 计时。
+    retryAttempts: 3
+    # 命令重试发送时间间隔，单位：毫秒
+    retryInterval: 1500
+    # 发布和订阅连接的最小空闲连接数
+    subscriptionConnectionMinimumIdleSize: 1
+    # 发布和订阅连接池大小
+    subscriptionConnectionPoolSize: 50
+    # 单个连接最大订阅数量
+    subscriptionsPerConnection: 5
+    # DNS监测时间间隔，单位：毫秒
+    dnsMonitoringInterval: 5000
+
+
+# 分布式锁 lock4j 全局配置
+lock4j:
+  # 获取分布式锁超时时间，默认为 3000 毫秒
+  acquire-timeout: 3000
+  # 分布式锁的超时时间，默认为 30 毫秒
+  expire: 30000
+
+
+# MyBatisPlus配置 不允许修改
+mybatis-plus:
+  # 搜索指定包别名
+  typeAliasesPackage: com.mini.**
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  # 启动时是否检查 MyBatis XML 文件的存在，默认不检查
+  checkConfigLocation: false
+  configuration:
+    # 自动驼峰命名规则（camel case）映射
+    mapUnderscoreToCamelCase: true
+    # MyBatis 自动映射策略
+    # NONE：不启用 PARTIAL：只对非嵌套 resultMap 自动映射 FULL：对所有 resultMap 自动映射
+    autoMappingBehavior: FULL
+    # MyBatis 自动映射时未知列或未知属性处理策
+    # NONE：不做处理 WARNING：打印相关警告 FAILING：抛出异常和详细信息
+    autoMappingUnknownColumnBehavior: NONE
+    # 更详细的日志输出 会有性能损耗 org.apache.ibatis.logging.stdout.StdOutImpl
+    # 关闭日志记录 (可单纯使用 p6spy 分析) org.apache.ibatis.logging.nologging.NoLoggingImpl
+    # 默认日志输出 org.apache.ibatis.logging.slf4j.Slf4jImpl
+    logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    # 是否打印 Logo banner
+    banner: true
+    dbConfig:
+      # 主键类型
+      # AUTO 自增 NONE 空 INPUT 用户输入 ASSIGN_ID 雪花 ASSIGN_UUID 唯一 UUID
+      idType: AUTO
+      # 表名是否使用驼峰转下划线命名,只对表名生效
+      tableUnderline: true
+      # 大写命名,对表名和字段名均生效
+      capitalMode: false
+      # 逻辑已删除值 手动控制
+      #      logicDeleteValue: -1
+      # 逻辑未删除值
+      #      logicNotDeleteValue: 1
+      # 字段验证策略之 insert,在 insert 的时候的字段验证策略
+      # IGNORED 忽略 NOT_NULL 非NULL NOT_EMPTY 非空 DEFAULT 默认 NEVER 不加入 SQL
+      insertStrategy: NOT_NULL
+      # 字段验证策略之 update,在 update 的时候的字段验证策略
+      updateStrategy: NOT_NULL
+      # 字段验证策略之 select,在 select 的时候的字段验证策略既 wrapper 根据内部 entity 生成的 where 条件
+      where-strategy: NOT_NULL
+
+#   文件存储
+minio:
+  accessKey: minioadmin
+  secretKey: minioadmin
+  endPoint: http://10.0.16.3:9000
+  defaultBucketName: e-mode-bucket
+  appStaticBucketName: e-mode-app-static
+
+# Sa-Token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # token有效期 设为一天 (必定过期) 单位: 秒
+  timeout: 86400
+  # token临时有效期 (指定时间无操作就过期) 单位: 秒  4个小时
+  active-timeout: 14400
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: false
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # 是否尝试从请求体里读取token
+  is-read-body: false
+  # 是否尝试从cookie里读取token
+  is-read-cookie: false
+  # token前缀
+  token-prefix: "Bearer"
+  # jwt秘钥
+  jwt-secret-key: abcdefghijklmnopqrstuvwxyz
+  # 是否输出操作日志
+  is-log: false
+
+# 自定义 token续期 秒
+token-renew:
+  pc: 7200
+  mini: 86400
+
+
+# security配置
+security:
+  # 排除路径
+  excludes:
+    # 验证码
+    - /sys-captcha/captcha-image
+    - /sys-auth/captcha-enable
+    # 登录注册接口
+    - /sys-auth/login
+    - /sys-auth/register
+    # knife4j接口文档
+    - /favicon.ico
+    - /error
+    - /doc.html
+    - /druid/**
+    - /*/api-docs
+    - /profile/**
+    - /**/*.js
+    - /**/*.css
+    - /**/*.html
+    - /*.html
+    - /webjars/**
+    - /swagger-resources/**
+    - /v3/api-docs/**
+
+# 验证码配置
+captcha:
+  enabled: true
+  weight: 130
+  height: 48
+  len: 4
+  # 多少分钟过期 单位分钟
+  expiration: 5
+
+# 日志配置
+logging:
+  level:
+    com.mini: info
+    org.springframework: warn
+  config: classpath:logback.xml
+
+# 防止XSS攻击
+xss:
+  # 过滤开关
+  enabled: true
+  # 排除链接（多个用逗号分隔）
+  excludes: /system/notice
+  # 匹配链接
+  urlPatterns: /system/*,/monitor/*,/tool/*
+
+# spring-doc-openapi项目配置
+spring-doc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'pc管理端-系统功能'
+      paths-to-match: '/**'
+      packages-to-scan:
+        - com.mini.web.controller.sys
+
+# knife4j configuration   http://127.0.0.1:18099/doc.html  OpenAPI3 语法
+knife4j:
+  enable: true
+  production: false
+  basic:
+    enable: false
+    username: admin
+    password: 123456

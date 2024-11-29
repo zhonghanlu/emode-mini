@@ -11,6 +11,7 @@ import com.mini.auth.model.vo.AuthRoleDetailVo;
 import com.mini.auth.model.vo.AuthRoleVo;
 import com.mini.auth.service.IAuthRoleService;
 import com.mini.auth.service.IAuthUserRoleService;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.exception.service.EModeServiceException;
 import com.mini.common.utils.TreeUtils;
 import com.mini.common.utils.str.StrUtil;
@@ -83,7 +84,7 @@ public class SysRoleBiz {
 
         if (!authRoleService.checkRoleByRoleCode(dto.getId(), dto.getRoleCode()) ||
                 !authRoleService.checkRoleByRoleName(dto.getId(), dto.getRoleName())) {
-            throw new EModeServiceException("更改名字或编码重复");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "更改名字或编码重复");
         }
 
         authRoleService.update(dto);
@@ -118,4 +119,10 @@ public class SysRoleBiz {
 
     }
 
+    /**
+     * 所有角色
+     */
+    public List<AuthRoleVo> all() {
+        return AuthRoleStructMapper.INSTANCE.dtoList2VoList(authRoleService.all());
+    }
 }

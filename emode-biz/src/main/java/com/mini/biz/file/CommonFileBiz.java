@@ -1,6 +1,7 @@
 package com.mini.biz.file;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.constant.FileConstant;
 import com.mini.common.enums.str.Device;
 import com.mini.common.exception.service.EModeServiceException;
@@ -43,7 +44,7 @@ public class CommonFileBiz {
      */
     public void batchFileUpload(MultipartFile[] files) {
         if (files.length > 10) {
-            throw new EModeServiceException("批量文件限制10");
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "批量文件限制10");
         }
         Arrays.asList(files).parallelStream().forEach(this::singleFileUpload);
     }

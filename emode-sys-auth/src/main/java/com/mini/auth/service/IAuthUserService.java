@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mini.auth.model.dto.AuthUserDTO;
 import com.mini.auth.model.dto.AuthUserDetailDTO;
 import com.mini.auth.model.dto.AuthUserRoleDTO;
+import com.mini.auth.model.edit.AuthUserPasswordEdit;
 import com.mini.auth.model.query.AuthUserQuery;
 import com.mini.common.enums.str.UserType;
 
@@ -74,4 +75,9 @@ public interface IAuthUserService {
      * 根据id查询用户所有角色
      */
     Set<String> getUserRoleByIdForSet(long id);
+
+    /**
+     * 更新密码
+     */
+    void updatePassword(AuthUserPasswordEdit edit);
 }

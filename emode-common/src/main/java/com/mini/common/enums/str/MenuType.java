@@ -14,7 +14,9 @@ public enum MenuType implements StringEnum {
     // Button
     BUTTON("Button"),
     // Menu
-    MENU("Menu");
+    MENU("Menu"),
+    // Directory
+    DIRECTORY("Directory");
 
     private String value;
 

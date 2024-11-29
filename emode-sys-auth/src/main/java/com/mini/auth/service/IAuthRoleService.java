@@ -1,8 +1,11 @@
 package com.mini.auth.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.mini.auth.model.dto.AuthRoleDTO;
 import com.mini.auth.model.dto.AuthRoleRelationDTO;
 import com.mini.auth.model.query.AuthRoleQuery;
+
+import java.util.List;
 
 /**
  * @author zhl
@@ -14,6 +17,11 @@ public interface IAuthRoleService {
      * 角色关联分页
      */
     IPage<AuthRoleRelationDTO> pageAuthRelation(AuthRoleQuery authRoleQuery);
+
+    /**
+     * 所有角色
+     */
+    List<AuthRoleDTO> all();
 
     /**
      * 根据角色id查询角色详细权限信息

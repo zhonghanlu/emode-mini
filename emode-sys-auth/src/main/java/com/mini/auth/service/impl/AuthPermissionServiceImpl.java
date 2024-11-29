@@ -9,6 +9,7 @@ import com.mini.auth.mapperstruct.AuthPermissionStructMapper;
 import com.mini.auth.model.dto.AuthPermissionDTO;
 import com.mini.auth.model.query.AuthPermissionQuery;
 import com.mini.auth.service.IAuthPermissionService;
+import com.mini.common.constant.ErrorCodeConstant;
 import com.mini.common.constant.LastSql;
 import com.mini.common.enums.number.Delete;
 import com.mini.common.exception.service.EModeServiceException;
@@ -43,7 +44,7 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
                 .last(LastSql.LIMIT_ONE);
         AuthPermission permission = authPermissionMapper.selectOne(wrapper);
         if (Objects.nonNull(permission)) {
-            throw new EModeServiceException("菜单名重复，请重新输入");
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "菜单名重复，请重新输入");
         }
 
         authPermission.setId(IDGenerator.next());
@@ -52,7 +53,7 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
         int b = authPermissionMapper.insert(authPermission);
 
         if (b <= 0) {
-            throw new EModeServiceException("权限新增失败");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "权限新增失败");
         }
     }
 
@@ -60,13 +61,13 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
     public void del(long id) {
 
         if (id <= 0) {
-            throw new EModeServiceException("主键id有误，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "主键id有误，id:" + id);
         }
 
         AuthPermission authPermission = getAuthPermission(id);
 
         if (Objects.isNull(authPermission)) {
-            throw new EModeServiceException("权限信息不存在，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "权限信息不存在，id:" + id);
         }
 
         // 1.判断是否为父级菜单
@@ -74,14 +75,14 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
             // 2.查看下面是否有子节点
             List<AuthPermission> authPermissionList = getChildrenElement(id);
             if (CollectionUtils.isNotEmpty(authPermissionList)) {
-                throw new EModeServiceException("当前节点下有子节点，不允许删除");
+                throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "当前节点下有子节点，不允许删除");
             }
         }
 
         authPermission.setDelFlag(Delete.YES);
         int b = authPermissionMapper.updateById(authPermission);
         if (b <= 0) {
-            throw new EModeServiceException("权限删除失败，id：" + id);
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "权限删除失败，id：" + id);
         }
     }
 
@@ -91,18 +92,18 @@ public class AuthPermissionServiceImpl implements IAuthPermissionService {
         AuthPermission authPermission = AuthPermissionStructMapper.INSTANCE.dto2Entity(dto);
         Long id = authPermission.getId();
         if (id <= 0) {
-            throw new EModeServiceException("主键id有误，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "主键id有误，id:" + id);
         }
 
         AuthPermission authPermission1 = getAuthPermission(id);
         if (Objects.isNull(authPermission1)) {
-            throw new EModeServiceException("权限信息不存在，id:" + id);
+            throw new EModeServiceException(ErrorCodeConstant.BUSINESS_ERROR, "权限信息不存在，id:" + id);
         }
 
         int b = authPermissionMapper.updateById(authPermission);
 
         if (b <= 0) {
-            throw new EModeServiceException("权限信息更新异常");
+            throw new EModeServiceException(ErrorCodeConstant.DB_ERROR, "权限信息更新异常");
         }
     }
 

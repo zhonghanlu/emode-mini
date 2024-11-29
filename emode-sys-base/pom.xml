@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>emode-sys-base</artifactId>
+    <description>系统基础业务层</description>
 
     <dependencies>
         <dependency>

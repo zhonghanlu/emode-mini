@@ -3,6 +3,8 @@ package com.mini.common.utils;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
+import com.mini.common.constant.ErrorCodeConstant;
+import com.mini.common.exception.service.EModeServiceException;
 
 /**
  * @author zhl
@@ -41,7 +43,13 @@ public class SmHutoolUtil {
      */
     public static String sm2DecryptStr(String cipherText) {
         cipherText = EXTRA_STR + cipherText;
-        return sm2.decryptStr(cipherText, KeyType.PrivateKey);
+        String decryptStr = "";
+        try {
+            decryptStr = sm2.decryptStr(cipherText, KeyType.PrivateKey);
+        } catch (Exception e) {
+            throw new EModeServiceException(ErrorCodeConstant.PARAM_ERROR, "解密异常，请传入正确密文");
+        }
+        return decryptStr;
     }
 
 
@@ -61,7 +69,7 @@ public class SmHutoolUtil {
 //
 //        String decryptStr = sm2.decryptStr("04c3e5df33440666c166f316f1572cf485b790072a0d41aede8b1ac8436bc46105e531ea491a97232432950dcb03980d4f5aade6582dfe9a3d14b95c35a6a82ee0ae39b3046c13871b4e572b7dc94b132635b91700da14b0c33af2d092c770407b8b2a0ab0f577", KeyType.PrivateKey);
 //        System.out.println(decryptStr);
-        System.out.println(sm2EncryptBase64("123456"));
+        System.out.println(sm2EncryptBase64("1234567"));
 
         // 解密
 //        SM2 sm2pr = SmUtil.sm2(privateKeyStr, null);

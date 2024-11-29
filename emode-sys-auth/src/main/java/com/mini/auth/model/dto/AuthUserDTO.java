@@ -8,7 +8,7 @@ import lombok.Data;
  * @author zhl
  */
 @Data
-public class AuthUserDTO  {
+public class AuthUserDTO {
     /**
      * 用户表主键
      */
@@ -33,6 +33,12 @@ public class AuthUserDTO  {
      * 头像id
      */
     private Long avatar;
+
+    /**
+     * 头像url
+     */
+    private String avatarUrl;
+
     /**
      * 手机号
      */

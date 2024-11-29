@@ -11,6 +11,7 @@
             <id column="apID" property="id"/>
             <result column="parent_id" property="parentId"/>
             <result column="menu_name" property="menuName"/>
+            <result column="menu_path" property="menuPath"/>
             <result column="menu_url" property="menuUrl"/>
             <result column="menu_type" property="menuType"/>
             <result column="permissions" property="permissions"/>
@@ -42,6 +43,7 @@
                ap.id AS apID,
                ap.parent_id,
                ap.menu_name,
+               ap.menu_path,
                ap.menu_url,
                ap.menu_type,
                ap.permissions,

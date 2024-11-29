@@ -3,6 +3,7 @@ package com.mini.auth.model.query;
 import com.mini.common.enums.str.MenuType;
 import com.mini.common.utils.webmvc.PageQuery;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,6 +24,12 @@ public class AuthPermissionQuery extends PageQuery {
     private String menuName;
 
     /**
+     * 菜单path
+     */
+    @Schema(description = "菜单path")
+    private String menuPath;
+
+    /**
      * 菜单url
      */
     @Parameter(description = "菜单url")
@@ -37,7 +44,7 @@ public class AuthPermissionQuery extends PageQuery {
     /**
      * 按钮类型 按钮 菜单
      */
-    @Parameter(description = "按钮类型：按钮、菜单")
+    @Parameter(description = "类型：目录、按钮、菜单")
     private MenuType menuType;
 
 }
